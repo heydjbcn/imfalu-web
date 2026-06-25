@@ -59,6 +59,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
         description: s.intro,
       },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
+          { "@type": "ListItem", position: 2, name: "Servicios", item: `${site.url}/#servicios` },
+          { "@type": "ListItem", position: 3, name: s.title, item: `${site.url}/servicios/${s.slug}` },
+        ],
+      },
       faqs.length
         ? { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
         : null,

@@ -11,6 +11,7 @@ export async function LocalBusinessJsonLd() {
     name: site.name,
     description: `${site.tagline} en ${site.area}. Más de 30 años de experiencia.`,
     url: site.url,
+    image: `${site.url}/og.jpg`,
     telephone: `+34${site.phone}`,
     areaServed: site.area,
     address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: "Barcelona", addressCountry: "ES" },

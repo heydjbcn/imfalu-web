@@ -33,6 +33,13 @@ export const metadata: Metadata = {
     description:
       "Mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia.",
     url: site.url,
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: `${site.name} · fachadas de aluminio y cristal en ${site.city}` }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} · ${site.tagline} en ${site.city}`,
+    description: "Mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona.",
+    images: ["/og.jpg"],
   },
   alternates: { canonical: "/" },
   ...(process.env.SITE_NOINDEX === "1" ? { robots: { index: false, follow: false } } : {}),
