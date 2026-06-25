@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { TopBar } from "@/components/site/topbar"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
 import { WhatsAppFab } from "@/components/site/whatsapp-fab"
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-ink" suppressHydrationWarning>
+        <TopBar />
         <Header />
         <main className="flex-1 bg-white">{children}</main>
         <Footer />

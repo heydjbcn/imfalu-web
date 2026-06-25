@@ -3,7 +3,7 @@ import Image from "next/image"
 import {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
   ArrowRight, Phone, Building2, Clock, Award, MapPin,
-  Hotel, Users, Landmark, BadgeCheck,
+  Hotel, Users, Landmark, BadgeCheck, ChevronRight,
 } from "lucide-react"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
 
@@ -15,18 +15,16 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div className="pointer-events-none absolute inset-0 opacity-70"
-          style={{ background: "radial-gradient(60% 80% at 80% 0%, rgba(155,35,53,0.55), transparent 60%)" }} />
-        <div className="container-x relative grid gap-10 py-20 md:grid-cols-12 md:py-28">
-          <div className="md:col-span-7">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">
-              Fachadas de aluminio y cristal · {site.city}
+      <section className="bg-cream">
+        <div className="container-x grid gap-10 py-16 md:py-20">
+          <div className="max-w-4xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">
+              Mantenimiento · Reparación · Rehabilitación
             </p>
-            <h1 className="mt-4 text-4xl font-bold md:text-5xl lg:text-6xl">
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold text-ink md:text-6xl">
               Cuidamos la piel de tu edificio
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-warm">
               Especialistas en mantener, reparar y rehabilitar fachadas de aluminio y cristal en
               Barcelona. Del muro cortina al cristal roto, la fachada acristalada es lo nuestro: más de
               30 años, trabajo en altura certificado y urgencias 24 h.
@@ -37,7 +35,7 @@ export default function HomePage() {
                 Pide presupuesto <ArrowRight className="h-4 w-4" />
               </Link>
               <a href={waLink("Hola, quiero información sobre una fachada.")} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
+                className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink/5">
                 Escríbenos por WhatsApp
               </a>
             </div>
@@ -45,12 +43,17 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BANDA DE IMAGEN */}
+      <section className="relative h-[280px] w-full overflow-hidden bg-ink md:h-[440px]">
+        <Image src="/proyectos/cornella/1.jpg" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+      </section>
+
       {/* STATS */}
-      <section className="border-b bg-cream">
-        <div className="container-x grid grid-cols-2 gap-6 py-10 md:grid-cols-4">
-          {site.stats.map((s) => (
-            <div key={s.label}>
-              <div className="text-3xl font-bold text-burdeos md:text-4xl">
+      <section className="border-b bg-white">
+        <div className="container-x grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4 md:divide-x md:gap-y-0">
+          {site.stats.map((s, i) => (
+            <div key={s.label} className={i > 0 ? "md:pl-8" : ""}>
+              <div className="text-4xl font-bold text-burdeos">
                 {s.value}<span className="text-warm">{s.suffix}</span>
               </div>
               <div className="mt-1 text-sm text-warm">{s.label}</div>
@@ -59,30 +62,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICIOS */}
+      {/* SERVICIOS (lista numerada) */}
       <section id="servicios" className="container-x py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Servicios</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">Servicios</p>
           <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Todo para la fachada, de principio a fin</h2>
           <p className="mt-4 text-lg text-warm">
             Del diagnóstico al mantenimiento continuo, cubrimos el ciclo completo de la fachada
             de aluminio y cristal.
           </p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => {
+        <div className="mt-10 border-y divide-y">
+          {services.map((s, i) => {
             const Icon = ICONS[s.icon] ?? ShieldCheck
             return (
               <Link key={s.slug} href={`/servicios/${s.slug}`}
-                className="group rounded-2xl border bg-white p-6 transition-shadow hover:shadow-lg hover:shadow-black/5">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-burdeos/10 text-burdeos">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-ink">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-warm">{s.short}</p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-burdeos">
-                  Ver más <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </span>
+                className="group grid grid-cols-[2rem_1fr_auto] items-center gap-4 py-5 md:gap-8 md:py-6">
+                <span className="font-mono text-sm font-bold text-burdeos md:text-base">{String(i + 1).padStart(2, "0")}</span>
+                <div className="grid gap-1 md:grid-cols-[280px_1fr] md:items-baseline md:gap-8">
+                  <h3 className="flex items-center gap-2.5 text-lg font-semibold text-ink">
+                    <Icon className="h-5 w-5 shrink-0 text-burdeos" /> {s.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-warm">{s.short}</p>
+                </div>
+                <ChevronRight className="h-5 w-5 text-warm transition-all group-hover:translate-x-1 group-hover:text-burdeos" />
               </Link>
             )
           })}
