@@ -45,6 +45,7 @@ export interface Service {
   intro: string // texto largo (con keyword principal)
   bullets: string[]
   when: string[] // señales / cuándo lo necesitas
+  note?: { title: string; body: string[] } // nota aclaratoria (normativa, etc.)
 }
 
 export const services: Service[] = [
@@ -65,6 +66,14 @@ export const services: Service[] = [
       "El mantenimiento de fachadas de aluminio y cristal evita que pequeños deterioros se conviertan en filtraciones, desprendimientos o reparaciones costosas. En IMFALÚ ofrecemos un programa de mantenimiento preventivo y correctivo para fachadas metálicas y acristaladas —incluido el muro cortina—, con contrato anual y servicio de urgencias 24 h. Más de 30 años cuidando la fachada de edificios en Barcelona y su área metropolitana.",
     bullets: ["Contrato anual de mantenimiento", "Servicio de urgencias 24 h", "Revisiones periódicas programadas", "Pequeñas reparaciones preventivas", "Informe del estado de la fachada", "Mantenimiento de muro cortina"],
     when: ["La fachada no se revisa desde hace más de un año", "Aparecen manchas, óxido o juntas y sellados deteriorados", "El edificio tiene muro cortina o gran superficie acristalada", "Quieres prevenir filtraciones y desprendimientos", "Buscas un único especialista con contrato de mantenimiento"],
+    note: {
+      title: "Mantenimiento, ITE y el Libro del Edificio",
+      body: [
+        "El mantenimiento de la fachada debe realizarlo una empresa autorizada, que mantenga actualizados los libros de mantenimiento y la documentación que exige la normativa vigente, e informe de cualquier cambio que afecte a las instalaciones o de las modificaciones necesarias para seguir cumpliéndola.",
+        "El Código Técnico de la Edificación (CTE) refuerza la exigibilidad del Libro del Edificio, la herramienta básica con la que propietarios y usuarios cumplen sus obligaciones de conservación. La LOE define su contenido —con desarrollo autonómico—: conservar el edificio mediante un uso y mantenimiento adecuados y custodiar la documentación, seguros y garantías de la obra.",
+        "Como parte del servicio, documentamos nuestras actuaciones sobre la fachada para que el Libro del Edificio refleje su estado real y las intervenciones realizadas.",
+      ],
+    },
   },
   {
     slug: "reparacion",

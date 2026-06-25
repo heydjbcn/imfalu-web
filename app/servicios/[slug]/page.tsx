@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
-  ArrowRight, Check, ChevronRight, AlertCircle, Award, Building2,
+  ArrowRight, Check, ChevronRight, AlertCircle, Award, Building2, FileText,
 } from "lucide-react"
 import { services, site } from "@/lib/site"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
@@ -120,6 +120,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </li>
             ))}
           </ul>
+
+          {/* Nota aclaratoria (normativa) */}
+          {s.note ? (
+            <div className="mt-12 rounded-2xl border border-l-4 border-l-burdeos bg-cream p-6">
+              <h2 className="flex items-center gap-2 text-lg font-bold text-ink">
+                <FileText className="h-5 w-5 shrink-0 text-burdeos" /> {s.note.title}
+              </h2>
+              <div className="mt-3 space-y-3 text-sm leading-relaxed text-warm">
+                {s.note.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+            </div>
+          ) : null}
 
           {/* Cómo trabajamos */}
           <h2 className="mt-12 text-2xl font-bold text-ink">Cómo trabajamos</h2>
