@@ -15,10 +15,11 @@ export default function ContactoPage() {
     <section className="container-x py-14 md:py-20">
       <div className="max-w-2xl">
         <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Contacto</p>
-        <h1 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Hablemos de tu fachada</h1>
+        <h1 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Presupuesto de fachadas de aluminio y cristal en Barcelona</h1>
         <p className="mt-4 text-lg text-warm">
-          Cuéntanos qué necesitas y te damos presupuesto sin compromiso. Si es urgente (un cristal roto,
-          un riesgo en fachada), llámanos o escríbenos por WhatsApp.
+          <strong className="text-ink">Hablemos de tu fachada.</strong> Cuéntanos qué necesitas y te damos
+          presupuesto sin compromiso. Si es urgente (un cristal roto, un riesgo en fachada), llámanos o
+          escríbenos por WhatsApp.
         </p>
       </div>
 

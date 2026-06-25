@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <span className="text-ink">{s.title}</span>
           </nav>
           <h1 className="max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-            {s.title} de aluminio y cristal en {site.city}
+            {s.seoTitle}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.intro}</p>
         </div>

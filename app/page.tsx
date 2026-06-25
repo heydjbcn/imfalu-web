@@ -22,12 +22,12 @@ export default function HomePage() {
               Mantenimiento · Reparación · Rehabilitación
             </p>
             <h1 className="mt-5 max-w-3xl text-4xl font-bold text-ink md:text-6xl">
-              Cuidamos la piel de tu edificio
+              Fachadas de aluminio y cristal en Barcelona
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-warm">
-              Especialistas en mantener, reparar y rehabilitar fachadas de aluminio y cristal en
-              Barcelona. Del muro cortina al cristal roto, la fachada acristalada es lo nuestro: más de
-              30 años, trabajo en altura certificado y urgencias 24 h.
+              <strong className="text-ink">Cuidamos la piel de tu edificio.</strong> Mantenemos,
+              reparamos y rehabilitamos fachadas metálicas, acristaladas y muro cortina. Más de 30 años,
+              trabajo en altura certificado y servicio de urgencias 24 h.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contacto"

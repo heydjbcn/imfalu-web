@@ -18,10 +18,11 @@ export default function ProyectosPage() {
         <div className="container-x py-14 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Proyectos</p>
           <h1 className="mt-3 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-            Edificios donde hemos trabajado
+            Proyectos de fachadas de aluminio y cristal en Barcelona
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-warm">
-            Más de 150 edificios y +300.000 m² de fachada de aluminio y cristal intervenida en {site.area}.
+            Edificios donde hemos trabajado: más de 150 edificios y +300.000 m² de fachada de aluminio
+            y cristal intervenida en {site.area}.
           </p>
         </div>
       </section>
