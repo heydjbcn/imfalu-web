@@ -36,7 +36,6 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const { slug } = await params
   const s = services.find((x) => x.slug === slug)
   if (!s) notFound()
-  const Icon = ICONS[s.icon] ?? ShieldCheck
   const faqs = FAQ_BY_SLUG[slug] ?? []
   const others = services.filter((x) => x.slug !== slug)
 
@@ -71,10 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <ChevronRight className="h-3.5 w-3.5" />
             <span className="text-ink">{s.title}</span>
           </nav>
-          <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-burdeos/10 text-burdeos">
-            <Icon className="h-6 w-6" />
-          </span>
-          <h1 className="mt-5 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
+          <h1 className="max-w-3xl text-3xl font-bold text-ink md:text-4xl">
             {s.title} de aluminio y cristal en {site.city}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.intro}</p>
