@@ -6,6 +6,7 @@ export const FAQ_BY_SLUG: Record<string, { q: string; a: string }[]> = {
     { q: "¿Trabajáis con comunidades y administradores de fincas?", a: "Sí. La mayoría de nuestros clientes son administradores de fincas, property managers y departamentos de mantenimiento de edificios de oficinas y hoteles en Barcelona." },
   ],
   reparacion: [
+    { q: "¿Cómo se repara una fachada de vidrio o cristal?", a: "Según el daño: reposición del vidrio afectado (de cualquier medida y peso), sustitución de juntas y sellados, o reparación de la perfilería de aluminio. Empezamos con un diagnóstico y resolvemos en altura con medios certificados, sin sustituir toda la fachada." },
     { q: "¿Reponéis cristales rotos de fachada de cualquier tamaño?", a: "Sí. Reponemos y sustituimos cristales de cualquier medida y peso, con los medios de elevación y seguridad necesarios para trabajo en altura." },
     { q: "¿Tenéis servicio de urgencias por un cristal roto?", a: "Sí, disponemos de servicio de urgencias 24 h para cristales rotos, desprendimientos o riesgos en fachada en Barcelona y área metropolitana." },
     { q: "¿Reparáis elementos de aluminio dañados sin cambiar toda la fachada?", a: "Sí. Reparamos y reponemos los elementos constructivos dañados puntualmente, sin necesidad de sustituir la fachada completa." },
