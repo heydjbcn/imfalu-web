@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description:
-    "Empresa especialista en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia. Pide presupuesto.",
+    "Empresa de referencia en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia. Pide presupuesto.",
   keywords: [
     "rehabilitación de fachadas de aluminio y cristal Barcelona",
     "mantenimiento de fachadas de aluminio y cristal",

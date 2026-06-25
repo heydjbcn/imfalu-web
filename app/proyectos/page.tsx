@@ -34,10 +34,16 @@ export default function ProyectosPage() {
               <ProjectGallery images={p.images} title={p.title} />
             </div>
             <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-              <h2 className="text-2xl font-bold text-ink">{p.title}</h2>
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 className="text-2xl font-bold text-ink">{p.title}</h2>
+                {p.sector ? <span className="rounded-full bg-cream px-3 py-0.5 text-xs font-semibold text-burdeos">{p.sector}</span> : null}
+              </div>
               <p className="mt-1 flex items-center gap-1.5 text-sm text-warm">
                 <MapPin className="h-4 w-4 text-burdeos" /> {p.location} · {p.type}
               </p>
+              {p.metric ? (
+                <p className="mt-3 inline-flex rounded-lg bg-burdeos/10 px-3 py-1.5 text-sm font-semibold text-burdeos">{p.metric}</p>
+              ) : null}
               <dl className="mt-5 space-y-4">
                 <div className="flex gap-3">
                   <Target className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />

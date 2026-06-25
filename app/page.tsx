@@ -6,6 +6,7 @@ import {
   Hotel, Users, Landmark, BadgeCheck, ChevronRight,
 } from "lucide-react"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
+import { Reviews } from "@/components/site/reviews"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
@@ -101,9 +102,10 @@ export default function HomePage() {
               30 años cuidando fachadas en Barcelona
             </h2>
             <p className="mt-4 text-lg text-warm">
-              Acumulamos una amplia experiencia en mantenimiento y rehabilitación de fachadas de
-              aluminio y cristal, con más de 300.000 m² intervenidos. Damos servicio a propietarios, administradores
-              de fincas y departamentos de mantenimiento que necesitan un especialista de confianza.
+              Somos una empresa de referencia en mantenimiento y rehabilitación de fachada de aluminio
+              y cristal en Barcelona, con más de 300.000 m² intervenidos y pioneros en tratamientos por
+              fotocatálisis. Damos servicio a propietarios, administradores de fincas y departamentos de
+              mantenimiento que necesitan un especialista de confianza.
             </p>
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
@@ -196,6 +198,9 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* RESEÑAS (oculto si no hay datos de Places API) */}
+      <Reviews />
 
       {/* CTA */}
       <section className="bg-burdeos">

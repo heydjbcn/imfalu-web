@@ -6,11 +6,12 @@ import {
 } from "lucide-react"
 import { services, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
+import { Reviews } from "@/components/site/reviews"
 
 export const metadata: Metadata = {
   title: "Sobre nosotros — 30 años en fachadas de aluminio y cristal",
   description:
-    "IMFALÚ: más de 30 años, +300.000 m² y +150 edificios de fachada de aluminio y cristal intervenida en Barcelona. Especialistas en mantenimiento, reparación y rehabilitación.",
+    "IMFALÚ: más de 30 años, +300.000 m² y +150 edificios de fachada de aluminio y cristal intervenida en Barcelona. Empresa de referencia en mantenimiento, reparación y rehabilitación.",
   alternates: { canonical: "/sobre-nosotros" },
 }
 
@@ -85,8 +86,9 @@ export default function SobreNosotrosPage() {
           </p>
           <p>
             Seguimos siendo lo que fuimos desde el principio: <strong className="text-ink">especialistas</strong>.
-            Nos dedicamos a las fachadas de aluminio y cristal, y esa concentración es nuestra mayor
-            garantía para quien gestiona un edificio.
+            Nos dedicamos a las fachadas de aluminio y cristal, y esa concentración nos ha convertido en
+            una <strong className="text-ink">empresa de referencia</strong> en mantenimiento y rehabilitación
+            de fachada de aluminio y cristal en Barcelona, además de pioneros en tratamientos por fotocatálisis.
           </p>
         </div>
       </section>
@@ -157,6 +159,8 @@ export default function SobreNosotrosPage() {
           </div>
         </div>
       </section>
+
+      <Reviews />
 
       <CtaBand title={`¿Tu edificio necesita un especialista en fachadas en ${site.city}?`} />
     </>
