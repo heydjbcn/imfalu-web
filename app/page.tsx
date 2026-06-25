@@ -26,10 +26,9 @@ export default function HomePage() {
               Mantenemos, reparamos y rehabilitamos tu fachada de aluminio y cristal
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-              Especialistas <strong className="font-semibold text-white">solo</strong> en fachadas de
-              aluminio y cristal —metálicas, acristaladas y muro cortina—. No hacemos obra ni SATE:
-              cuidamos la fachada que tu edificio ya tiene. Más de 30 años, trabajo en altura
-              certificado y urgencias 24 h.
+              Especialistas en fachadas de aluminio y cristal: metálicas, acristaladas y muro cortina.
+              Más de 30 años de experiencia, trabajo en altura certificado y servicio de urgencias para
+              propietarios, administradores de fincas y property managers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contacto"
