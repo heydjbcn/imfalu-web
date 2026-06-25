@@ -1,0 +1,129 @@
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowRight, Check, ChevronRight, MapPin } from "lucide-react"
+import { projects, services, site, telLink } from "@/lib/site"
+import { PROCESS } from "@/lib/service-faqs"
+import { CtaBand } from "@/components/site/cta-band"
+import { JsonLd } from "@/components/site/json-ld"
+
+export interface LandingData {
+  slug: string
+  kicker: string
+  h1: string
+  intro: string
+  bullets: string[]
+  relatedSlugs: string[]
+  faqs: { q: string; a: string }[]
+}
+
+export function Landing({ data }: { data: LandingData }) {
+  const related = services.filter((s) => data.relatedSlugs.includes(s.slug))
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: data.h1,
+        areaServed: site.area,
+        provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
+        description: data.intro,
+      },
+      data.faqs.length
+        ? { "@type": "FAQPage", mainEntity: data.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
+        : null,
+    ].filter(Boolean),
+  }
+
+  return (
+    <>
+      <JsonLd data={jsonLd} />
+
+      <section className="relative overflow-hidden bg-ink text-white">
+        <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(60% 80% at 80% 0%, rgba(155,35,53,0.5), transparent 60%)" }} />
+        <div className="container-x relative py-16 md:py-20">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">{data.kicker}</p>
+          <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-5xl">{data.h1}</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{data.intro}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/contacto" className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
+              Pide presupuesto <ArrowRight className="h-4 w-4" />
+            </Link>
+            <a href={telLink} className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">
+              {site.phoneDisplay}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
+        <div>
+          <h2 className="text-2xl font-bold text-ink">Qué hacemos</h2>
+          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+            {data.bullets.map((b) => (
+              <li key={b} className="flex items-start gap-2.5 text-ink">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" /> <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="mt-12 text-2xl font-bold text-ink">Cómo trabajamos</h2>
+          <ol className="mt-5 grid gap-4 sm:grid-cols-2">
+            {PROCESS.map((p, i) => (
+              <li key={p.t} className="rounded-2xl border bg-white p-5">
+                <span className="text-sm font-bold text-burdeos">0{i + 1}</span>
+                <h3 className="mt-1 font-semibold text-ink">{p.t}</h3>
+                <p className="mt-1 text-sm text-warm">{p.d}</p>
+              </li>
+            ))}
+          </ol>
+
+          {data.faqs.length ? (
+            <>
+              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes</h2>
+              <div className="mt-5 divide-y rounded-2xl border bg-white">
+                {data.faqs.map((f) => (
+                  <details key={f.q} className="group p-5">
+                    <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-ink">
+                      {f.q} <ChevronRight className="h-4 w-4 text-burdeos transition-transform group-open:rotate-90" />
+                    </summary>
+                    <p className="mt-3 text-warm">{f.a}</p>
+                  </details>
+                ))}
+              </div>
+            </>
+          ) : null}
+        </div>
+
+        <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <div className="rounded-2xl border bg-cream p-6">
+            <h3 className="font-semibold text-ink">Presupuesto sin compromiso</h3>
+            <p className="mt-2 text-sm text-warm">Más de 30 años y +300.000 m² de fachada en {site.city}.</p>
+            <Link href="/contacto" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-burdeos px-5 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
+              Pedir presupuesto <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          {related.length ? (
+            <div className="rounded-2xl border p-6">
+              <h3 className="text-sm font-semibold text-ink">Servicios relacionados</h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                {related.map((s) => (
+                  <li key={s.slug}><Link href={`/servicios/${s.slug}`} className="text-warm hover:text-burdeos">{s.title}</Link></li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+          <Link href="/proyectos" className="block overflow-hidden rounded-2xl border">
+            <div className="relative aspect-[4/3] bg-cream">
+              <Image src={projects[0].image} alt="Proyecto de fachada en Barcelona" fill className="object-cover" sizes="320px" />
+            </div>
+            <div className="flex items-center gap-1.5 p-4 text-sm font-semibold text-burdeos">
+              <MapPin className="h-4 w-4" /> Ver proyectos
+            </div>
+          </Link>
+        </aside>
+      </section>
+
+      <CtaBand />
+    </>
+  )
+}

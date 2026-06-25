@@ -1,0 +1,18 @@
+url,tipo,perfil_audiencia,intencion,objetivo,keyword_principal,prioridad,cta
+/,Home,Todos,Marca/navegacional,Propuesta de valor + servicios + prueba social,empresa de fachadas Barcelona,Alta,Pide presupuesto
+/servicios/mantenimiento-fachadas,Single:Servicio,Administrador/Property manager,Comercial recurrente,Vender contrato de mantenimiento,mantenimiento de fachadas Barcelona,Alta,Pide presupuesto
+/servicios/reparacion,Single:Servicio,Mantenimiento de edificio,Urgente,Conversion rapida (cristales/daños),reparacion de fachadas Barcelona,Alta,Llámanos ahora
+/servicios/regeneracion,Single:Servicio,Administrador/Propietario,Comercial,Alternativa a sustitucion,regeneracion de fachadas,Media,Pide presupuesto
+/servicios/informes-tecnicos,Single:Servicio,Administrador/Arquitecto,Problema/diagnostico,Diagnostico previo,informe tecnico fachada,Media,Solicita un diagnostico
+/servicios/pruebas-estanqueidad,Single:Servicio,Propietario con humedad,Problema concreto,Captar filtraciones,pruebas de estanqueidad fachada,Media,Localiza la filtracion
+/servicios/fotocatalisis,Single:Servicio,Tecnico/curioso,Informacional,Diferenciacion + autoridad,fotocatalisis fachada,Baja,Pide presupuesto
+/rehabilitacion-de-fachadas-barcelona,Landing,Administrador/Property manager,Comercial alta,Consulta estrella,rehabilitacion de fachadas Barcelona,Alta,Pide presupuesto
+/mantenimiento-de-fachadas-barcelona,Landing,Gestor de edificio,Comercial,Captar contrato,mantenimiento de fachadas Barcelona,Alta,Pide presupuesto
+/muro-cortina-barcelona,Landing,Arquitecto/Constructora,Tecnica B2B,Nicho alto valor,muro cortina Barcelona,Media,Hablemos de tu proyecto
+/proyectos,Page (galeria),Todos,Prueba social,Mostrar obras con cifras,proyectos rehabilitacion fachadas Barcelona,Media,Ver proyectos
+/sobre-nosotros,Page,Todos,Confianza,Autoridad (30 años, +300.000 m², premio),empresa de fachadas Barcelona,Media,Hablemos de tu proyecto
+/contacto,Page,Todos,Contacto/conversion,Facilitar contacto,contacto fachadas Barcelona,Alta,Pide presupuesto
+/blog,Archive:Post (fase 2),Administradores,Informacional/GEO,Atraer trafico + autoridad,guias rehabilitacion fachadas,Baja (fase 2),Lee la guia
+/aviso-legal,Page,Legal,Legal,Cumplimiento,,Baja,
+/privacidad,Page,Legal,Legal,Cumplimiento,,Baja,
+/cookies,Page,Legal,Legal,Cumplimiento,,Baja,
