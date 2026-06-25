@@ -34,7 +34,7 @@ export async function getReviews(): Promise<ReviewsData | null> {
   if (!key || !placeId) return null
 
   try {
-    const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}`, {
+    const res = await fetch(`https://places.googleapis.com/v1/places/${placeId}?languageCode=es&regionCode=ES`, {
       headers: {
         "X-Goog-Api-Key": key,
         "X-Goog-FieldMask": "rating,userRatingCount,googleMapsUri,reviews",
