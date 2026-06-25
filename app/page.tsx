@@ -46,7 +46,7 @@ export default function HomePage() {
 
       {/* BANDA DE IMAGEN */}
       <section className="relative h-[280px] w-full overflow-hidden bg-ink md:h-[440px]">
-        <Image src="/proyectos/cornella/1.jpg" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/headers/home.jpg" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
       </section>
 
       {/* STATS */}
