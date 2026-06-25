@@ -131,7 +131,7 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {projects.map((p) => (
+          {projects.slice(0, 4).map((p) => (
             <div key={p.title} className="overflow-hidden rounded-2xl border bg-white">
               <div className="relative aspect-[4/3] overflow-hidden bg-cream">
                 <Image src={p.image} alt={`${p.type} — ${p.title}, ${p.location}`} fill className="object-cover" sizes="(max-width:1024px) 50vw, 25vw" />

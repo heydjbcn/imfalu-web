@@ -112,9 +112,11 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  { title: "WTC Cornellà", location: "Cornellà de Llobregat", type: "Fachada de oficinas", image: "/proyectos/oficinas-cornella.jpg" },
   { title: "Edificio Ski (Meliá)", location: "Barcelona", type: "Rehabilitación de fachada", image: "/proyectos/edificio-ski.jpg" },
+  { title: "Parc Vallsolana", location: "Sant Cugat del Vallès", type: "Fachada de oficinas", image: "/proyectos/oficinas-sant-cugat.jpg" },
+  { title: "Torre Tarragona", location: "Barcelona", type: "Edificio de oficinas", image: "/proyectos/oficinas-barcelona.jpg" },
   { title: "Hotel Roselló", location: "Barcelona", type: "Mantenimiento de fachada acristalada", image: "/proyectos/hotel-rosello.jpg" },
-  { title: "Torre Tarragona", location: "Tarragona", type: "Edificio de oficinas", image: "/proyectos/torre-tarragona.jpg" },
   { title: "Edificio de oficinas", location: "Barberà del Vallès", type: "Regeneración de fachada", image: "/proyectos/oficinas-barbera.jpg" },
 ]
 
