@@ -12,7 +12,13 @@ export const metadata: Metadata = {
 const data: LandingData = {
   slug: "rehabilitacion-de-fachadas-barcelona",
   term: "la rehabilitación de fachadas de aluminio y cristal",
-  gallery: ["/proyectos/ski/1.jpg", "/galeria/diagonal-1.jpg", "/galeria/diagonal-2.jpg", "/proyectos/hotel/1.jpg", "/proyectos/cornella/1.jpg"],
+  gallery: [
+    { src: "/proyectos/ski/1.jpg", label: "Edificio Ski (Meliá)", caption: "Rehabilitación · Barcelona" },
+    { src: "/galeria/diagonal-1.jpg", label: "Torre en Diagonal", caption: "Oficinas · Barcelona" },
+    { src: "/galeria/diagonal-2.jpg", label: "Edificio en Diagonal", caption: "Oficinas · Barcelona" },
+    { src: "/proyectos/hotel/1.jpg", label: "Hotel Roselló", caption: "Fachada acristalada · Barcelona" },
+    { src: "/proyectos/cornella/1.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà" },
+  ],
   kicker: "Rehabilitación de fachadas · Barcelona",
   h1: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
   intro:

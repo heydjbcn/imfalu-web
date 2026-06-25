@@ -12,7 +12,11 @@ export const metadata: Metadata = {
 const data: LandingData = {
   slug: "mantenimiento-de-fachadas-barcelona",
   term: "el mantenimiento de fachadas de aluminio y cristal",
-  gallery: ["/proyectos/cornella/1.jpg", "/proyectos/vallsolana/1.jpg", "/proyectos/torre-tarragona/1.jpg"],
+  gallery: [
+    { src: "/proyectos/cornella/1.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà" },
+    { src: "/proyectos/vallsolana/1.jpg", label: "Parc Vallsolana", caption: "Oficinas · Sant Cugat" },
+    { src: "/proyectos/torre-tarragona/1.jpg", label: "Torre Tarragona", caption: "Oficinas · Barcelona" },
+  ],
   kicker: "Mantenimiento de fachadas · Barcelona",
   h1: "Mantenimiento de fachadas de aluminio y cristal en Barcelona",
   intro:

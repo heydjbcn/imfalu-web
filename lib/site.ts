@@ -31,6 +31,12 @@ export const nav = [
   { label: "Contacto", href: "/contacto" },
 ] as const
 
+export interface GalleryItem {
+  src: string // ruta en /public
+  label: string // título (vertical cuando está recogida)
+  caption?: string // subtítulo al abrir
+}
+
 export interface Service {
   slug: string
   title: string
@@ -46,7 +52,7 @@ export interface Service {
   bullets: string[]
   when: string[] // señales / cuándo lo necesitas
   note?: { title: string; body: string[] } // nota aclaratoria (normativa, etc.)
-  gallery?: string[] // fotos reales de trabajos (rutas en /public)
+  gallery?: GalleryItem[] // fotos reales de trabajos
 }
 
 export const services: Service[] = [
@@ -67,7 +73,11 @@ export const services: Service[] = [
       "El mantenimiento de fachadas de aluminio y cristal evita que pequeños deterioros se conviertan en filtraciones, desprendimientos o reparaciones costosas. En IMFALÚ ofrecemos un programa de mantenimiento preventivo y correctivo para fachadas metálicas y acristaladas —incluido el muro cortina—, con contrato anual y servicio de urgencias 24 h. Más de 30 años cuidando la fachada de edificios en Barcelona y su área metropolitana.",
     bullets: ["Contrato anual de mantenimiento", "Servicio de urgencias 24 h", "Revisiones periódicas programadas", "Pequeñas reparaciones preventivas", "Informe del estado de la fachada", "Mantenimiento de muro cortina"],
     when: ["La fachada no se revisa desde hace más de un año", "Aparecen manchas, óxido o juntas y sellados deteriorados", "El edificio tiene muro cortina o gran superficie acristalada", "Quieres prevenir filtraciones y desprendimientos", "Buscas un único especialista con contrato de mantenimiento"],
-    gallery: ["/proyectos/cornella/1.jpg", "/proyectos/vallsolana/1.jpg", "/proyectos/torre-tarragona/1.jpg"],
+    gallery: [
+      { src: "/proyectos/cornella/1.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà de Llobregat" },
+      { src: "/proyectos/vallsolana/1.jpg", label: "Parc Vallsolana", caption: "Oficinas · Sant Cugat del Vallès" },
+      { src: "/proyectos/torre-tarragona/1.jpg", label: "Torre Tarragona", caption: "Oficinas · Barcelona" },
+    ],
     note: {
       title: "Mantenimiento, ITE y el Libro del Edificio",
       body: [
@@ -94,7 +104,12 @@ export const services: Service[] = [
       "Reparamos y reponemos los elementos dañados de la fachada de aluminio y cristal: desde un cristal roto en altura hasta juntas, sellados y perfilería de muro cortina. Sustituimos vidrios de cualquier medida y peso con los medios de elevación y la seguridad necesarios, y disponemos de servicio de urgencias 24 h ante cualquier riesgo en la fachada.",
     bullets: ["Reposición de cristales de cualquier medida y peso", "Reparación de elementos de aluminio y perfilería", "Sustitución de juntas y sellados", "Reparación de muro cortina", "Servicio de urgencias 24 h", "Medios de elevación propios"],
     when: ["Hay un cristal roto o agrietado en la fachada", "Riesgo de desprendimiento de un elemento de fachada", "Juntas o sellados envejecidos que dejan pasar agua", "Perfilería de aluminio dañada o suelta", "Necesitas una reparación urgente en altura"],
-    gallery: ["/galeria/reparacion-1.jpg", "/galeria/reparacion-2.jpg", "/galeria/reparacion-3.jpg", "/galeria/reparacion-4.jpg"],
+    gallery: [
+      { src: "/galeria/reparacion-1.jpg", label: "Grúa en muro cortina", caption: "Reposición de cristal en altura" },
+      { src: "/galeria/reparacion-2.jpg", label: "Vidrio de gran formato", caption: "Manipulación con grúa y ventosa" },
+      { src: "/galeria/reparacion-3.jpg", label: "Trabajo en altura", caption: "Reparación de fachada acristalada" },
+      { src: "/galeria/reparacion-4.jpg", label: "Reposición en fachada", caption: "Camión grúa y cesta certificados" },
+    ],
   },
   {
     slug: "regeneracion",
@@ -113,7 +128,11 @@ export const services: Service[] = [
       "La regeneración recupera el estado y las prestaciones originales de una fachada de aluminio y cristal sin necesidad de sustituirla por completo. Restauramos los lacados y elementos metálicos y tratamos los vidrios afectados: una alternativa más económica y sostenible a la sustitución total, ideal cuando la estructura de la fachada sigue en buen estado.",
     bullets: ["Restauración de aluminio y lacados", "Recuperación de vidrios", "Tratamiento de oxidación y deterioro", "Alternativa a la sustitución total", "Recuperación del aspecto y prestaciones"],
     when: ["El aluminio o el lacado se ven envejecidos o con óxido", "La fachada ha perdido aspecto pero la estructura está bien", "Quieres una alternativa más barata que sustituir toda la fachada", "Hay vidrios deteriorados pero recuperables", "Buscas mejorar la imagen del edificio sin una gran obra"],
-    gallery: ["/proyectos/barbera/1.jpg", "/proyectos/ski/2.jpg", "/proyectos/cornella/2.jpg"],
+    gallery: [
+      { src: "/proyectos/barbera/1.jpg", label: "Oficinas Barberà", caption: "Regeneración · Barberà del Vallès" },
+      { src: "/proyectos/ski/2.jpg", label: "Edificio Ski", caption: "Rehabilitación · Barcelona" },
+      { src: "/proyectos/cornella/2.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà" },
+    ],
   },
   {
     slug: "informes-tecnicos",

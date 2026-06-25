@@ -12,7 +12,11 @@ export const metadata: Metadata = {
 const data: LandingData = {
   slug: "muro-cortina-barcelona",
   term: "el muro cortina de aluminio y cristal",
-  gallery: ["/proyectos/ski/2.jpg", "/proyectos/cornella/2.jpg", "/proyectos/hotel/2.jpg"],
+  gallery: [
+    { src: "/proyectos/ski/2.jpg", label: "Edificio Ski", caption: "Muro cortina · Barcelona" },
+    { src: "/proyectos/cornella/2.jpg", label: "WTC Cornellà", caption: "Muro cortina · Cornellà" },
+    { src: "/proyectos/hotel/2.jpg", label: "Hotel Roselló", caption: "Fachada acristalada · Barcelona" },
+  ],
   kicker: "Muro cortina · Barcelona",
   h1: "Muro cortina en Barcelona: mantenimiento, reparación y rehabilitación",
   intro:

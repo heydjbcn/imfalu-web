@@ -10,7 +10,7 @@ import { services, site } from "@/lib/site"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
-import { ProjectGallery } from "@/components/site/project-gallery"
+import { ExpandingGallery } from "@/components/site/expanding-gallery"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
@@ -170,7 +170,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <>
               <h2 className="mt-12 text-2xl font-bold text-ink">Algunos de nuestros trabajos</h2>
               <div className="mt-5">
-                <ProjectGallery images={s.gallery} title={s.title} />
+                <ExpandingGallery items={s.gallery} />
               </div>
             </>
           ) : null}

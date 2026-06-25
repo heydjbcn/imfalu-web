@@ -1,11 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Check, ChevronRight, MapPin } from "lucide-react"
-import { projects, services, site, telLink } from "@/lib/site"
+import { projects, services, site, telLink, type GalleryItem } from "@/lib/site"
 import { PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
-import { ProjectGallery } from "@/components/site/project-gallery"
+import { ExpandingGallery } from "@/components/site/expanding-gallery"
 
 export interface LandingData {
   slug: string
@@ -17,8 +17,8 @@ export interface LandingData {
   faqs: { q: string; a: string }[]
   /** Término para enriquecer los H2 con keyword secundaria, p.ej. "el muro cortina" */
   term?: string
-  /** Fotos reales de trabajos (rutas en /public) */
-  gallery?: string[]
+  /** Fotos reales de trabajos */
+  gallery?: GalleryItem[]
 }
 
 export function Landing({ data }: { data: LandingData }) {
@@ -103,7 +103,7 @@ export function Landing({ data }: { data: LandingData }) {
             <>
               <h2 className="mt-12 text-2xl font-bold text-ink">Algunos de nuestros trabajos</h2>
               <div className="mt-5">
-                <ProjectGallery images={data.gallery} title={data.h1} />
+                <ExpandingGallery items={data.gallery} />
               </div>
             </>
           ) : null}
