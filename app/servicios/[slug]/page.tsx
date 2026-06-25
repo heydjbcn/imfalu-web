@@ -38,6 +38,15 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   if (!s) notFound()
   const faqs = FAQ_BY_SLUG[slug] ?? []
   const others = services.filter((x) => x.slug !== slug)
+  const TERMS: Record<string, string> = {
+    "mantenimiento-fachadas": "el mantenimiento de fachadas",
+    reparacion: "la reparación de fachadas",
+    regeneracion: "la regeneración de fachadas",
+    "informes-tecnicos": "el informe técnico de fachada",
+    "pruebas-estanqueidad": "las pruebas de estanqueidad",
+    fotocatalisis: "la fotocatálisis",
+  }
+  const term = TERMS[slug] ?? "este servicio"
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -85,7 +94,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
           {/* Qué incluye */}
-          <h2 className="text-2xl font-bold text-ink">Qué incluye</h2>
+          <h2 className="text-2xl font-bold text-ink">Qué incluye {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {s.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
@@ -95,7 +104,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </ul>
 
           {/* Cuándo lo necesitas */}
-          <h2 className="mt-12 text-2xl font-bold text-ink">Cuándo necesitas este servicio</h2>
+          <h2 className="mt-12 text-2xl font-bold text-ink">Cuándo necesitas {term}</h2>
           <ul className="mt-5 space-y-3">
             {s.when.map((w) => (
               <li key={w} className="flex items-start gap-2.5 text-warm">
@@ -117,7 +126,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </ol>
 
           {/* Por qué IMFALÚ */}
-          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué IMFALÚ</h2>
+          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
           <p className="mt-4 text-warm">
             Somos especialistas en fachadas de aluminio y cristal: es lo que hacemos. Más de 30 años de
             experiencia, trabajo en altura certificado y servicio de urgencias para administradores de
@@ -135,7 +144,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* FAQ */}
           {faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes</h2>
+              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {faqs.map((f) => (
                   <details key={f.q} className="group p-5">

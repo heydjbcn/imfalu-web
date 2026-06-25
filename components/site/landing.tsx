@@ -14,10 +14,13 @@ export interface LandingData {
   bullets: string[]
   relatedSlugs: string[]
   faqs: { q: string; a: string }[]
+  /** Término para enriquecer los H2 con keyword secundaria, p.ej. "el muro cortina" */
+  term?: string
 }
 
 export function Landing({ data }: { data: LandingData }) {
   const related = services.filter((s) => data.relatedSlugs.includes(s.slug))
+  const term = data.term ?? "fachadas de aluminio y cristal"
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -57,7 +60,7 @@ export function Landing({ data }: { data: LandingData }) {
 
       <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
-          <h2 className="text-2xl font-bold text-ink">Qué hacemos</h2>
+          <h2 className="text-2xl font-bold text-ink">Qué hacemos en {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {data.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
@@ -79,7 +82,7 @@ export function Landing({ data }: { data: LandingData }) {
 
           {data.faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes</h2>
+              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {data.faqs.map((f) => (
                   <details key={f.q} className="group p-5">

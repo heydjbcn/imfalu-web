@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 const data: LandingData = {
   slug: "mantenimiento-de-fachadas-barcelona",
+  term: "el mantenimiento de fachadas de aluminio y cristal",
   kicker: "Mantenimiento de fachadas · Barcelona",
   h1: "Mantenimiento de fachadas de aluminio y cristal en Barcelona",
   intro:

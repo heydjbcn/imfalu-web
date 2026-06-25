@@ -48,7 +48,7 @@ export default function SobreNosotrosPage() {
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-warm">
             <strong className="text-ink">Cuidamos la piel de los edificios.</strong> Los profesionales que
             formamos IMFALÚ acumulamos una amplia experiencia en mantenimiento y rehabilitación de
-            fachadas, con más de 300.000 m² intervenidos en Barcelona y su área metropolitana.
+            fachadas de aluminio y cristal, con más de 300.000 m² intervenidos en Barcelona y su área metropolitana.
           </p>
         </div>
       </section>

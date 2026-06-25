@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 const data: LandingData = {
   slug: "muro-cortina-barcelona",
+  term: "el muro cortina de aluminio y cristal",
   kicker: "Muro cortina · Barcelona",
   h1: "Muro cortina en Barcelona: mantenimiento, reparación y rehabilitación",
   intro:
@@ -27,7 +28,7 @@ const data: LandingData = {
   faqs: [
     { q: "¿Hacéis mantenimiento de muro cortina en Barcelona?", a: "Sí, mantenemos fachadas ligeras de aluminio y cristal en edificios de oficinas, hoteles y singulares, con contrato y urgencias." },
     { q: "¿Reparáis filtraciones en muro cortina?", a: "Sí. Localizamos el punto de entrada de agua con pruebas de estanqueidad y reparamos sellados y vidrios afectados." },
-    { q: "¿Trabajáis con arquitectos y constructoras?", a: "Sí, colaboramos con estudios de arquitectura y constructoras tanto en obra nueva como en rehabilitación de muro cortina." },
+    { q: "¿Trabajáis con arquitectos y constructoras?", a: "Sí, colaboramos con estudios de arquitectura, constructoras y property managers en el mantenimiento, la reparación y la rehabilitación de muro cortina de aluminio y cristal ya instalado. No fabricamos fachada nueva: nos especializamos en conservar y recuperar la que ya existe." },
   ],
 }
 

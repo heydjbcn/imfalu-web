@@ -19,10 +19,10 @@ export const metadata: Metadata = {
   description:
     "Empresa especialista en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia. Pide presupuesto.",
   keywords: [
-    "rehabilitación de fachadas Barcelona",
-    "mantenimiento de fachadas",
-    "fachadas de aluminio y cristal",
-    "reparación de fachadas",
+    "rehabilitación de fachadas de aluminio y cristal Barcelona",
+    "mantenimiento de fachadas de aluminio y cristal",
+    "reparación de fachadas de aluminio y cristal",
+    "fachadas de aluminio y cristal Barcelona",
     "muro cortina Barcelona",
   ],
   openGraph: {

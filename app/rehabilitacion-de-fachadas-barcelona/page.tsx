@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Landing, type LandingData } from "@/components/site/landing"
 
 export const metadata: Metadata = {
-  title: "Rehabilitación de fachadas en Barcelona",
+  title: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
   description:
     "Rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años, +300.000 m² y +150 edificios. Diagnóstico, regeneración y reparación con trabajo en altura certificado.",
   keywords: ["rehabilitación de fachadas Barcelona", "rehabilitar fachada aluminio", "rehabilitación fachada cristal", "rehabilitación fachada acristalada", "fachada metálica Barcelona", "regeneración fachada aluminio"],
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 
 const data: LandingData = {
   slug: "rehabilitacion-de-fachadas-barcelona",
+  term: "la rehabilitación de fachadas de aluminio y cristal",
   kicker: "Rehabilitación de fachadas · Barcelona",
   h1: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
   intro:

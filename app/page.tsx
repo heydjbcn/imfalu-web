@@ -101,8 +101,8 @@ export default function HomePage() {
               30 años cuidando fachadas en Barcelona
             </h2>
             <p className="mt-4 text-lg text-warm">
-              Acumulamos una amplia experiencia en construcción y rehabilitación de fachadas,
-              con más de 300.000 m² intervenidos. Damos servicio a propietarios, administradores
+              Acumulamos una amplia experiencia en mantenimiento y rehabilitación de fachadas de
+              aluminio y cristal, con más de 300.000 m² intervenidos. Damos servicio a propietarios, administradores
               de fincas y departamentos de mantenimiento que necesitan un especialista de confianza.
             </p>
           </div>
