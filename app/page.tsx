@@ -54,7 +54,7 @@ export default function HomePage() {
         <div className="container-x grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4 md:divide-x md:gap-y-0">
           {site.stats.map((s, i) => (
             <div key={s.label} className={i > 0 ? "md:pl-8" : ""}>
-              <div className="text-4xl font-bold text-burdeos">
+              <div className="whitespace-nowrap text-2xl font-bold text-burdeos sm:text-3xl md:text-4xl">
                 {s.value}<span className="text-warm">{s.suffix}</span>
               </div>
               <div className="mt-1 text-sm text-warm">{s.label}</div>

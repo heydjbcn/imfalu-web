@@ -60,7 +60,7 @@ export default function SobreNosotrosPage() {
           {HITOS.map((h, i) => (
             <div key={h.v} className={i > 0 ? "md:pl-8" : ""}>
               <h.icon className="h-6 w-6 text-burdeos" />
-              <div className="mt-3 text-3xl font-bold text-ink">{h.v}</div>
+              <div className="mt-3 whitespace-nowrap text-2xl font-bold text-ink md:text-3xl">{h.v}</div>
               <div className="mt-1 text-sm text-warm">{h.d}</div>
             </div>
           ))}

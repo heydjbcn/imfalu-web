@@ -90,7 +90,7 @@ export function Landing({ data }: { data: LandingData }) {
           <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {site.stats.map((st) => (
               <div key={st.label} className="rounded-2xl border bg-cream p-4">
-                <div className="text-2xl font-bold text-burdeos">{st.value}<span className="text-warm">{st.suffix}</span></div>
+                <div className="whitespace-nowrap text-xl font-bold text-burdeos sm:text-2xl">{st.value}<span className="text-warm">{st.suffix}</span></div>
                 <div className="mt-1 text-xs text-warm">{st.label}</div>
               </div>
             ))}
