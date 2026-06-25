@@ -27,10 +27,11 @@ export default function SobreNosotrosPage() {
             30 años especializados en fachadas de aluminio y cristal
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-warm">
-            Los profesionales que formamos IMFALÚ acumulamos una amplia experiencia en construcción y
-            rehabilitación de fachadas, con más de 300.000 m² intervenidos. Nacimos para dar respuesta a
-            la creciente demanda de mantenimiento, reparación y rehabilitación de fachadas de aluminio y
-            cristal de propietarios, administradores de fincas y departamentos de mantenimiento.
+            <strong className="text-ink">Cuidamos la piel de los edificios.</strong> Los profesionales que
+            formamos IMFALÚ acumulamos una amplia experiencia en rehabilitación de fachadas, con más de
+            300.000 m² intervenidos. Nacimos para dar respuesta a la creciente demanda de mantenimiento,
+            reparación y rehabilitación de fachadas de aluminio y cristal de propietarios, administradores
+            de fincas y departamentos de mantenimiento.
           </p>
         </div>
       </section>

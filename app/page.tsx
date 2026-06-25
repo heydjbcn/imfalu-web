@@ -2,7 +2,8 @@ import Link from "next/link"
 import Image from "next/image"
 import {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
-  ArrowRight, Phone, Building2, Clock, Award, MapPin, CheckCircle2,
+  ArrowRight, Phone, Building2, Clock, Award, MapPin,
+  Hotel, Users, Landmark, BadgeCheck,
 } from "lucide-react"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
 
@@ -23,12 +24,12 @@ export default function HomePage() {
               Fachadas de aluminio y cristal · {site.city}
             </p>
             <h1 className="mt-4 text-4xl font-bold md:text-5xl lg:text-6xl">
-              Mantenemos, reparamos y rehabilitamos tu fachada de aluminio y cristal
+              Cuidamos la piel de tu edificio
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">
-              Especialistas en fachadas de aluminio y cristal: metálicas, acristaladas y muro cortina.
-              Más de 30 años de experiencia, trabajo en altura certificado y servicio de urgencias para
-              propietarios, administradores de fincas y property managers.
+              Especialistas en mantener, reparar y rehabilitar fachadas de aluminio y cristal en
+              Barcelona. Del muro cortina al cristal roto, la fachada acristalada es lo nuestro: más de
+              30 años, trabajo en altura certificado y urgencias 24 h.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contacto"
@@ -148,17 +149,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* A QUIÉN SERVIMOS */}
-      <section className="bg-cream py-16">
+      {/* SECTORES */}
+      <section className="bg-cream py-20">
         <div className="container-x">
-          <h2 className="text-2xl font-bold text-ink">Trabajamos para</h2>
-          <div className="mt-6 flex flex-wrap gap-3">
-            {["Administradores de fincas", "Property managers", "Comunidades de propietarios", "Arquitectos", "Departamentos de mantenimiento", "Hoteles y oficinas"].map((a) => (
-              <span key={a} className="inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium text-ink">
-                <CheckCircle2 className="h-4 w-4 text-burdeos" /> {a}
-              </span>
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Sectores</p>
+            <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Edificios que cuidamos</h2>
+            <p className="mt-4 text-lg text-warm">Trabajamos para administradores de fincas, property managers, arquitectos y departamentos de mantenimiento.</p>
+          </div>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: Building2, t: "Oficinas", d: "Torres y edificios de oficinas con fachada acristalada y muro cortina." },
+              { icon: Hotel, t: "Hoteles", d: "Fachadas acristaladas con mantenimiento sin afectar a los huéspedes." },
+              { icon: Users, t: "Comunidades", d: "Comunidades de propietarios y edificios residenciales de aluminio y cristal." },
+              { icon: Landmark, t: "Edificios singulares", d: "Edificios emblemáticos y de gran altura que exigen un especialista." },
+            ].map((s) => (
+              <div key={s.t} className="rounded-2xl border bg-white p-6">
+                <s.icon className="h-7 w-7 text-burdeos" />
+                <h3 className="mt-3 font-semibold text-ink">{s.t}</h3>
+                <p className="mt-1.5 text-sm text-warm">{s.d}</p>
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* CONFIANZA */}
+      <section className="container-x py-14">
+        <div className="grid gap-4 rounded-2xl border bg-white p-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: ShieldCheck, t: "Trabajo en altura certificado", d: "Personal y medios homologados." },
+            { icon: BadgeCheck, t: "Garantía de los trabajos", d: "Respondemos por lo que hacemos." },
+            { icon: Clock, t: "Urgencias 24 h", d: "Cristales rotos, riesgos en fachada." },
+            { icon: Award, t: "+30 años · +150 edificios", d: "Experiencia que avala." },
+          ].map((c) => (
+            <div key={c.t} className="flex gap-3">
+              <c.icon className="mt-0.5 h-6 w-6 shrink-0 text-burdeos" />
+              <div>
+                <h3 className="text-sm font-semibold text-ink">{c.t}</h3>
+                <p className="text-sm text-warm">{c.d}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

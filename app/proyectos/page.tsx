@@ -1,13 +1,13 @@
 import type { Metadata } from "next"
-import Image from "next/image"
-import { MapPin } from "lucide-react"
+import { MapPin, Target, Wrench, CheckCircle2 } from "lucide-react"
 import { projects, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
+import { ProjectGallery } from "@/components/site/project-gallery"
 
 export const metadata: Metadata = {
   title: "Proyectos de fachadas en Barcelona",
   description:
-    "Algunos de los edificios donde hemos intervenido la fachada de aluminio y cristal en Barcelona y área metropolitana: rehabilitación, mantenimiento y regeneración.",
+    "Edificios donde hemos intervenido la fachada de aluminio y cristal en Barcelona y área metropolitana: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona y más.",
   alternates: { canonical: "/proyectos" },
 }
 
@@ -21,33 +21,40 @@ export default function ProyectosPage() {
             Edificios donde hemos trabajado
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-warm">
-            Más de 150 edificios y +300.000 m² de fachada intervenida en {site.area}. Una muestra de
-            nuestro trabajo en fachadas de aluminio y cristal.
+            Más de 150 edificios y +300.000 m² de fachada de aluminio y cristal intervenida en {site.area}.
           </p>
         </div>
       </section>
 
-      <section className="container-x py-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p) => (
-            <article key={p.title} className="overflow-hidden rounded-2xl border bg-white">
-              <div className="relative aspect-[4/3] overflow-hidden bg-cream">
-                <Image src={p.image} alt={`${p.type} — ${p.title}, ${p.location}`} fill className="object-cover" sizes="(max-width:1024px) 50vw, 33vw" />
-              </div>
-              <div className="p-5">
-                <h2 className="font-semibold text-ink">{p.title}</h2>
-                <p className="mt-1 flex items-center gap-1.5 text-sm text-warm">
-                  <MapPin className="h-3.5 w-3.5" /> {p.location}
-                </p>
-                <p className="mt-1 text-sm text-warm">{p.type}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <p className="mt-8 text-sm text-warm">
-          ¿Tienes un edificio en {site.city}? Podemos visitarlo y darte un diagnóstico de la fachada.
-        </p>
-      </section>
+      <div className="container-x space-y-16 py-16">
+        {projects.map((p, idx) => (
+          <article key={p.slug} className="grid gap-8 lg:grid-cols-2 lg:items-start">
+            <div className={idx % 2 === 1 ? "lg:order-2" : ""}>
+              <ProjectGallery images={p.images} title={p.title} />
+            </div>
+            <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
+              <h2 className="text-2xl font-bold text-ink">{p.title}</h2>
+              <p className="mt-1 flex items-center gap-1.5 text-sm text-warm">
+                <MapPin className="h-4 w-4 text-burdeos" /> {p.location} · {p.type}
+              </p>
+              <dl className="mt-5 space-y-4">
+                <div className="flex gap-3">
+                  <Target className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
+                  <div><dt className="text-sm font-semibold text-ink">El reto</dt><dd className="text-sm text-warm">{p.reto}</dd></div>
+                </div>
+                <div className="flex gap-3">
+                  <Wrench className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
+                  <div><dt className="text-sm font-semibold text-ink">Qué hicimos</dt><dd className="text-sm text-warm">{p.solucion}</dd></div>
+                </div>
+                <div className="flex gap-3">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
+                  <div><dt className="text-sm font-semibold text-ink">Resultado</dt><dd className="text-sm text-warm">{p.resultado}</dd></div>
+                </div>
+              </dl>
+            </div>
+          </article>
+        ))}
+      </div>
 
       <CtaBand title="¿Quieres que tu edificio sea el próximo?" />
     </>

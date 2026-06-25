@@ -105,19 +105,66 @@ export const services: Service[] = [
 ]
 
 export interface Project {
+  slug: string
   title: string
   location: string
   type: string
-  image: string
+  image: string // portada (= images[0])
+  images: string[]
+  reto: string
+  solucion: string
+  resultado: string
 }
 
 export const projects: Project[] = [
-  { title: "WTC Cornellà", location: "Cornellà de Llobregat", type: "Fachada de oficinas", image: "/proyectos/oficinas-cornella.jpg" },
-  { title: "Edificio Ski (Meliá)", location: "Barcelona", type: "Rehabilitación de fachada", image: "/proyectos/edificio-ski.jpg" },
-  { title: "Parc Vallsolana", location: "Sant Cugat del Vallès", type: "Fachada de oficinas", image: "/proyectos/oficinas-sant-cugat.jpg" },
-  { title: "Torre Tarragona", location: "Barcelona", type: "Edificio de oficinas", image: "/proyectos/oficinas-barcelona.jpg" },
-  { title: "Hotel Roselló", location: "Barcelona", type: "Mantenimiento de fachada acristalada", image: "/proyectos/hotel-rosello.jpg" },
-  { title: "Edificio de oficinas", location: "Barberà del Vallès", type: "Regeneración de fachada", image: "/proyectos/oficinas-barbera.jpg" },
+  {
+    slug: "wtc-cornella", title: "WTC Cornellà", location: "Cornellà de Llobregat",
+    type: "Fachada de oficinas de aluminio y cristal",
+    image: "/proyectos/cornella/1.jpg", images: ["/proyectos/cornella/1.jpg", "/proyectos/cornella/2.jpg", "/proyectos/cornella/3.jpg"],
+    reto: "Complejo de oficinas singular con una gran superficie acristalada que necesitaba conservar su fachada en perfecto estado y de forma segura.",
+    solucion: "Mantenimiento y reparación de los elementos de aluminio y vidrio con trabajo en altura certificado.",
+    resultado: "Fachada segura y con buen aspecto, sin interrumpir la actividad del edificio.",
+  },
+  {
+    slug: "edificio-ski-melia", title: "Edificio Ski (Meliá)", location: "Barcelona",
+    type: "Rehabilitación de fachada",
+    image: "/proyectos/ski/1.jpg", images: ["/proyectos/ski/1.jpg", "/proyectos/ski/2.jpg", "/proyectos/ski/3.jpg", "/proyectos/ski/4.jpg"],
+    reto: "Edificio emblemático con fachada metálica y acristalada muy expuesta que requería rehabilitación.",
+    solucion: "Rehabilitación y regeneración de los elementos de la fachada, recuperando su estado original.",
+    resultado: "Recuperación estética y funcional de la fachada.",
+  },
+  {
+    slug: "parc-vallsolana", title: "Parc Vallsolana", location: "Sant Cugat del Vallès",
+    type: "Fachada de oficinas",
+    image: "/proyectos/vallsolana/1.jpg", images: ["/proyectos/vallsolana/1.jpg"],
+    reto: "Parque empresarial con fachadas acristaladas de oficinas que requerían mantenimiento.",
+    solucion: "Mantenimiento y reparación de la fachada de aluminio y cristal.",
+    resultado: "Fachada en óptimo estado.",
+  },
+  {
+    slug: "torre-tarragona", title: "Torre Tarragona", location: "Barcelona",
+    type: "Edificio de oficinas",
+    image: "/proyectos/torre-tarragona/1.jpg", images: ["/proyectos/torre-tarragona/1.jpg"],
+    reto: "Edificio de oficinas en altura con fachada acristalada.",
+    solucion: "Intervención en la fachada de aluminio y cristal con medios de elevación.",
+    resultado: "Fachada conservada y segura.",
+  },
+  {
+    slug: "hotel-rosello", title: "Hotel Roselló", location: "Barcelona",
+    type: "Mantenimiento de fachada acristalada",
+    image: "/proyectos/hotel/1.jpg", images: ["/proyectos/hotel/1.jpg", "/proyectos/hotel/2.jpg"],
+    reto: "Hotel con fachada acristalada que exigía mantenimiento sin afectar a los huéspedes.",
+    solucion: "Mantenimiento y reposición de elementos de la fachada de cristal.",
+    resultado: "Fachada en buen estado y con mínimas molestias.",
+  },
+  {
+    slug: "oficinas-barbera", title: "Edificio de oficinas", location: "Barberà del Vallès",
+    type: "Regeneración de fachada",
+    image: "/proyectos/barbera/1.jpg", images: ["/proyectos/barbera/1.jpg"],
+    reto: "Edificio de oficinas con fachada metálica y de cristal deteriorada.",
+    solucion: "Regeneración de la fachada de aluminio y vidrio.",
+    resultado: "Recuperación del aspecto y las prestaciones de la fachada.",
+  },
 ]
 
 export const waLink = (text?: string) =>

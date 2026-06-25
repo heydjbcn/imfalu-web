@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Muro cortina en Barcelona — mantenimiento y reparación",
   description:
     "Mantenimiento, reparación y rehabilitación de muro cortina en Barcelona. Especialistas en fachadas ligeras de aluminio y cristal para arquitectos, constructoras y property managers.",
-  keywords: ["muro cortina Barcelona", "mantenimiento muro cortina", "reparación muro cortina", "fachada ligera Barcelona"],
+  keywords: ["muro cortina Barcelona", "mantenimiento muro cortina", "reparación muro cortina", "fachada ligera Barcelona", "estanqueidad muro cortina", "cristal muro cortina", "filtraciones muro cortina"],
   alternates: { canonical: "/muro-cortina-barcelona" },
 }
 
