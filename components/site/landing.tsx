@@ -80,6 +80,22 @@ export function Landing({ data }: { data: LandingData }) {
             ))}
           </ol>
 
+          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
+          <p className="mt-4 text-warm">
+            No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
+            aluminio y cristal, y es lo único que hacemos. Esa concentración —más de 30 años, trabajo
+            en altura certificado y servicio de urgencias 24 h— es la mayor garantía para
+            administradores de fincas, property managers y departamentos de mantenimiento de {site.area}.
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {site.stats.map((st) => (
+              <div key={st.label} className="rounded-2xl border bg-cream p-4">
+                <div className="text-2xl font-bold text-burdeos">{st.value}<span className="text-warm">{st.suffix}</span></div>
+                <div className="mt-1 text-xs text-warm">{st.label}</div>
+              </div>
+            ))}
+          </div>
+
           {data.faqs.length ? (
             <>
               <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>

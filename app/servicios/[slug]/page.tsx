@@ -128,9 +128,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* Por qué IMFALÚ */}
           <h2 className="mt-12 text-2xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
           <p className="mt-4 text-warm">
-            Somos especialistas en fachadas de aluminio y cristal: es lo que hacemos. Más de 30 años de
-            experiencia, trabajo en altura certificado y servicio de urgencias para administradores de
-            fincas, property managers y departamentos de mantenimiento en {site.area}.
+            No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
+            aluminio y cristal, y es lo único que hacemos. Más de 30 años de experiencia, trabajo en
+            altura certificado y servicio de urgencias para administradores de fincas, property managers
+            y departamentos de mantenimiento en {site.area}.
           </p>
           <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {site.stats.map((st) => (
