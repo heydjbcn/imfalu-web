@@ -9,9 +9,9 @@ import { CtaBand } from "@/components/site/cta-band"
 import { Reviews } from "@/components/site/reviews"
 
 export const metadata: Metadata = {
-  title: "Sobre nosotros — 30 años en fachadas de aluminio y cristal",
+  title: "Sobre nosotros: 30 años en fachadas de aluminio y cristal",
   description:
-    "IMFALÚ: más de 30 años, +300.000 m² y +150 edificios de fachada de aluminio y cristal intervenida en Barcelona. Empresa de referencia en mantenimiento, reparación y rehabilitación.",
+    "Más de 30 años, +300.000 m² y +150 edificios de fachada de aluminio y cristal en Barcelona. Empresa de referencia en mantenimiento y rehabilitación.",
   alternates: { canonical: "/sobre-nosotros" },
 }
 

@@ -4,9 +4,9 @@ import { site, telLink, waLink } from "@/lib/site"
 import { ContactForm } from "@/components/site/contact-form"
 
 export const metadata: Metadata = {
-  title: "Contacto — Presupuesto de fachadas en Barcelona",
+  title: "Contacto: presupuesto de fachadas en Barcelona",
   description:
-    "Pide presupuesto sin compromiso para el mantenimiento, reparación o rehabilitación de tu fachada de aluminio y cristal en Barcelona. Teléfono, WhatsApp y formulario.",
+    "Pide presupuesto sin compromiso para el mantenimiento, reparación o rehabilitación de tu fachada de aluminio y cristal en Barcelona. Tel y WhatsApp.",
   alternates: { canonical: "/contacto" },
 }
 

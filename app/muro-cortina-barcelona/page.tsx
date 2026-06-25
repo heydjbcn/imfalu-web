@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { Landing, type LandingData } from "@/components/site/landing"
 
 export const metadata: Metadata = {
-  title: "Muro cortina en Barcelona — mantenimiento y reparación",
+  title: "Muro cortina en Barcelona: mantenimiento y reparación",
   description:
-    "Mantenimiento, reparación y rehabilitación de muro cortina en Barcelona. Especialistas en fachadas ligeras de aluminio y cristal para arquitectos, constructoras y property managers.",
+    "Mantenimiento, reparación y rehabilitación de muro cortina de aluminio y cristal en Barcelona para arquitectos, constructoras y property managers.",
   keywords: ["muro cortina Barcelona", "mantenimiento muro cortina", "reparación muro cortina", "fachada ligera Barcelona", "estanqueidad muro cortina", "cristal muro cortina", "filtraciones muro cortina"],
   alternates: { canonical: "/muro-cortina-barcelona" },
 }

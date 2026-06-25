@@ -7,7 +7,7 @@ import { ProjectGallery } from "@/components/site/project-gallery"
 export const metadata: Metadata = {
   title: "Proyectos de fachadas en Barcelona",
   description:
-    "Edificios donde hemos intervenido la fachada de aluminio y cristal en Barcelona y área metropolitana: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona y más.",
+    "Edificios donde hemos intervenido la fachada de aluminio y cristal en Barcelona: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona.",
   alternates: { canonical: "/proyectos" },
 }
 

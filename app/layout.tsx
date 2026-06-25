@@ -13,11 +13,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} · ${site.tagline} en ${site.city}`,
+    default: `Fachadas de aluminio y cristal en Barcelona · ${site.name}`,
     template: `%s · ${site.name}`,
   },
   description:
-    "Empresa de referencia en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia. Pide presupuesto.",
+    "Empresa de referencia en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia.",
   keywords: [
     "rehabilitación de fachadas de aluminio y cristal Barcelona",
     "mantenimiento de fachadas de aluminio y cristal",

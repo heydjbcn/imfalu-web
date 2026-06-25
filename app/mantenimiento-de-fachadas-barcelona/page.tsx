@@ -4,7 +4,7 @@ import { Landing, type LandingData } from "@/components/site/landing"
 export const metadata: Metadata = {
   title: "Mantenimiento de fachadas en Barcelona",
   description:
-    "Mantenimiento de fachadas de aluminio y cristal en Barcelona con contrato anual y servicio de urgencias 24 h. Evita filtraciones y desprendimientos. +30 años de experiencia.",
+    "Mantenimiento de fachadas de aluminio y cristal en Barcelona con contrato anual y urgencias 24 h. Evita filtraciones y desprendimientos. +30 años.",
   keywords: ["mantenimiento de fachadas Barcelona", "contrato mantenimiento fachada", "mantenimiento fachada cristal", "mantenimiento muro cortina", "mantenimiento fachada acristalada", "mantenimiento fachada aluminio"],
   alternates: { canonical: "/mantenimiento-de-fachadas-barcelona" },
 }

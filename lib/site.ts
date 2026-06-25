@@ -58,7 +58,7 @@ export const services: Service[] = [
     image: "/servicios/mantenimiento-fachadas.jpg",
     seoTitle: "Mantenimiento de fachadas de aluminio y cristal en Barcelona",
     metaDescription:
-      "Mantenimiento de fachadas de aluminio y cristal en Barcelona: contrato anual, revisiones y urgencias 24 h para muro cortina y fachada acristalada. +30 años. Pide presupuesto.",
+      "Mantenimiento de fachadas de aluminio y cristal en Barcelona: contrato anual, revisiones y urgencias 24 h para muro cortina. Más de 30 años.",
     keywords: ["mantenimiento de fachadas de aluminio y cristal Barcelona", "mantenimiento de fachadas Barcelona", "contrato mantenimiento fachada"],
     secondaryKeywords: ["contrato de mantenimiento de fachada", "mantenimiento de muro cortina", "mantenimiento fachada acristalada", "conservación de fachada", "revisión de fachada"],
     intro:
@@ -76,7 +76,7 @@ export const services: Service[] = [
     image: "/servicios/reparacion.jpg",
     seoTitle: "Reparación de fachadas de aluminio y cristal en Barcelona",
     metaDescription:
-      "Reparación de fachadas y reposición de cristales en Barcelona: cristal roto, muro cortina, juntas y elementos de aluminio. Urgencias 24 h. Pide presupuesto sin compromiso.",
+      "Reparación de fachadas y reposición de cristales en Barcelona: cristal roto, muro cortina, juntas y aluminio. Urgencias 24 h. Pide presupuesto.",
     keywords: ["reparación de fachadas de aluminio y cristal Barcelona", "reparación de fachadas Barcelona", "reposición de cristales fachada"],
     secondaryKeywords: ["reposición de cristales de fachada", "reparar fachada de vidrio", "cristal de fachada roto", "reparación de muro cortina", "sustitución de cristales"],
     intro:
@@ -94,7 +94,7 @@ export const services: Service[] = [
     image: "/servicios/regeneracion.jpg",
     seoTitle: "Regeneración de fachadas de aluminio en Barcelona",
     metaDescription:
-      "Regeneración y restauración de fachadas de aluminio y vidrio en Barcelona: recupera el estado original sin sustituir toda la fachada. Alternativa económica. Pide presupuesto.",
+      "Regeneración y restauración de fachadas de aluminio y vidrio en Barcelona: recupera el estado original sin sustituir toda la fachada.",
     keywords: ["regeneración de fachadas de aluminio Barcelona", "regeneración de fachadas", "restauración fachada aluminio"],
     secondaryKeywords: ["restauración de fachada de aluminio", "recuperar lacado de aluminio", "rehabilitación de fachada metálica", "regeneración de vidrios"],
     intro:
@@ -112,7 +112,7 @@ export const services: Service[] = [
     image: "/servicios/informes-tecnicos.jpg",
     seoTitle: "Informe técnico y auditoría de fachada en Barcelona",
     metaDescription:
-      "Informe técnico y auditoría de fachadas de aluminio y cristal en Barcelona: diagnóstico de patologías, evaluación de riesgos y plan de actuación. Solicita tu diagnóstico.",
+      "Informe técnico y auditoría de fachadas de aluminio y cristal en Barcelona: diagnóstico de patologías, riesgos y plan de actuación priorizado.",
     keywords: ["informe técnico de fachada Barcelona", "auditoría de fachadas", "inspección técnica fachada Barcelona"],
     secondaryKeywords: ["auditoría de fachada", "inspección técnica de fachada", "diagnóstico de patologías", "informe de fachada"],
     intro:
@@ -130,7 +130,7 @@ export const services: Service[] = [
     image: "/servicios/pruebas-estanqueidad.jpg",
     seoTitle: "Pruebas de estanqueidad de fachada en Barcelona",
     metaDescription:
-      "Pruebas de estanqueidad de fachada en Barcelona: localizamos filtraciones de agua en muro cortina, ventanas y cristales antes de reparar. Diagnóstico fiable. Pide presupuesto.",
+      "Pruebas de estanqueidad de fachada en Barcelona: localizamos filtraciones de agua en muro cortina, ventanas y cristales antes de reparar.",
     keywords: ["pruebas de estanqueidad de fachada Barcelona", "pruebas de estanqueidad fachada", "estanqueidad muro cortina"],
     secondaryKeywords: ["detección de filtraciones", "filtraciones en muro cortina", "prueba de agua en fachada", "humedades por fachada"],
     intro:
@@ -148,7 +148,7 @@ export const services: Service[] = [
     image: "/servicios/fotocatalisis.jpg",
     seoTitle: "Fotocatálisis para fachadas en Barcelona",
     metaDescription:
-      "Tratamiento por fotocatálisis para fachadas en Barcelona: efecto autolimpiante, menos mantenimiento y reducción de contaminantes. Pioneros en su aplicación. Pide información.",
+      "Tratamiento por fotocatálisis para fachadas en Barcelona: efecto autolimpiante, menos mantenimiento y menos contaminantes. Pioneros en su aplicación.",
     keywords: ["fotocatálisis para fachadas Barcelona", "fotocatálisis fachada", "tratamiento autolimpiante fachada"],
     secondaryKeywords: ["tratamiento autolimpiante de fachada", "recubrimiento fotocatalítico", "fachada sostenible", "limpieza de fachada sin químicos"],
     intro:

@@ -4,7 +4,7 @@ import { Landing, type LandingData } from "@/components/site/landing"
 export const metadata: Metadata = {
   title: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
   description:
-    "Rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años, +300.000 m² y +150 edificios. Diagnóstico, regeneración y reparación con trabajo en altura certificado.",
+    "Rehabilitación de fachadas de aluminio y cristal en Barcelona. +30 años, +300.000 m² y +150 edificios. Diagnóstico, regeneración y reparación.",
   keywords: ["rehabilitación de fachadas Barcelona", "rehabilitar fachada aluminio", "rehabilitación fachada cristal", "rehabilitación fachada acristalada", "fachada metálica Barcelona", "regeneración fachada aluminio"],
   alternates: { canonical: "/rehabilitacion-de-fachadas-barcelona" },
 }
