@@ -87,9 +87,9 @@ export function Landing({ data }: { data: LandingData }) {
             en altura certificado y servicio de urgencias 24 h— es la mayor garantía para
             administradores de fincas, property managers y departamentos de mantenimiento de {site.area}.
           </p>
-          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-[1fr_1.45fr_0.85fr_0.85fr]">
             {site.stats.map((st) => (
-              <div key={st.label} className="rounded-2xl border bg-cream p-4">
+              <div key={st.label} className="rounded-2xl border bg-cream px-5 py-4">
                 <div className="whitespace-nowrap text-xl font-bold text-burdeos sm:text-2xl">{st.value}<span className="text-warm">{st.suffix}</span></div>
                 <div className="mt-1 text-xs text-warm">{st.label}</div>
               </div>
