@@ -37,8 +37,14 @@ export interface Service {
   short: string
   description: string
   icon: string // nombre de icono lucide
-  bullets: string[]
+  image: string // cabecera
+  seoTitle: string
+  metaDescription: string
   keywords: string[]
+  secondaryKeywords: string[]
+  intro: string // texto largo (con keyword principal)
+  bullets: string[]
+  when: string[] // señales / cuándo lo necesitas
 }
 
 export const services: Service[] = [
@@ -49,18 +55,34 @@ export const services: Service[] = [
     description:
       "Programa de mantenimiento preventivo y correctivo para fachadas de aluminio y cristal, con contrato anual y servicio de urgencias. Mantenemos la fachada de tu edificio en estado óptimo, evitando incidencias y alargando su vida útil.",
     icon: "ShieldCheck",
-    bullets: ["Contrato anual de mantenimiento", "Servicio de urgencias 24 h", "Revisiones periódicas programadas", "Informe del estado de la fachada"],
-    keywords: ["mantenimiento de fachadas Barcelona", "mantenimiento fachadas aluminio", "contrato mantenimiento fachada"],
+    image: "/servicios/mantenimiento-fachadas.jpg",
+    seoTitle: "Mantenimiento de fachadas de aluminio y cristal en Barcelona",
+    metaDescription:
+      "Mantenimiento de fachadas de aluminio y cristal en Barcelona: contrato anual, revisiones y urgencias 24 h para muro cortina y fachada acristalada. +30 años. Pide presupuesto.",
+    keywords: ["mantenimiento de fachadas de aluminio y cristal Barcelona", "mantenimiento de fachadas Barcelona", "contrato mantenimiento fachada"],
+    secondaryKeywords: ["contrato de mantenimiento de fachada", "mantenimiento de muro cortina", "mantenimiento fachada acristalada", "conservación de fachada", "revisión de fachada"],
+    intro:
+      "El mantenimiento de fachadas de aluminio y cristal evita que pequeños deterioros se conviertan en filtraciones, desprendimientos o reparaciones costosas. En IMFALÚ ofrecemos un programa de mantenimiento preventivo y correctivo para fachadas metálicas y acristaladas —incluido el muro cortina—, con contrato anual y servicio de urgencias 24 h. Más de 30 años cuidando la fachada de edificios en Barcelona y su área metropolitana.",
+    bullets: ["Contrato anual de mantenimiento", "Servicio de urgencias 24 h", "Revisiones periódicas programadas", "Pequeñas reparaciones preventivas", "Informe del estado de la fachada", "Mantenimiento de muro cortina"],
+    when: ["La fachada no se revisa desde hace más de un año", "Aparecen manchas, óxido o juntas y sellados deteriorados", "El edificio tiene muro cortina o gran superficie acristalada", "Quieres prevenir filtraciones y desprendimientos", "Buscas un único especialista con contrato de mantenimiento"],
   },
   {
     slug: "reparacion",
     title: "Reparación y reposición",
-    short: "Reparación de elementos constructivos dañados y reposición de cristales de cualquier medida y peso.",
+    short: "Reparación de elementos dañados y reposición de cristales de cualquier medida y peso.",
     description:
       "Reparamos y reponemos los elementos constructivos dañados de la fachada y sustituimos cristales de cualquier medida y peso, con los medios de elevación y seguridad necesarios para trabajos en altura.",
     icon: "Wrench",
-    bullets: ["Reposición de cristales de cualquier medida", "Reparación de elementos de aluminio", "Sustitución de juntas y sellados", "Medios de elevación propios"],
-    keywords: ["reparación de fachadas Barcelona", "reposición de cristales fachada", "reparación fachada aluminio"],
+    image: "/servicios/reparacion.jpg",
+    seoTitle: "Reparación de fachadas de aluminio y cristal en Barcelona",
+    metaDescription:
+      "Reparación de fachadas y reposición de cristales en Barcelona: cristal roto, muro cortina, juntas y elementos de aluminio. Urgencias 24 h. Pide presupuesto sin compromiso.",
+    keywords: ["reparación de fachadas de aluminio y cristal Barcelona", "reparación de fachadas Barcelona", "reposición de cristales fachada"],
+    secondaryKeywords: ["reposición de cristales de fachada", "reparar fachada de vidrio", "cristal de fachada roto", "reparación de muro cortina", "sustitución de cristales"],
+    intro:
+      "Reparamos y reponemos los elementos dañados de la fachada de aluminio y cristal: desde un cristal roto en altura hasta juntas, sellados y perfilería de muro cortina. Sustituimos vidrios de cualquier medida y peso con los medios de elevación y la seguridad necesarios, y disponemos de servicio de urgencias 24 h ante cualquier riesgo en la fachada.",
+    bullets: ["Reposición de cristales de cualquier medida y peso", "Reparación de elementos de aluminio y perfilería", "Sustitución de juntas y sellados", "Reparación de muro cortina", "Servicio de urgencias 24 h", "Medios de elevación propios"],
+    when: ["Hay un cristal roto o agrietado en la fachada", "Riesgo de desprendimiento de un elemento de fachada", "Juntas o sellados envejecidos que dejan pasar agua", "Perfilería de aluminio dañada o suelta", "Necesitas una reparación urgente en altura"],
   },
   {
     slug: "regeneracion",
@@ -69,8 +91,16 @@ export const services: Service[] = [
     description:
       "Restauramos los elementos afectados de la fachada y recuperamos su estado original, tanto en elementos metálicos como en los vidrios. Una alternativa a la sustitución completa que devuelve a la fachada su aspecto y prestaciones.",
     icon: "Sparkles",
-    bullets: ["Restauración de aluminio y lacados", "Recuperación de vidrios", "Tratamiento de oxidación y deterioro", "Alternativa a la sustitución total"],
-    keywords: ["regeneración de fachadas", "rehabilitación de fachadas Barcelona", "restauración fachada aluminio"],
+    image: "/servicios/regeneracion.jpg",
+    seoTitle: "Regeneración de fachadas de aluminio en Barcelona",
+    metaDescription:
+      "Regeneración y restauración de fachadas de aluminio y vidrio en Barcelona: recupera el estado original sin sustituir toda la fachada. Alternativa económica. Pide presupuesto.",
+    keywords: ["regeneración de fachadas de aluminio Barcelona", "regeneración de fachadas", "restauración fachada aluminio"],
+    secondaryKeywords: ["restauración de fachada de aluminio", "recuperar lacado de aluminio", "rehabilitación de fachada metálica", "regeneración de vidrios"],
+    intro:
+      "La regeneración recupera el estado y las prestaciones originales de una fachada de aluminio y cristal sin necesidad de sustituirla por completo. Restauramos los lacados y elementos metálicos y tratamos los vidrios afectados: una alternativa más económica y sostenible a la sustitución total, ideal cuando la estructura de la fachada sigue en buen estado.",
+    bullets: ["Restauración de aluminio y lacados", "Recuperación de vidrios", "Tratamiento de oxidación y deterioro", "Alternativa a la sustitución total", "Recuperación del aspecto y prestaciones"],
+    when: ["El aluminio o el lacado se ven envejecidos o con óxido", "La fachada ha perdido aspecto pero la estructura está bien", "Quieres una alternativa más barata que sustituir toda la fachada", "Hay vidrios deteriorados pero recuperables", "Buscas mejorar la imagen del edificio sin una gran obra"],
   },
   {
     slug: "informes-tecnicos",
@@ -79,28 +109,52 @@ export const services: Service[] = [
     description:
       "Elaboramos informes técnicos y auditorías del estado de la fachada: diagnóstico de patologías, evaluación de riesgos y plan de actuación. La base para decidir con criterio cualquier intervención.",
     icon: "ClipboardCheck",
-    bullets: ["Diagnóstico de patologías", "Evaluación de riesgos", "Plan de actuación priorizado", "Documentación técnica"],
-    keywords: ["informe técnico fachada", "auditoría de fachadas", "inspección técnica fachada Barcelona"],
+    image: "/servicios/informes-tecnicos.jpg",
+    seoTitle: "Informe técnico y auditoría de fachada en Barcelona",
+    metaDescription:
+      "Informe técnico y auditoría de fachadas de aluminio y cristal en Barcelona: diagnóstico de patologías, evaluación de riesgos y plan de actuación. Solicita tu diagnóstico.",
+    keywords: ["informe técnico de fachada Barcelona", "auditoría de fachadas", "inspección técnica fachada Barcelona"],
+    secondaryKeywords: ["auditoría de fachada", "inspección técnica de fachada", "diagnóstico de patologías", "informe de fachada"],
+    intro:
+      "Antes de intervenir una fachada conviene saber exactamente en qué estado está. Elaboramos informes técnicos y auditorías de fachadas de aluminio y cristal: diagnóstico de patologías, evaluación de riesgos y un plan de actuación priorizado, con la documentación que permite decidir cualquier obra con criterio y sin sorpresas.",
+    bullets: ["Diagnóstico de patologías", "Evaluación de riesgos", "Plan de actuación priorizado", "Documentación técnica", "Apoyo a la gestión del edificio"],
+    when: ["Vas a presupuestar o planificar una intervención en la fachada", "Necesitas documentar el estado de la fachada del edificio", "Hay patologías visibles y quieres conocer su alcance", "Como apoyo técnico para la gestión del edificio", "Quieres priorizar actuaciones con criterio profesional"],
   },
   {
     slug: "pruebas-estanqueidad",
     title: "Pruebas de estanqueidad",
-    short: "Detección de filtraciones y verificación de la estanqueidad de la fachada.",
+    short: "Localización de filtraciones y verificación de la estanqueidad de la fachada.",
     description:
       "Realizamos pruebas de estanqueidad para localizar filtraciones de agua y verificar el correcto comportamiento de la fachada frente a la lluvia y la humedad, antes y después de una intervención.",
     icon: "Droplets",
-    bullets: ["Localización de filtraciones", "Pruebas de agua controladas", "Verificación de sellados", "Informe de resultados"],
-    keywords: ["pruebas de estanqueidad fachada", "filtraciones fachada Barcelona", "estanqueidad muro cortina"],
+    image: "/servicios/pruebas-estanqueidad.jpg",
+    seoTitle: "Pruebas de estanqueidad de fachada en Barcelona",
+    metaDescription:
+      "Pruebas de estanqueidad de fachada en Barcelona: localizamos filtraciones de agua en muro cortina, ventanas y cristales antes de reparar. Diagnóstico fiable. Pide presupuesto.",
+    keywords: ["pruebas de estanqueidad de fachada Barcelona", "pruebas de estanqueidad fachada", "estanqueidad muro cortina"],
+    secondaryKeywords: ["detección de filtraciones", "filtraciones en muro cortina", "prueba de agua en fachada", "humedades por fachada"],
+    intro:
+      "Cuando hay humedades, lo primero es saber por dónde entra el agua. Realizamos pruebas de estanqueidad controladas que localizan el punto exacto de filtración en la fachada de aluminio y cristal —muro cortina, ventanas, sellados y juntas— antes y después de una reparación, para resolver el problema de raíz y sin obras innecesarias.",
+    bullets: ["Localización del punto de filtración", "Pruebas de agua controladas", "Verificación de sellados y juntas", "Comprobación antes y después de reparar", "Informe de resultados"],
+    when: ["Aparecen humedades o manchas de agua tras la fachada", "Sospechas de filtraciones en el muro cortina", "Quieres verificar la fachada tras una reparación", "Antes de comprar o recepcionar un edificio acristalado", "No localizas el origen de una filtración recurrente"],
   },
   {
     slug: "fotocatalisis",
     title: "Tratamientos por fotocatálisis",
-    short: "Tratamiento innovador para la fachada y el medio ambiente.",
+    short: "Tratamiento autolimpiante y sostenible para la fachada y el medio ambiente.",
     description:
       "Aplicamos tratamientos por fotocatálisis: un recubrimiento que ayuda a autolimpiar la fachada y a reducir contaminantes del aire mediante la acción de la luz. Mejor aspecto, menos mantenimiento y beneficio medioambiental.",
     icon: "Leaf",
-    bullets: ["Efecto autolimpiante", "Reducción de contaminantes", "Menor mantenimiento", "Beneficio medioambiental"],
-    keywords: ["fotocatálisis fachada", "tratamiento autolimpiante fachada", "fachada sostenible Barcelona"],
+    image: "/servicios/fotocatalisis.jpg",
+    seoTitle: "Fotocatálisis para fachadas en Barcelona",
+    metaDescription:
+      "Tratamiento por fotocatálisis para fachadas en Barcelona: efecto autolimpiante, menos mantenimiento y reducción de contaminantes. Pioneros en su aplicación. Pide información.",
+    keywords: ["fotocatálisis para fachadas Barcelona", "fotocatálisis fachada", "tratamiento autolimpiante fachada"],
+    secondaryKeywords: ["tratamiento autolimpiante de fachada", "recubrimiento fotocatalítico", "fachada sostenible", "limpieza de fachada sin químicos"],
+    intro:
+      "La fotocatálisis es un recubrimiento que, con la acción de la luz, ayuda a autolimpiar la fachada y a reducir contaminantes del aire. El resultado: mejor aspecto durante más tiempo, menos necesidad de limpieza y un beneficio medioambiental. En IMFALÚ somos pioneros en aplicar tratamientos por fotocatálisis en fachadas de aluminio y cristal.",
+    bullets: ["Efecto autolimpiante", "Reducción de contaminantes del aire", "Menor necesidad de limpieza", "Beneficio medioambiental", "Protege el resultado tras una rehabilitación"],
+    when: ["Quieres reducir la frecuencia de limpieza de la fachada", "Buscas una opción más sostenible para el edificio", "La fachada se ensucia rápido por la contaminación", "Tras una rehabilitación, para proteger el resultado", "Quieres diferenciar tu edificio con una mejora verde"],
   },
 ]
 

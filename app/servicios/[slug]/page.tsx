@@ -1,9 +1,10 @@
 import Link from "next/link"
+import Image from "next/image"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import {
   ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
-  ArrowRight, Check, ChevronRight,
+  ArrowRight, Check, ChevronRight, AlertCircle, Award, Building2,
 } from "lucide-react"
 import { services, site } from "@/lib/site"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
@@ -22,13 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params
   const s = services.find((x) => x.slug === slug)
   if (!s) return {}
-  const title = `${s.title} de aluminio y cristal en ${site.city}`
   return {
-    title,
-    description: s.description.slice(0, 155),
-    keywords: s.keywords,
+    title: s.seoTitle,
+    description: s.metaDescription,
+    keywords: [...s.keywords, ...s.secondaryKeywords],
     alternates: { canonical: `/servicios/${s.slug}` },
-    openGraph: { title: `${title} · ${site.name}`, description: s.short, url: `/servicios/${s.slug}` },
+    openGraph: { title: `${s.seoTitle} · ${site.name}`, description: s.metaDescription, url: `/servicios/${s.slug}`, images: [s.image] },
   }
 }
 
@@ -45,21 +45,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     "@graph": [
       {
         "@type": "Service",
-        name: `${s.title} de fachadas de aluminio y cristal en ${site.city}`,
+        name: s.seoTitle,
         serviceType: s.title,
         areaServed: site.area,
         provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
-        description: s.description,
+        description: s.intro,
       },
       faqs.length
-        ? {
-            "@type": "FAQPage",
-            mainEntity: faqs.map((f) => ({
-              "@type": "Question",
-              name: f.q,
-              acceptedAnswer: { "@type": "Answer", text: f.a },
-            })),
-          }
+        ? { "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
         : null,
     ].filter(Boolean),
   }
@@ -69,7 +62,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={jsonLd} />
 
       {/* Cabecera */}
-      <section className="border-b bg-cream">
+      <section className="bg-cream">
         <div className="container-x py-12 md:py-16">
           <nav className="mb-5 flex items-center gap-1.5 text-sm text-warm">
             <Link href="/" className="hover:text-burdeos">Inicio</Link>
@@ -84,8 +77,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h1 className="mt-5 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
             {s.title} de aluminio y cristal en {site.city}
           </h1>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.description}</p>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.intro}</p>
         </div>
+      </section>
+
+      {/* Banda de imagen */}
+      <section className="relative h-[240px] w-full overflow-hidden bg-ink md:h-[380px]">
+        <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
       </section>
 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
@@ -95,8 +93,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {s.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
-                <span>{b}</span>
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" /> <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Cuándo lo necesitas */}
+          <h2 className="mt-12 text-2xl font-bold text-ink">Cuándo necesitas este servicio</h2>
+          <ul className="mt-5 space-y-3">
+            {s.when.map((w) => (
+              <li key={w} className="flex items-start gap-2.5 text-warm">
+                <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" /> <span>{w}</span>
               </li>
             ))}
           </ul>
@@ -112,6 +119,22 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </li>
             ))}
           </ol>
+
+          {/* Por qué IMFALÚ */}
+          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué IMFALÚ</h2>
+          <p className="mt-4 text-warm">
+            Somos especialistas en fachadas de aluminio y cristal: es lo que hacemos. Más de 30 años de
+            experiencia, trabajo en altura certificado y servicio de urgencias para administradores de
+            fincas, property managers y departamentos de mantenimiento en {site.area}.
+          </p>
+          <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {site.stats.map((st) => (
+              <div key={st.label} className="rounded-2xl border bg-cream p-4">
+                <div className="text-2xl font-bold text-burdeos">{st.value}<span className="text-warm">{st.suffix}</span></div>
+                <div className="mt-1 text-xs text-warm">{st.label}</div>
+              </div>
+            ))}
+          </div>
 
           {/* FAQ */}
           {faqs.length ? (
@@ -146,11 +169,18 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div className="mt-5 rounded-2xl border p-6">
+            <h3 className="flex items-center gap-2 text-sm font-semibold text-ink"><Award className="h-4 w-4 text-burdeos" /> Especialistas en fachadas</h3>
+            <p className="mt-2 text-sm text-warm">Aluminio y cristal, muro cortina y fachada acristalada. +150 edificios en Barcelona y área metropolitana.</p>
+          </div>
+
+          <div className="mt-5 rounded-2xl border p-6">
             <h3 className="text-sm font-semibold text-ink">Otros servicios</h3>
             <ul className="mt-3 space-y-2 text-sm">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <Link href={`/servicios/${o.slug}`} className="text-warm hover:text-burdeos">{o.title}</Link>
+                  <Link href={`/servicios/${o.slug}`} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
+                    <Building2 className="h-3.5 w-3.5" /> {o.title}
+                  </Link>
                 </li>
               ))}
             </ul>
