@@ -5,6 +5,7 @@ import { projects, services, site, telLink } from "@/lib/site"
 import { PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
+import { ProjectGallery } from "@/components/site/project-gallery"
 
 export interface LandingData {
   slug: string
@@ -16,6 +17,8 @@ export interface LandingData {
   faqs: { q: string; a: string }[]
   /** Término para enriquecer los H2 con keyword secundaria, p.ej. "el muro cortina" */
   term?: string
+  /** Fotos reales de trabajos (rutas en /public) */
+  gallery?: string[]
 }
 
 export function Landing({ data }: { data: LandingData }) {
@@ -95,6 +98,15 @@ export function Landing({ data }: { data: LandingData }) {
               </div>
             ))}
           </div>
+
+          {data.gallery?.length ? (
+            <>
+              <h2 className="mt-12 text-2xl font-bold text-ink">Algunos de nuestros trabajos</h2>
+              <div className="mt-5">
+                <ProjectGallery images={data.gallery} title={data.h1} />
+              </div>
+            </>
+          ) : null}
 
           {data.faqs.length ? (
             <>

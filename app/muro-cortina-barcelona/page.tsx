@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 const data: LandingData = {
   slug: "muro-cortina-barcelona",
   term: "el muro cortina de aluminio y cristal",
+  gallery: ["/proyectos/ski/2.jpg", "/proyectos/cornella/2.jpg", "/proyectos/hotel/2.jpg"],
   kicker: "Muro cortina · Barcelona",
   h1: "Muro cortina en Barcelona: mantenimiento, reparación y rehabilitación",
   intro:
