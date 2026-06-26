@@ -42,3 +42,6 @@ next-env.d.ts
 
 # deploy artifacts (build standalone ensamblado para MS01 LXC 113)
 /deploy
+
+# GEO eval (datasets, prompts y resultados del test de ranking)
+/geo-eval
