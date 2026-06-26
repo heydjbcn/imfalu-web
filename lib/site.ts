@@ -39,32 +39,43 @@ export const site = {
   ],
 } as const
 
-export const navMenu = [
+export interface NavItem {
+  label: string
+  href: string
+  desc: string
+  img: string
+  sub?: { label: string; href: string }[]
+}
+export interface NavGroup {
+  label: string
+  featured: { title: string; text: string; img: string; href: string }
+  children: NavItem[]
+}
+
+export const navMenu: NavGroup[] = [
   {
     label: "Servicios",
+    featured: { title: "Urgencias 24 h", text: "Cristal roto o riesgo en fachada", img: "/galeria/reparacion-4.jpg", href: "/contacto" },
     children: [
-      { label: "Mantenimiento de fachadas", href: "/servicios/mantenimiento-fachadas" },
-      { label: "Preventivo", href: "/servicios/mantenimiento-preventivo", sub: true },
-      { label: "Correctivo", href: "/servicios/mantenimiento-correctivo", sub: true },
-      { label: "Reparación y reposición", href: "/servicios/reparacion" },
-      { label: "Regeneración", href: "/servicios/regeneracion" },
-      { label: "Informes técnicos", href: "/servicios/informes-tecnicos" },
-      { label: "Pruebas de estanqueidad", href: "/servicios/pruebas-estanqueidad" },
-      { label: "Fotocatálisis", href: "/servicios/fotocatalisis" },
+      { label: "Mantenimiento de fachadas", href: "/servicios/mantenimiento-fachadas", desc: "Contrato anual y urgencias 24 h", img: "/servicios/mantenimiento-fachadas.jpg", sub: [{ label: "Preventivo", href: "/servicios/mantenimiento-preventivo" }, { label: "Correctivo", href: "/servicios/mantenimiento-correctivo" }] },
+      { label: "Reparación y reposición", href: "/servicios/reparacion", desc: "Cristales, sellados y perfilería", img: "/servicios/reparacion.jpg" },
+      { label: "Regeneración", href: "/servicios/regeneracion", desc: "Recuperar sin sustituir", img: "/servicios/regeneracion.jpg" },
+      { label: "Informes técnicos", href: "/servicios/informes-tecnicos", desc: "Diagnóstico y auditoría", img: "/servicios/informes-tecnicos.jpg" },
+      { label: "Pruebas de estanqueidad", href: "/servicios/pruebas-estanqueidad", desc: "Localizar filtraciones", img: "/servicios/pruebas-estanqueidad.jpg" },
+      { label: "Fotocatálisis", href: "/servicios/fotocatalisis", desc: "Tratamiento autolimpiante", img: "/servicios/fotocatalisis.jpg" },
     ],
   },
   {
     label: "Tipos de fachada",
+    featured: { title: "Más de 150 edificios", text: "Oficinas, hoteles y singulares", img: "/proyectos/ski/1.jpg", href: "/proyectos" },
     children: [
-      { label: "Muro cortina", href: "/fachadas/muro-cortina" },
-      { label: "De aluminio", href: "/fachadas/muro-cortina-aluminio", sub: true },
-      { label: "De cristal", href: "/fachadas/muro-cortina-cristal", sub: true },
-      { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
-      { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
-      { label: "Rehabilitación", href: "/fachadas/rehabilitacion" },
+      { label: "Muro cortina", href: "/fachadas/muro-cortina", desc: "Fachada ligera de aluminio y cristal", img: "/proyectos/ski/2.jpg", sub: [{ label: "De aluminio", href: "/fachadas/muro-cortina-aluminio" }, { label: "De cristal", href: "/fachadas/muro-cortina-cristal" }] },
+      { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada", desc: "Fachada de vidrio", img: "/proyectos/hotel/1.jpg" },
+      { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio", desc: "Fachada metálica", img: "/proyectos/cornella/1.jpg" },
+      { label: "Rehabilitación", href: "/fachadas/rehabilitacion", desc: "Recuperar el cerramiento", img: "/proyectos/barbera/1.jpg" },
     ],
   },
-] as const
+]
 
 export const navLinks = [
   { label: "Proyectos", href: "/proyectos" },
