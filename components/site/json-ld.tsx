@@ -9,7 +9,7 @@ export async function LocalBusinessJsonLd() {
     "@context": "https://schema.org",
     "@type": "HomeAndConstructionBusiness",
     name: site.name,
-    description: `${site.tagline} en ${site.area}. Más de 30 años de experiencia.`,
+    description: `${site.tagline} en ${site.area}. Más de 30 años de experiencia, +150 edificios y +300.000 m² de fachada intervenida.`,
     url: site.url,
     image: `${site.url}/og.jpg`,
     telephone: `+34${site.phone}`,

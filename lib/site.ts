@@ -33,9 +33,9 @@ export const site = {
   },
   stats: [
     { value: "30", suffix: " años", label: "de experiencia en el sector" },
+    { value: "+150", suffix: " edificios", label: "intervenidos en Barcelona" },
     { value: "+300.000", suffix: " m²", label: "de fachada intervenida" },
     { value: "24 h", suffix: "", label: "servicio de urgencias" },
-    { value: "100%", suffix: "", label: "trabajo en altura certificado" },
   ],
 } as const
 

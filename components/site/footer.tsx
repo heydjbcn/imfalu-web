@@ -65,7 +65,7 @@ export function Footer() {
       </div>
 
       <div>
-        <div className="container-x flex flex-col items-center justify-between gap-3 pb-6 text-xs text-white/40 md:flex-row">
+        <div className="container-x flex flex-col items-center justify-between gap-3 pb-6 text-xs text-white/60 md:flex-row">
           <p>© {new Date().getFullYear()} {site.legalName}. Todos los derechos reservados.</p>
           <div className="flex gap-5">
             <Link href="/aviso-legal" className="hover:text-white/70">Aviso legal</Link>

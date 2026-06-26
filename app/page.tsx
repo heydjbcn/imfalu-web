@@ -38,7 +38,7 @@ export default function HomePage() {
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-warm">
               <strong className="text-ink">Cuidamos la piel de tu edificio.</strong> Mantenemos,
               reparamos y rehabilitamos fachadas metálicas, acristaladas y muro cortina. Más de 30 años,
-              trabajo en altura certificado y servicio de urgencias 24 h.
+              +150 edificios y +300.000 m² de fachada intervenida, con trabajo en altura certificado y urgencias 24 h.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contacto"
@@ -56,7 +56,7 @@ export default function HomePage() {
 
       {/* BANDA DE IMAGEN */}
       <section className="relative h-[280px] w-full overflow-hidden bg-ink md:h-[440px]">
-        <Image src="/headers/home.jpg" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+        <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
       </section>
 
       {/* STATS */}
