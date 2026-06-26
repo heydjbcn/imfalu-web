@@ -3,7 +3,7 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import {
-  ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
+  ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
   ArrowRight, Check, ChevronRight, AlertCircle, Award, Building2, FileText,
 } from "lucide-react"
 import { services, site } from "@/lib/site"
@@ -13,7 +13,7 @@ import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
+  ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
 }
 
 export function generateStaticParams() {

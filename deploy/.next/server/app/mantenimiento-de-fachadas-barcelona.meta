@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/mantenimiento-de-fachadas-barcelona/layout,_N_T_/mantenimiento-de-fachadas-barcelona/page,_N_T_/mantenimiento-de-fachadas-barcelona"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/mantenimiento-de-fachadas-barcelona/__PAGE__",
+    "/mantenimiento-de-fachadas-barcelona",
+    "/_index",
+    "/_head"
+  ]
+}

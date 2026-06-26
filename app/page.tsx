@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import {
-  ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
+  ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
   ArrowRight, Phone, Building2, Clock, Award, MapPin,
   Hotel, Users, Landmark, BadgeCheck, ChevronRight,
 } from "lucide-react"
@@ -9,7 +9,7 @@ import { services, projects, site, waLink, telLink } from "@/lib/site"
 import { Reviews } from "@/components/site/reviews"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
-  ShieldCheck, Wrench, Sparkles, ClipboardCheck, Droplets, Leaf,
+  ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
 }
 
 export default function HomePage() {

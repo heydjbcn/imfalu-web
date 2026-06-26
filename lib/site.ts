@@ -117,7 +117,7 @@ export const services: Service[] = [
     short: "Restauración y recuperación del estado original de elementos metálicos y vidrios.",
     description:
       "Restauramos los elementos afectados de la fachada y recuperamos su estado original, tanto en elementos metálicos como en los vidrios. Una alternativa a la sustitución completa que devuelve a la fachada su aspecto y prestaciones.",
-    icon: "Sparkles",
+    icon: "RefreshCw",
     image: "/servicios/regeneracion.jpg",
     seoTitle: "Regeneración de fachadas de aluminio en Barcelona",
     metaDescription:
