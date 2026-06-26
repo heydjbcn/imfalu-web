@@ -22,6 +22,8 @@ export interface LandingData {
   term?: string
   /** Fotos reales de trabajos */
   gallery?: GalleryItem[]
+  /** Miga de pan (silo). Último item sin href = página actual. */
+  breadcrumb?: { label: string; href?: string }[]
 }
 
 export function Landing({ data }: { data: LandingData }) {
@@ -45,6 +47,9 @@ export function Landing({ data }: { data: LandingData }) {
         provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
         description: data.answer ?? data.intro,
       },
+      data.breadcrumb?.length
+        ? { "@type": "BreadcrumbList", itemListElement: data.breadcrumb.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.label, ...(b.href ? { item: `${site.url}${b.href}` } : {}) })) }
+        : null,
       data.faqs.length
         ? { "@type": "FAQPage", mainEntity: data.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
         : null,
@@ -58,6 +63,16 @@ export function Landing({ data }: { data: LandingData }) {
       <section className="relative overflow-hidden bg-ink text-white">
         <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(60% 80% at 80% 0%, rgba(155,35,53,0.5), transparent 60%)" }} />
         <div className="container-x relative py-16 md:py-20">
+          {data.breadcrumb?.length ? (
+            <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-white/60">
+              {data.breadcrumb.map((b, i) => (
+                <span key={b.label} className="flex items-center gap-1.5">
+                  {i > 0 ? <ChevronRight className="h-3.5 w-3.5" /> : null}
+                  {b.href ? <Link href={b.href} className="hover:text-white">{b.label}</Link> : <span className="text-white/90">{b.label}</span>}
+                </span>
+              ))}
+            </nav>
+          ) : null}
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">{data.kicker}</p>
           <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-4xl">{data.h1}</h1>
           {data.answer ? <AnswerBlock>{data.answer}</AnswerBlock> : null}

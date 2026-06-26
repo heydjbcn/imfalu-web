@@ -5,7 +5,7 @@ import { TopBar } from "@/components/site/topbar"
 import { Header } from "@/components/site/header"
 import { Footer } from "@/components/site/footer"
 import { WhatsAppFab } from "@/components/site/whatsapp-fab"
-import { LocalBusinessJsonLd } from "@/components/site/json-ld"
+import { LocalBusinessJsonLd, SiteJsonLd } from "@/components/site/json-ld"
 import { site } from "@/lib/site"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -55,6 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Footer />
         <WhatsAppFab />
         <LocalBusinessJsonLd />
+        <SiteJsonLd />
       </body>
     </html>
   )

@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
   // 301 del WordPress viejo (imfalu.com) a las URLs de la web nueva.
   async redirects() {
     return [
-      { source: "/rehabilitacion", destination: "/rehabilitacion-de-fachadas-barcelona", permanent: true },
+      { source: "/rehabilitacion", destination: "/fachadas/rehabilitacion", permanent: true },
       { source: "/rehabilitacion/:slug*", destination: "/proyectos", permanent: true },
       { source: "/mantenimiento", destination: "/servicios/mantenimiento-fachadas", permanent: true },
       { source: "/regeneracion-fachadas", destination: "/servicios/regeneracion", permanent: true },
@@ -16,6 +16,10 @@ const nextConfig: NextConfig = {
       { source: "/informes-tecnicos", destination: "/servicios/informes-tecnicos", permanent: true },
       { source: "/tratamientos-del-cristal-por-fotocalasis", destination: "/servicios/fotocatalisis", permanent: true },
       { source: "/noticias", destination: "/", permanent: true },
+      // Reestructuración silo (tipos de fachada)
+      { source: "/muro-cortina-barcelona", destination: "/fachadas/muro-cortina", permanent: true },
+      { source: "/rehabilitacion-de-fachadas-barcelona", destination: "/fachadas/rehabilitacion", permanent: true },
+      { source: "/mantenimiento-de-fachadas-barcelona", destination: "/servicios/mantenimiento-fachadas", permanent: true },
     ];
   },
 };

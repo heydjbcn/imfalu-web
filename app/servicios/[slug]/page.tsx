@@ -42,6 +42,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const others = services.filter((x) => x.slug !== slug)
   const TERMS: Record<string, string> = {
     "mantenimiento-fachadas": "el mantenimiento de fachadas",
+    "mantenimiento-preventivo": "el mantenimiento preventivo",
+    "mantenimiento-correctivo": "el mantenimiento correctivo",
     reparacion: "la reparación de fachadas",
     regeneracion: "la regeneración de fachadas",
     "informes-tecnicos": "el informe técnico de fachada",
@@ -49,6 +51,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     fotocatalisis: "la fotocatálisis",
   }
   const term = TERMS[slug] ?? "este servicio"
+  const isSubMantenimiento = slug === "mantenimiento-preventivo" || slug === "mantenimiento-correctivo"
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -74,7 +77,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
           { "@type": "ListItem", position: 2, name: "Servicios", item: `${site.url}/#servicios` },
-          { "@type": "ListItem", position: 3, name: s.title, item: `${site.url}/servicios/${s.slug}` },
+          ...(isSubMantenimiento ? [{ "@type": "ListItem", position: 3, name: "Mantenimiento", item: `${site.url}/servicios/mantenimiento-fachadas` }] : []),
+          { "@type": "ListItem", position: isSubMantenimiento ? 4 : 3, name: s.title, item: `${site.url}/servicios/${s.slug}` },
         ],
       },
       faqs.length
@@ -95,6 +99,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <ChevronRight className="h-3.5 w-3.5" />
             <Link href="/#servicios" className="hover:text-burdeos">Servicios</Link>
             <ChevronRight className="h-3.5 w-3.5" />
+            {isSubMantenimiento ? (
+              <>
+                <Link href="/servicios/mantenimiento-fachadas" className="hover:text-burdeos">Mantenimiento</Link>
+                <ChevronRight className="h-3.5 w-3.5" />
+              </>
+            ) : null}
             <span className="text-ink">{s.title}</span>
           </nav>
           <h1 className="max-w-3xl text-3xl font-bold text-ink md:text-4xl">

@@ -7,6 +7,18 @@ export const FAQ_BY_SLUG: Record<string, { q: string; a: string }[]> = {
     { q: "¿Cuánto cuesta el mantenimiento de una fachada de aluminio y cristal?", a: "Depende de la superficie, la altura y el estado de la fachada. Tras una visita te damos un presupuesto cerrado para el contrato de mantenimiento, sin compromiso." },
     { q: "¿Hacéis mantenimiento de muro cortina?", a: "Sí, el muro cortina es una de nuestras especialidades: revisamos vidrios, perfilería, juntas y sellados, y resolvemos incidencias en altura con medios certificados." },
   ],
+  "mantenimiento-preventivo": [
+    { q: "¿Qué diferencia hay entre mantenimiento preventivo y correctivo?", a: "El preventivo se adelanta: revisa y corrige el deterioro antes de que cause daños. El correctivo actúa una vez que el problema ya ha ocurrido (un cristal roto, una filtración). Lo ideal es el preventivo como base." },
+    { q: "¿Qué se revisa en un mantenimiento preventivo?", a: "El estado del aluminio y los vidrios, las juntas y sellados, las fijaciones con riesgo de desprendimiento y los drenajes. Tras cada revisión entregamos un informe del estado de la fachada." },
+    { q: "¿Cada cuánto se hace?", a: "Al menos una revisión anual, y dos al año en edificios de gran altura o muy expuestos al viento, la contaminación o el mar." },
+    { q: "¿Compensa el mantenimiento preventivo?", a: "Sí: una junta resellada a tiempo cuesta una fracción de lo que cuesta resolver una filtración que ya ha dañado el interior, y reduce el riesgo de desprendimientos." },
+  ],
+  "mantenimiento-correctivo": [
+    { q: "¿Qué incluye el mantenimiento correctivo?", a: "La reparación de las incidencias ya producidas en la fachada: reposición de cristales, reparación de sellados y perfilería, acopio de materiales y servicio de urgencias 24 h." },
+    { q: "¿Tenéis servicio de urgencias?", a: "Sí, 24 h para cristales rotos, riesgo de desprendimiento o filtraciones en fachada en Barcelona y área metropolitana." },
+    { q: "¿Es mejor el correctivo o el preventivo?", a: "Se complementan: el preventivo evita llegar a la incidencia; el correctivo la resuelve cuando aparece. Con un buen preventivo, el correctivo es mucho menos frecuente." },
+    { q: "¿Reparáis sin sustituir toda la fachada?", a: "Sí. Intervenimos solo sobre los elementos afectados, sin necesidad de sustituir la fachada completa." },
+  ],
   reparacion: [
     { q: "¿Cómo se repara una fachada de vidrio o cristal?", a: "Según el daño: reposición del vidrio afectado (de cualquier medida y peso), sustitución de juntas y sellados, o reparación de la perfilería de aluminio. Empezamos con un diagnóstico y resolvemos en altura con medios certificados, sin sustituir toda la fachada." },
     { q: "¿Reponéis cristales rotos de fachada de cualquier tamaño?", a: "Sí. Reponemos y sustituimos cristales de cualquier medida y peso, con los medios de elevación y seguridad necesarios para trabajo en altura." },

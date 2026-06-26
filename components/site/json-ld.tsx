@@ -57,3 +57,31 @@ export async function LocalBusinessJsonLd() {
 export function JsonLd({ data }: { data: object }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
 }
+
+// WebSite + Organization a nivel de sitio (entidad global, ayuda a la knowledge graph).
+export function SiteJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${site.url}/#org`,
+        name: site.name,
+        url: site.url,
+        telephone: `+34${site.phone}`,
+        logo: `${site.url}/brand/logo.png`,
+        image: `${site.url}/og.jpg`,
+        areaServed: site.area,
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: site.name,
+        inLanguage: "es-ES",
+        publisher: { "@id": `${site.url}/#org` },
+      },
+    ],
+  }
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+}

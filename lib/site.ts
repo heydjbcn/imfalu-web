@@ -39,8 +39,34 @@ export const site = {
   ],
 } as const
 
-export const nav = [
-  { label: "Servicios", href: "/#servicios" },
+export const navMenu = [
+  {
+    label: "Servicios",
+    children: [
+      { label: "Mantenimiento de fachadas", href: "/servicios/mantenimiento-fachadas" },
+      { label: "Preventivo", href: "/servicios/mantenimiento-preventivo", sub: true },
+      { label: "Correctivo", href: "/servicios/mantenimiento-correctivo", sub: true },
+      { label: "Reparación y reposición", href: "/servicios/reparacion" },
+      { label: "Regeneración", href: "/servicios/regeneracion" },
+      { label: "Informes técnicos", href: "/servicios/informes-tecnicos" },
+      { label: "Pruebas de estanqueidad", href: "/servicios/pruebas-estanqueidad" },
+      { label: "Fotocatálisis", href: "/servicios/fotocatalisis" },
+    ],
+  },
+  {
+    label: "Tipos de fachada",
+    children: [
+      { label: "Muro cortina", href: "/fachadas/muro-cortina" },
+      { label: "De aluminio", href: "/fachadas/muro-cortina-aluminio", sub: true },
+      { label: "De cristal", href: "/fachadas/muro-cortina-cristal", sub: true },
+      { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
+      { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
+      { label: "Rehabilitación", href: "/fachadas/rehabilitacion" },
+    ],
+  },
+] as const
+
+export const navLinks = [
   { label: "Proyectos", href: "/proyectos" },
   { label: "Empresa", href: "/sobre-nosotros" },
   { label: "Contacto", href: "/contacto" },
@@ -105,6 +131,56 @@ export const services: Service[] = [
         "Como parte del servicio, documentamos nuestras actuaciones sobre la fachada para que el Libro del Edificio refleje su estado real y las intervenciones realizadas.",
       ],
     },
+  },
+  {
+    slug: "mantenimiento-preventivo",
+    title: "Mantenimiento preventivo",
+    short: "Revisiones programadas para adelantarse a filtraciones y desprendimientos.",
+    description:
+      "Programa de revisiones periódicas y pequeñas actuaciones sobre el cerramiento para conservar la fachada en buen estado y alargar su vida útil, antes de que aparezcan los problemas.",
+    icon: "ShieldCheck",
+    image: "/servicios/mantenimiento-fachadas.jpg",
+    seoTitle: "Mantenimiento preventivo de fachadas de aluminio y cristal en Barcelona",
+    metaDescription:
+      "Mantenimiento preventivo de fachadas de aluminio y cristal en Barcelona: revisiones programadas de sellados, juntas y anclajes para evitar filtraciones y desprendimientos.",
+    keywords: ["mantenimiento preventivo de fachadas", "mantenimiento preventivo muro cortina", "revisión de fachada Barcelona"],
+    secondaryKeywords: ["revisión de sellados", "inspección de fachada", "conservación de fachada", "contrato de mantenimiento"],
+    answer:
+      "El mantenimiento preventivo de fachadas de aluminio y cristal es el programa de revisiones periódicas y pequeñas actuaciones (sellados, juntas, anclajes, drenajes) que detecta y corrige el deterioro del cerramiento antes de que cause filtraciones o desprendimientos. Es la base del mantenimiento y casi siempre más barato que el correctivo.",
+    intro:
+      "El mantenimiento preventivo se adelanta al problema: revisa periódicamente el aluminio, los vidrios, las juntas y los sellados, y corrige los pequeños deterioros antes de que se conviertan en filtraciones o riesgos de desprendimiento. En edificios con muro cortina o gran superficie acristalada es la mejor inversión para la fachada.",
+    bullets: ["Revisiones periódicas programadas", "Inspección de sellados, juntas y anclajes", "Comprobación de drenajes y estanqueidad", "Pequeñas reparaciones preventivas", "Informe del estado tras cada revisión", "Contrato anual adaptado al edificio"],
+    when: ["La fachada no se revisa desde hace más de un año", "Quieres prevenir filtraciones y desprendimientos", "El edificio es de gran altura o muy expuesto", "Buscas un contrato anual con un único especialista", "Necesitas documentar el estado para el Libro del Edificio"],
+    gallery: [
+      { src: "/proyectos/cornella/1.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà de Llobregat" },
+      { src: "/proyectos/vallsolana/1.jpg", label: "Parc Vallsolana", caption: "Oficinas · Sant Cugat del Vallès" },
+      { src: "/proyectos/torre-tarragona/1.jpg", label: "Torre Tarragona", caption: "Oficinas · Barcelona" },
+    ],
+  },
+  {
+    slug: "mantenimiento-correctivo",
+    title: "Mantenimiento correctivo",
+    short: "Resolvemos las incidencias de la fachada cuando ya han aparecido.",
+    description:
+      "Reparación de las incidencias que ya se han producido en la fachada —cristales, sellados, perfilería— con reposición y acopio de materiales, y servicio de urgencias 24 h.",
+    icon: "Wrench",
+    image: "/servicios/reparacion.jpg",
+    seoTitle: "Mantenimiento correctivo de fachadas de aluminio y cristal en Barcelona",
+    metaDescription:
+      "Mantenimiento correctivo de fachadas en Barcelona: resolvemos incidencias del cerramiento (cristales, sellados, perfilería) con reposición y urgencias 24 h.",
+    keywords: ["mantenimiento correctivo de fachadas", "reparación de incidencias fachada", "urgencias fachada Barcelona"],
+    secondaryKeywords: ["reposición de elementos", "reparación de sellados", "cristal roto fachada", "acopio de materiales"],
+    answer:
+      "El mantenimiento correctivo de fachadas de aluminio y cristal interviene cuando el daño ya se ha producido: repara incidencias del cerramiento (cristales, sellados, perfilería), repone elementos y atiende urgencias 24 h. Complementa al preventivo, que es el que evita llegar a este punto.",
+    intro:
+      "Cuando ya hay un cristal roto, una filtración o un elemento suelto, el mantenimiento correctivo lo resuelve: reparamos y reponemos los elementos afectados del cerramiento, con acopio de materiales y servicio de urgencias 24 h para riesgos en altura.",
+    bullets: ["Reparación de incidencias ya producidas", "Reposición de cristales y elementos", "Reparación de sellados y perfilería", "Acopio de materiales de la fachada", "Servicio de urgencias 24 h", "Medios de elevación certificados"],
+    when: ["Hay un cristal roto o un elemento suelto", "Aparece una filtración o humedad", "Riesgo de desprendimiento en la fachada", "Necesitas una reparación urgente en altura", "El preventivo ha detectado algo que reparar"],
+    gallery: [
+      { src: "/galeria/reparacion-1.jpg", label: "Grúa en muro cortina", caption: "Reposición de cristal en altura" },
+      { src: "/galeria/reparacion-4.jpg", label: "Reposición en fachada", caption: "Camión grúa y cesta certificados" },
+      { src: "/galeria/reparacion-3.jpg", label: "Trabajo en altura", caption: "Reparación de fachada acristalada" },
+    ],
   },
   {
     slug: "reparacion",
