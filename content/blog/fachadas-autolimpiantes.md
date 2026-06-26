@@ -1,7 +1,7 @@
 ---
 title: "Fachadas autolimpiantes con fotocatálisis: cómo funcionan"
 description: "Qué es una fachada autolimpiante, cómo funciona el tratamiento fotocatalítico (TiO₂/Pureti) y por qué reduce el mantenimiento y descontamina el aire."
-date: "2026-06-24"
+date: "2026-06-28T12:35:00+02:00"
 cluster: "Fotocatálisis"
 keywords: ["fachadas autolimpiantes", "fotocatálisis fachadas", "tratamiento fotocatalítico Pureti"]
 cover: "/servicios/fotocatalisis.jpg"

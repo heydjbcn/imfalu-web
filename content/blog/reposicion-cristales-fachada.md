@@ -1,7 +1,7 @@
 ---
 title: "Reposición de cristales de fachada: cuándo y cómo se hace"
 description: "Cuándo hay que reponer un cristal de fachada, cómo se sustituye un vidrio en altura y qué hacer ante un cristal roto. Urgencias 24 h en Barcelona."
-date: "2026-06-23"
+date: "2026-06-29T12:15:00+02:00"
 cluster: "Reparación y vidrio"
 keywords: ["reposición de cristales de fachada", "cambiar vidrio fachada", "cristal roto fachada Barcelona"]
 cover: "/galeria/reparacion-1.jpg"

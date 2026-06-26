@@ -6,8 +6,10 @@ import type { ReactNode } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { Clock, ChevronRight } from "lucide-react"
-import { getAllPosts, getPost, tableOfContents, slugifyHeading } from "@/lib/blog"
+import { getAllPosts, getPost, tableOfContents, slugifyHeading, isPublished } from "@/lib/blog"
 import { site } from "@/lib/site"
+
+export const revalidate = 1800
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ArticleAside } from "@/components/site/article-aside"
@@ -43,7 +45,7 @@ function toText(c: ReactNode): string {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = getPost(slug)
-  if (!post) notFound()
+  if (!post || !isPublished(post.date)) notFound()
   const toc = tableOfContents(post.body)
   const url = `${site.url}/blog/${post.slug}`
   const related = getAllPosts().filter((p) => p.slug !== post.slug && p.cluster === post.cluster).slice(0, 3)

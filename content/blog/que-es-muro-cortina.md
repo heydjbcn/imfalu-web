@@ -1,7 +1,7 @@
 ---
 title: "Qué es un muro cortina y cómo funciona"
 description: "Qué es un muro cortina, de qué se compone, tipos (aluminio y cristal) y por qué necesita mantenimiento especializado. Guía clara para propietarios y gestores."
-date: "2026-06-25"
+date: "2026-06-27T12:10:00+02:00"
 cluster: "Muro cortina"
 keywords: ["qué es un muro cortina", "muro cortina aluminio y cristal", "fachada ligera"]
 cover: "/proyectos/ski/2.jpg"

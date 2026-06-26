@@ -1,7 +1,7 @@
 ---
 title: "Mantenimiento preventivo de fachadas de aluminio y cristal: guía para edificios"
 description: "Qué es el mantenimiento preventivo de fachada, cada cuánto hacerlo y qué incluye. Evita filtraciones, desprendimientos y reparaciones costosas en Barcelona."
-date: "2026-06-26"
+date: "2026-07-01T12:20:00+02:00"
 cluster: "Mantenimiento"
 keywords: ["mantenimiento preventivo de fachadas", "mantenimiento de fachada de aluminio y cristal", "conservación de fachada Barcelona"]
 cover: "/servicios/mantenimiento-fachadas.jpg"

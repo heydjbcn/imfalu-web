@@ -54,10 +54,16 @@ export function getAllSlugs(): string[] {
   }
 }
 
+// Un artículo está publicado cuando su fecha/hora ya ha llegado (programación por fecha).
+export function isPublished(date: string): boolean {
+  return new Date(date).getTime() <= Date.now()
+}
+
+// Solo los publicados (oculta los programados a futuro). Ordenados por fecha desc.
 export function getAllPosts(): Post[] {
   return getAllSlugs()
     .map(read)
-    .filter((p): p is Post => p !== null)
+    .filter((p): p is Post => p !== null && isPublished(p.date))
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 

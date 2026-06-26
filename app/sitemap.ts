@@ -3,6 +3,8 @@ import { services, site } from "@/lib/site"
 import { facades } from "@/lib/facades"
 import { getAllPosts } from "@/lib/blog"
 
+export const revalidate = 3600
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url
   const staticRoutes = ["", "/sobre-nosotros", "/contacto", "/proyectos", "/blog"]

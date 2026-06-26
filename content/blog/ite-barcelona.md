@@ -1,7 +1,7 @@
 ---
 title: "ITE en Barcelona: qué es la Inspección Técnica de Edificios y la fachada"
 description: "Qué es la ITE en Barcelona, cuándo es obligatoria y qué papel juega la fachada. Cómo un informe técnico de fachada te ayuda a pasarla sin sorpresas."
-date: "2026-06-22"
+date: "2026-06-30T12:40:00+02:00"
 cluster: "Normativa"
 keywords: ["ITE Barcelona", "inspección técnica de edificios", "informe técnico de fachada"]
 cover: "/servicios/informes-tecnicos.jpg"

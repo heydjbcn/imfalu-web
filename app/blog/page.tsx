@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 }
 
+export const revalidate = 1800
+
 export default function BlogIndex() {
   const posts = getAllPosts().map(({ slug, title, excerpt, cluster, cover, date, readingMin }) => ({
     slug, title, excerpt, cluster, cover, date, readingMin,

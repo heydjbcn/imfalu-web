@@ -57,6 +57,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2 text-sm">
             <li><Link href="/proyectos" className="text-white/60 hover:text-white">Proyectos</Link></li>
             <li><Link href="/sobre-nosotros" className="text-white/60 hover:text-white">Sobre nosotros</Link></li>
+            <li><Link href="/blog" className="text-white/60 hover:text-white">Blog</Link></li>
             <li><Link href="/contacto" className="text-white/60 hover:text-white">Contacto</Link></li>
             <li><Link href="/contacto" className="font-medium text-white hover:text-burdeos">Pedir presupuesto</Link></li>
           </ul>
