@@ -68,3 +68,23 @@ export function getPost(slug: string): Post | null {
 export function getClusters(): string[] {
   return [...new Set(getAllPosts().map((p) => p.cluster))]
 }
+
+export function slugifyHeading(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{Diacritic}/gu, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "")
+}
+
+// Índice de contenidos a partir de los H2 (## ) del markdown.
+export function tableOfContents(body: string): { id: string; text: string }[] {
+  return body
+    .split("\n")
+    .filter((l) => /^##\s+/.test(l) && !/^###/.test(l))
+    .map((l) => {
+      const text = l.replace(/^##\s+/, "").replace(/\*\*/g, "").trim()
+      return { id: slugifyHeading(text), text }
+    })
+}
