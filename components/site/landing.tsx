@@ -6,6 +6,7 @@ import { PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
+import { AnswerBlock } from "@/components/site/answer-block"
 
 export interface LandingData {
   slug: string
@@ -15,6 +16,8 @@ export interface LandingData {
   bullets: string[]
   relatedSlugs: string[]
   faqs: { q: string; a: string }[]
+  /** Respuesta directa y citable (answer-first), se muestra bajo el H1. */
+  answer?: string
   /** Término para enriquecer los H2 con keyword secundaria, p.ej. "el muro cortina" */
   term?: string
   /** Fotos reales de trabajos */
@@ -28,11 +31,19 @@ export function Landing({ data }: { data: LandingData }) {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        name: data.h1,
+        url: `${site.url}/${data.slug}`,
+        datePublished: site.lastUpdated,
+        dateModified: site.lastUpdated,
+        inLanguage: "es-ES",
+      },
+      {
         "@type": "Service",
         name: data.h1,
         areaServed: site.area,
         provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
-        description: data.intro,
+        description: data.answer ?? data.intro,
       },
       data.faqs.length
         ? { "@type": "FAQPage", mainEntity: data.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
@@ -49,6 +60,7 @@ export function Landing({ data }: { data: LandingData }) {
         <div className="container-x relative py-16 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">{data.kicker}</p>
           <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-4xl">{data.h1}</h1>
+          {data.answer ? <AnswerBlock>{data.answer}</AnswerBlock> : null}
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{data.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contacto" className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
@@ -123,6 +135,8 @@ export function Landing({ data }: { data: LandingData }) {
               </div>
             </>
           ) : null}
+
+          <p className="mt-10 text-xs text-warm">Última actualización: {site.lastUpdatedLabel}</p>
         </div>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">

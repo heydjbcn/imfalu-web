@@ -21,6 +21,8 @@ const data: LandingData = {
   h1: "Muro cortina en Barcelona: mantenimiento, reparación y rehabilitación",
   intro:
     "Especialistas en fachadas ligeras de aluminio y cristal (muro cortina) para edificios de oficinas, hoteles y singulares en Barcelona. Trabajamos con arquitectos, constructoras y property managers en mantenimiento, reparación, estanqueidad y regeneración de muro cortina.",
+  answer:
+    "El muro cortina es una fachada ligera de aluminio y vidrio, autoportante y anclada a la estructura del edificio. Su mantenimiento y reparación —sellados, juntas, anclajes, reposición de vidrios y pruebas de estanqueidad— exige un especialista en fachada acristalada, no una empresa de obra. En IMFALÚ conservamos y recuperamos el muro cortina ya instalado; no fabricamos fachada nueva.",
   bullets: [
     "Mantenimiento de muro cortina",
     "Reparación y reposición de vidrios y perfilería",

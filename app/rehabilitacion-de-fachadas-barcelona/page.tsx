@@ -23,6 +23,8 @@ const data: LandingData = {
   h1: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
   intro:
     "Especialistas en rehabilitar fachadas metálicas y acristaladas de edificios en Barcelona y área metropolitana. Más de 30 años de experiencia, +300.000 m² intervenidos y +150 edificios. Recuperamos el estado y las prestaciones de la fachada con trabajo en altura certificado.",
+  answer:
+    "La rehabilitación de fachadas de aluminio y cristal es el conjunto de trabajos —diagnóstico, regeneración de lacados y vidrios, reparación de elementos y pruebas de estanqueidad— que recuperan el estado y las prestaciones de una fachada metálica o acristalada sin sustituirla por completo. A diferencia de la rehabilitación de obra (mortero, SATE, revocos), interviene sobre el aluminio y el vidrio del cerramiento, incluido el muro cortina.",
   bullets: [
     "Diagnóstico previo del estado de la fachada",
     "Regeneración de aluminio, lacados y vidrios",

@@ -11,6 +11,7 @@ import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
+import { AnswerBlock } from "@/components/site/answer-block"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
@@ -53,12 +54,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        name: s.seoTitle,
+        url: `${site.url}/servicios/${s.slug}`,
+        datePublished: site.lastUpdated,
+        dateModified: site.lastUpdated,
+        inLanguage: "es-ES",
+      },
+      {
         "@type": "Service",
         name: s.seoTitle,
         serviceType: s.title,
         areaServed: site.area,
         provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
-        description: s.intro,
+        description: s.answer,
       },
       {
         "@type": "BreadcrumbList",
@@ -91,6 +100,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h1 className="max-w-3xl text-3xl font-bold text-ink md:text-4xl">
             {s.seoTitle}
           </h1>
+          <AnswerBlock>{s.answer}</AnswerBlock>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.intro}</p>
         </div>
       </section>
@@ -192,6 +202,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
             </>
           ) : null}
+
+          <p className="mt-10 text-xs text-warm">Última actualización: {site.lastUpdatedLabel}</p>
         </div>
 
         {/* Aside */}

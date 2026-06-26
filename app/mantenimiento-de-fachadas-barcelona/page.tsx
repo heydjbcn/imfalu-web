@@ -21,6 +21,8 @@ const data: LandingData = {
   h1: "Mantenimiento de fachadas de aluminio y cristal en Barcelona",
   intro:
     "Programas de mantenimiento preventivo y correctivo para fachadas de edificios en Barcelona, con contrato anual y servicio de urgencias 24 h. Mantenemos la fachada en estado óptimo, evitando incidencias, filtraciones y desprendimientos.",
+  answer:
+    "El mantenimiento de fachadas de aluminio y cristal es la revisión y conservación periódica del cerramiento —sellados, juntas, anclajes, drenajes y vidrios— para prevenir filtraciones y desprendimientos antes de que obliguen a una reparación mayor. Se contrata de forma anual e incluye revisiones programadas y servicio de urgencias, a diferencia del mantenimiento de obra que actúa sobre mortero y revocos.",
   bullets: [
     "Contrato anual de mantenimiento a medida",
     "Servicio de urgencias 24 h",
