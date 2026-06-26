@@ -118,17 +118,20 @@ export default function HomePage() {
               mantenimiento que necesitan un especialista de confianza.
             </p>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2">
+          <div className="grid gap-4 sm:grid-cols-2">
             {[
               { icon: Award, t: "Especialistas", d: "Solo fachadas de aluminio y cristal. Es lo único que hacemos." },
               { icon: Clock, t: "Urgencias 24 h", d: "Respuesta rápida ante cristales rotos o filtraciones." },
               { icon: ShieldCheck, t: "Trabajo en altura", d: "Personal y medios certificados para trabajo vertical seguro." },
               { icon: Building2, t: "Para edificios", d: "Oficinas, hoteles y comunidades. Tratamos con quien gestiona." },
             ].map((f) => (
-              <div key={f.t} className="rounded-2xl border bg-white p-6">
-                <f.icon className="h-6 w-6 text-burdeos" />
-                <h3 className="mt-3 font-semibold text-ink">{f.t}</h3>
-                <p className="mt-1.5 text-sm text-warm">{f.d}</p>
+              <div key={f.t} className="group relative overflow-hidden rounded-2xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-burdeos/40 hover:shadow-[0_14px_40px_-14px_rgba(155,35,53,0.3)]">
+                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-burdeos/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl bg-burdeos/10 text-burdeos transition-colors duration-300 group-hover:bg-burdeos group-hover:text-white">
+                  <f.icon className="h-5 w-5" />
+                </span>
+                <h3 className="relative mt-4 font-semibold text-ink">{f.t}</h3>
+                <p className="relative mt-1.5 text-sm leading-relaxed text-warm">{f.d}</p>
               </div>
             ))}
           </div>
