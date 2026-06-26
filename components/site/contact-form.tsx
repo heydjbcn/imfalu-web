@@ -4,10 +4,19 @@ import { useState } from "react"
 import { Check, Send } from "lucide-react"
 import { waLink } from "@/lib/site"
 
+const TIPOS = [
+  "Mantenimiento de fachada",
+  "Reparación / cristal roto",
+  "Rehabilitación / regeneración",
+  "Informe técnico / estanqueidad",
+  "Otro",
+]
+
 export function ContactForm() {
   const [sending, setSending] = useState(false)
   const [done, setDone] = useState(false)
   const [error, setError] = useState("")
+  const [tipo, setTipo] = useState("")
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -76,15 +85,25 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">¿Qué necesitas?</label>
-        <select name="asunto" className={field} defaultValue="">
-          <option value="" disabled>Selecciona…</option>
-          <option>Mantenimiento de fachada</option>
-          <option>Reparación / cristal roto (urgente)</option>
-          <option>Rehabilitación / regeneración</option>
-          <option>Informe técnico / estanqueidad</option>
-          <option>Otro</option>
-        </select>
+        <label className="mb-2 block text-sm font-medium text-ink">¿Qué necesitas?</label>
+        <input type="hidden" name="asunto" value={tipo} />
+        <div className="flex flex-wrap gap-2">
+          {TIPOS.map((t) => {
+            const on = tipo === t
+            return (
+              <button
+                key={t}
+                type="button"
+                onClick={() => setTipo(on ? "" : t)}
+                className={`rounded-full border px-3.5 py-2 text-sm font-medium transition-colors ${
+                  on ? "border-burdeos bg-burdeos text-white" : "border-line bg-white text-ink hover:border-burdeos hover:text-burdeos"
+                }`}
+              >
+                {t}
+              </button>
+            )
+          })}
+        </div>
       </div>
       <div>
         <label className="mb-1.5 block text-sm font-medium text-ink">Mensaje *</label>
