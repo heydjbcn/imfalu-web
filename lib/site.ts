@@ -80,6 +80,7 @@ export const navMenu: NavGroup[] = [
 export const navLinks = [
   { label: "Proyectos", href: "/proyectos" },
   { label: "Empresa", href: "/sobre-nosotros" },
+  { label: "Blog", href: "/blog" },
   { label: "Contacto", href: "/contacto" },
 ] as const
 
