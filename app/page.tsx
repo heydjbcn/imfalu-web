@@ -3,8 +3,9 @@ import Image from "next/image"
 import {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
   ArrowRight, Phone, Building2, Clock, Award, MapPin,
-  Hotel, Users, Landmark, BadgeCheck, ChevronRight,
+  BadgeCheck, ChevronRight,
 } from "lucide-react"
+import { SectorsTabs } from "@/components/site/sectors-tabs"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
 import { Reviews } from "@/components/site/reviews"
 
@@ -162,20 +163,7 @@ export default function HomePage() {
             <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios que cuidamos</h2>
             <p className="mt-4 text-lg text-warm">Trabajamos para administradores de fincas, property managers, arquitectos y departamentos de mantenimiento.</p>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: Building2, t: "Oficinas", d: "Torres y edificios de oficinas con fachada acristalada y muro cortina." },
-              { icon: Hotel, t: "Hoteles", d: "Fachadas acristaladas con mantenimiento sin afectar a los huéspedes." },
-              { icon: Users, t: "Comunidades", d: "Comunidades de propietarios y edificios residenciales de aluminio y cristal." },
-              { icon: Landmark, t: "Edificios singulares", d: "Edificios emblemáticos y de gran altura que exigen un especialista." },
-            ].map((s) => (
-              <div key={s.t} className="rounded-2xl border bg-white p-6">
-                <s.icon className="h-7 w-7 text-burdeos" />
-                <h3 className="mt-3 font-semibold text-ink">{s.t}</h3>
-                <p className="mt-1.5 text-sm text-warm">{s.d}</p>
-              </div>
-            ))}
-          </div>
+          <SectorsTabs />
         </div>
       </section>
 
