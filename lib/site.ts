@@ -57,8 +57,8 @@ export const navMenu: NavGroup[] = [
     label: "Servicios",
     featured: { title: "Urgencias 24 h", text: "Cristal roto o riesgo en fachada", img: "/galeria/reparacion-4.jpg", href: "/contacto" },
     children: [
-      { label: "Mantenimiento de fachadas", href: "/servicios/mantenimiento-fachadas", desc: "Contrato anual y urgencias 24 h", img: "/servicios/mantenimiento-fachadas.jpg", sub: [{ label: "Preventivo", href: "/servicios/mantenimiento-preventivo" }, { label: "Correctivo", href: "/servicios/mantenimiento-correctivo" }] },
-      { label: "Reparación y reposición", href: "/servicios/reparacion", desc: "Cristales, sellados y perfilería", img: "/servicios/reparacion.jpg" },
+      { label: "Mantenimiento", href: "/servicios/mantenimiento-fachadas", desc: "Contrato anual y urgencias 24 h", img: "/servicios/mantenimiento-fachadas.jpg", sub: [{ label: "Preventivo", href: "/servicios/mantenimiento-preventivo" }, { label: "Correctivo", href: "/servicios/mantenimiento-correctivo" }] },
+      { label: "Reparación", href: "/servicios/reparacion", desc: "Cristales, sellados y perfilería", img: "/servicios/reparacion.jpg" },
       { label: "Regeneración", href: "/servicios/regeneracion", desc: "Recuperar sin sustituir", img: "/servicios/regeneracion.jpg" },
       { label: "Informes técnicos", href: "/servicios/informes-tecnicos", desc: "Diagnóstico y auditoría", img: "/servicios/informes-tecnicos.jpg" },
       { label: "Pruebas de estanqueidad", href: "/servicios/pruebas-estanqueidad", desc: "Localizar filtraciones", img: "/servicios/pruebas-estanqueidad.jpg" },

@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X, ChevronDown, ArrowRight } from "lucide-react"
+import { Phone, Menu, X, ChevronDown } from "lucide-react"
 import { navMenu, navLinks, site, telLink } from "@/lib/site"
 
 export function Header() {
@@ -22,35 +22,23 @@ export function Header() {
               <button className="flex items-center gap-1 py-5 text-sm font-medium text-ink/80 transition-colors group-hover:text-burdeos">
                 {g.label} <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
               </button>
-              {/* Mega-panel (compacto, anclado al botón) */}
+              {/* Mega-panel (más ancho que alto, rejilla de tarjetas) */}
               <div className="invisible absolute left-0 top-full -translate-y-1 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="grid w-[560px] grid-cols-[1fr_170px] gap-3 rounded-2xl border bg-white p-3 shadow-xl">
-                  <div className="grid grid-cols-2 gap-0.5">
-                    {g.children.map((c) => (
-                      <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-lg p-2 transition-colors hover:bg-cream">
-                        <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-md bg-cream ring-1 ring-line">
-                          <Image src={c.img} alt="" fill className="object-cover" sizes="36px" />
-                        </span>
-                        <span className="min-w-0">
-                          <span className="block text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
-                          <span className="block text-[11px] leading-snug text-warm">{c.desc}</span>
-                          {c.sub ? (
-                            <span className="mt-0.5 block text-[11px] text-burdeos/80">{c.sub.map((s) => s.label).join(" · ")}</span>
-                          ) : null}
-                        </span>
-                      </Link>
-                    ))}
-                  </div>
-                  {/* Featured */}
-                  <Link href={g.featured.href} className="group/f relative flex flex-col justify-end overflow-hidden rounded-xl bg-ink p-4 text-white">
-                    <Image src={g.featured.img} alt="" fill className="object-cover opacity-55 transition-transform duration-500 group-hover/f:scale-105" sizes="170px" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                    <div className="relative">
-                      <div className="text-sm font-bold leading-tight">{g.featured.title}</div>
-                      <div className="mt-1 text-[11px] leading-snug text-white/75">{g.featured.text}</div>
-                      <span className="mt-2.5 inline-flex items-center gap-1 text-[11px] font-semibold text-white">Ver más <ArrowRight className="h-3 w-3" /></span>
-                    </div>
-                  </Link>
+                <div className={`grid gap-1 rounded-2xl border bg-white p-3 shadow-xl ${g.children.length > 4 ? "w-[680px] grid-cols-3" : "w-[460px] grid-cols-2"}`}>
+                  {g.children.map((c) => (
+                    <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
+                      <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
+                        <Image src={c.img} alt="" fill className="object-cover" sizes="40px" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
+                        <span className="mt-0.5 block text-[11px] leading-snug text-warm">{c.desc}</span>
+                        {c.sub ? (
+                          <span className="mt-0.5 block text-[11px] font-medium text-burdeos/80">{c.sub.map((s) => s.label).join(" · ")}</span>
+                        ) : null}
+                      </span>
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
