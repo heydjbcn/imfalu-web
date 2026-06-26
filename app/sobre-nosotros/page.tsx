@@ -7,6 +7,14 @@ import {
 import { services, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
 import { Reviews } from "@/components/site/reviews"
+import { FaqSection } from "@/components/site/faq-section"
+
+const FAQS = [
+  { q: "¿Cuántos años de experiencia tiene IMFALÚ?", a: "Más de 30 años especializados en fachadas de aluminio y cristal, con más de 300.000 m² intervenidos y más de 150 edificios en Barcelona y su área metropolitana." },
+  { q: "¿Qué diferencia a IMFALÚ de una empresa de rehabilitación general?", a: "Nos dedicamos en exclusiva a la fachada de aluminio y cristal —muro cortina, acristaladas y metálicas—, no a la obra de albañilería (mortero, SATE, revocos). Esa especialización, junto al trabajo en altura certificado, es nuestra mayor garantía." },
+  { q: "¿Sois pioneros en algo?", a: "Sí, somos pioneros en Barcelona en aplicar tratamientos por fotocatálisis en fachadas: un recubrimiento autolimpiante que además reduce contaminantes del aire." },
+  { q: "¿Estáis certificados para trabajo en altura?", a: "Sí. Todo nuestro personal y nuestros medios están homologados para trabajo vertical y en altura, con prevención de riesgos en cada obra." },
+]
 
 export const metadata: Metadata = {
   title: "Sobre nosotros: 30 años en fachadas de aluminio y cristal",
@@ -161,6 +169,8 @@ export default function SobreNosotrosPage() {
       </section>
 
       <Reviews />
+
+      <FaqSection title="Preguntas frecuentes sobre IMFALÚ" faqs={FAQS} />
 
       <CtaBand title={`¿Tu edificio necesita un especialista en fachadas en ${site.city}?`} />
     </>

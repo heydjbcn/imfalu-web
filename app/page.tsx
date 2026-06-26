@@ -8,10 +8,19 @@ import {
 import { SectorsTabs } from "@/components/site/sectors-tabs"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
 import { Reviews } from "@/components/site/reviews"
+import { FaqSection } from "@/components/site/faq-section"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
 }
+
+const FAQS = [
+  { q: "¿Qué hace IMFALÚ?", a: "IMFALÚ es una empresa especializada en el mantenimiento, la reparación, la regeneración y la rehabilitación de fachadas de aluminio y cristal —muro cortina y fachadas acristaladas— en Barcelona y su área metropolitana. No hacemos obra de albañilería: intervenimos sobre el aluminio y el vidrio del cerramiento." },
+  { q: "¿En qué zona trabajáis?", a: "En Barcelona y toda su área metropolitana, con sede en Cornellà de Llobregat. Hemos intervenido más de 150 edificios entre oficinas, hoteles, comunidades y edificios singulares." },
+  { q: "¿Trabajáis con administradores de fincas y property managers?", a: "Sí. La mayoría de nuestros clientes son administradores de fincas, property managers, arquitectos y departamentos de mantenimiento de edificios." },
+  { q: "¿Tenéis servicio de urgencias?", a: "Sí, disponemos de servicio de urgencias 24 h para incidencias en fachada como cristales rotos, riesgo de desprendimiento o filtraciones." },
+  { q: "¿Cuánto cuesta intervenir una fachada?", a: "Depende del estado del cerramiento, la altura del edificio y el alcance de la intervención. Hacemos un diagnóstico previo y un presupuesto sin compromiso; en muchos casos rehabilitar o regenerar resulta más económico que sustituir toda la fachada." },
+]
 
 export default function HomePage() {
   return (
@@ -189,6 +198,9 @@ export default function HomePage() {
 
       {/* RESEÑAS (oculto si no hay datos de Places API) */}
       <Reviews />
+
+      {/* FAQ */}
+      <FaqSection title="Preguntas frecuentes sobre fachadas de aluminio y cristal" faqs={FAQS} bg="cream" />
 
       {/* CTA */}
       <section className="bg-burdeos">

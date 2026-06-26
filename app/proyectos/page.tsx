@@ -3,6 +3,14 @@ import { MapPin, Target, Wrench, CheckCircle2 } from "lucide-react"
 import { projects, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
 import { ProjectGallery } from "@/components/site/project-gallery"
+import { FaqSection } from "@/components/site/faq-section"
+
+const FAQS = [
+  { q: "¿En qué tipo de edificios trabajáis?", a: "En oficinas, hoteles, comunidades y edificios singulares con fachada de aluminio y cristal o muro cortina. Algunos ejemplos: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona y Hotel Roselló." },
+  { q: "¿Podéis intervenir sin parar la actividad del edificio?", a: "Sí. Trabajamos con medios de elevación y en altura para mantener y reparar la fachada minimizando las molestias a oficinas, huéspedes o vecinos." },
+  { q: "¿Trabajáis fuera de Barcelona ciudad?", a: "Sí, en toda el área metropolitana de Barcelona: Cornellà de Llobregat, Sant Cugat del Vallès, Barberà del Vallès y alrededores." },
+  { q: "¿Cómo empieza un proyecto de fachada?", a: "Con un diagnóstico previo del estado del cerramiento y un informe técnico. A partir de ahí proponemos la intervención —mantenimiento, reparación, regeneración o rehabilitación— y un presupuesto sin compromiso." },
+]
 
 export const metadata: Metadata = {
   title: "Proyectos de fachadas en Barcelona",
@@ -62,6 +70,8 @@ export default function ProyectosPage() {
           </article>
         ))}
       </div>
+
+      <FaqSection title="Preguntas frecuentes sobre nuestros proyectos" faqs={FAQS} bg="cream" />
 
       <CtaBand title="¿Quieres que tu edificio sea el próximo?" />
     </>
