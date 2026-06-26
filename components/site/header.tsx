@@ -18,45 +18,39 @@ export function Header() {
         {/* Desktop */}
         <nav className="hidden items-center gap-6 md:flex">
           {navMenu.map((g) => (
-            <div key={g.label} className="group static">
+            <div key={g.label} className="group relative">
               <button className="flex items-center gap-1 py-5 text-sm font-medium text-ink/80 transition-colors group-hover:text-burdeos">
                 {g.label} <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
               </button>
-              {/* Mega-panel */}
-              <div className="invisible absolute left-0 right-0 top-full -translate-y-1 pt-1 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className="container-x">
-                  <div className="grid grid-cols-[1fr_260px] gap-5 rounded-2xl border bg-white p-5 shadow-xl">
-                    <div className="grid grid-cols-2 gap-1.5">
-                      {g.children.map((c) => (
-                        <div key={c.href} className="group/i flex gap-3 rounded-xl p-2.5 transition-colors hover:bg-cream">
-                          <Link href={c.href} className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
-                            <Image src={c.img} alt="" fill className="object-cover" sizes="48px" />
-                          </Link>
-                          <div className="min-w-0">
-                            <Link href={c.href} className="block text-sm font-semibold text-ink group-hover/i:text-burdeos">{c.label}</Link>
-                            <span className="block text-xs leading-snug text-warm">{c.desc}</span>
-                            {c.sub ? (
-                              <span className="mt-1 flex flex-wrap gap-x-3 gap-y-0.5">
-                                {c.sub.map((s) => (
-                                  <Link key={s.href} href={s.href} className="text-xs font-medium text-burdeos/80 hover:text-burdeos">{s.label}</Link>
-                                ))}
-                              </span>
-                            ) : null}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    {/* Featured */}
-                    <Link href={g.featured.href} className="group/f relative flex min-h-[200px] flex-col justify-end overflow-hidden rounded-xl bg-ink p-5 text-white">
-                      <Image src={g.featured.img} alt="" fill className="object-cover opacity-55 transition-transform duration-500 group-hover/f:scale-105" sizes="260px" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-                      <div className="relative">
-                        <div className="text-base font-bold">{g.featured.title}</div>
-                        <div className="mt-1 text-xs text-white/75">{g.featured.text}</div>
-                        <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-white">Ver más <ArrowRight className="h-3.5 w-3.5" /></span>
-                      </div>
-                    </Link>
+              {/* Mega-panel (compacto, anclado al botón) */}
+              <div className="invisible absolute left-0 top-full -translate-y-1 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="grid w-[560px] grid-cols-[1fr_170px] gap-3 rounded-2xl border bg-white p-3 shadow-xl">
+                  <div className="grid grid-cols-2 gap-0.5">
+                    {g.children.map((c) => (
+                      <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-lg p-2 transition-colors hover:bg-cream">
+                        <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-md bg-cream ring-1 ring-line">
+                          <Image src={c.img} alt="" fill className="object-cover" sizes="36px" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
+                          <span className="block text-[11px] leading-snug text-warm">{c.desc}</span>
+                          {c.sub ? (
+                            <span className="mt-0.5 block text-[11px] text-burdeos/80">{c.sub.map((s) => s.label).join(" · ")}</span>
+                          ) : null}
+                        </span>
+                      </Link>
+                    ))}
                   </div>
+                  {/* Featured */}
+                  <Link href={g.featured.href} className="group/f relative flex flex-col justify-end overflow-hidden rounded-xl bg-ink p-4 text-white">
+                    <Image src={g.featured.img} alt="" fill className="object-cover opacity-55 transition-transform duration-500 group-hover/f:scale-105" sizes="170px" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+                    <div className="relative">
+                      <div className="text-sm font-bold leading-tight">{g.featured.title}</div>
+                      <div className="mt-1 text-[11px] leading-snug text-white/75">{g.featured.text}</div>
+                      <span className="mt-2.5 inline-flex items-center gap-1 text-[11px] font-semibold text-white">Ver más <ArrowRight className="h-3 w-3" /></span>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
