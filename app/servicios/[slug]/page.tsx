@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
           {/* Qué incluye */}
-          <h2 className="text-2xl font-bold text-ink">Qué incluye {term}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {s.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </ul>
 
           {/* Cuándo lo necesitas */}
-          <h2 className="mt-12 text-2xl font-bold text-ink">Cuándo necesitas {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cuándo necesitas {term}</h2>
           <ul className="mt-5 space-y-3">
             {s.when.map((w) => (
               <li key={w} className="flex items-start gap-2.5 text-warm">
@@ -137,7 +137,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           ) : null}
 
           {/* Cómo trabajamos */}
-          <h2 className="mt-12 text-2xl font-bold text-ink">Cómo trabajamos</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cómo trabajamos</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
             {PROCESS.map((p, i) => (
               <li key={p.t} className="rounded-2xl border bg-white p-5">
@@ -149,7 +149,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </ol>
 
           {/* Por qué IMFALÚ */}
-          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
           <p className="mt-4 text-warm">
             No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
             aluminio y cristal, y es lo único que hacemos. Más de 30 años de experiencia, trabajo en
@@ -168,7 +168,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* Galería de trabajos */}
           {s.gallery?.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Algunos de nuestros trabajos</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Algunos de nuestros trabajos</h2>
               <div className="mt-5">
                 <ExpandingGallery items={s.gallery} />
               </div>
@@ -178,7 +178,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* FAQ */}
           {faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {faqs.map((f) => (
                   <details key={f.q} className="group p-5">

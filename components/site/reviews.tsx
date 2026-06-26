@@ -42,7 +42,7 @@ export async function Reviews() {
       <div className="container-x flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Opiniones</p>
-          <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Lo que dicen nuestros clientes</h2>
+          <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Lo que dicen nuestros clientes</h2>
         </div>
         <div className="flex items-center gap-3">
           <span className="text-3xl font-bold text-ink">{data.rating.toFixed(1)}</span>

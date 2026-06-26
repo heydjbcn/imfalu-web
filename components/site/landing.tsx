@@ -48,7 +48,7 @@ export function Landing({ data }: { data: LandingData }) {
         <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(60% 80% at 80% 0%, rgba(155,35,53,0.5), transparent 60%)" }} />
         <div className="container-x relative py-16 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">{data.kicker}</p>
-          <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-5xl">{data.h1}</h1>
+          <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-4xl">{data.h1}</h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{data.intro}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link href="/contacto" className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
@@ -63,7 +63,7 @@ export function Landing({ data }: { data: LandingData }) {
 
       <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
-          <h2 className="text-2xl font-bold text-ink">Qué hacemos en {term}</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-ink">Qué hacemos en {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {data.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
@@ -72,7 +72,7 @@ export function Landing({ data }: { data: LandingData }) {
             ))}
           </ul>
 
-          <h2 className="mt-12 text-2xl font-bold text-ink">Cómo trabajamos</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cómo trabajamos</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
             {PROCESS.map((p, i) => (
               <li key={p.t} className="rounded-2xl border bg-white p-5">
@@ -83,7 +83,7 @@ export function Landing({ data }: { data: LandingData }) {
             ))}
           </ol>
 
-          <h2 className="mt-12 text-2xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
           <p className="mt-4 text-warm">
             No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
             aluminio y cristal, y es lo único que hacemos. Esa concentración —más de 30 años, trabajo
@@ -101,7 +101,7 @@ export function Landing({ data }: { data: LandingData }) {
 
           {data.gallery?.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Algunos de nuestros trabajos</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Algunos de nuestros trabajos</h2>
               <div className="mt-5">
                 <ExpandingGallery items={data.gallery} />
               </div>
@@ -110,7 +110,7 @@ export function Landing({ data }: { data: LandingData }) {
 
           {data.faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {data.faqs.map((f) => (
                   <details key={f.q} className="group p-5">

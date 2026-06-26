@@ -22,7 +22,7 @@ export default function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">
               Mantenimiento · Reparación · Rehabilitación
             </p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-bold text-ink md:text-6xl">
+            <h1 className="mt-5 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
               Fachadas de aluminio y cristal en Barcelona
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-warm">
@@ -67,7 +67,7 @@ export default function HomePage() {
       <section id="servicios" className="container-x py-20">
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">Servicios</p>
-          <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Todo para la fachada, de principio a fin</h2>
+          <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Todo para la fachada, de principio a fin</h2>
           <p className="mt-4 text-lg text-warm">
             Del diagnóstico al mantenimiento continuo, cubrimos el ciclo completo de la fachada
             de aluminio y cristal.
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div className="container-x grid gap-12 md:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Por qué IMFALÚ</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">
               30 años cuidando fachadas en Barcelona
             </h2>
             <p className="mt-4 text-lg text-warm">
@@ -130,7 +130,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Proyectos</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Edificios donde hemos trabajado</h2>
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios donde hemos trabajado</h2>
           </div>
           <Link href="/proyectos" className="inline-flex items-center gap-1.5 text-sm font-semibold text-burdeos">
             Ver proyectos <ArrowRight className="h-4 w-4" />
@@ -159,7 +159,7 @@ export default function HomePage() {
         <div className="container-x">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Sectores</p>
-            <h2 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Edificios que cuidamos</h2>
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios que cuidamos</h2>
             <p className="mt-4 text-lg text-warm">Trabajamos para administradores de fincas, property managers, arquitectos y departamentos de mantenimiento.</p>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

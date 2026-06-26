@@ -43,7 +43,7 @@ export default function SobreNosotrosPage() {
       <section className="border-b bg-cream">
         <div className="container-x py-14 md:py-20">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">La empresa</p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-bold text-ink md:text-5xl">
+          <h1 className="mt-3 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
             Empresa de fachadas de aluminio y cristal en Barcelona
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-warm">

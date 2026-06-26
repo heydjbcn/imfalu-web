@@ -35,7 +35,7 @@ export default function ProyectosPage() {
             </div>
             <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
               <div className="flex flex-wrap items-center gap-2">
-                <h2 className="text-2xl font-bold text-ink">{p.title}</h2>
+                <h2 className="text-2xl md:text-3xl font-bold text-ink">{p.title}</h2>
                 {p.sector ? <span className="rounded-full bg-cream px-3 py-0.5 text-xs font-semibold text-burdeos">{p.sector}</span> : null}
               </div>
               <p className="mt-1 flex items-center gap-1.5 text-sm text-warm">
