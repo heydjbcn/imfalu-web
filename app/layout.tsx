@@ -56,6 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WhatsAppFab />
         <LocalBusinessJsonLd />
         <SiteJsonLd />
+        <script src="https://analytics.ahrefs.com/analytics.js" data-key="Lx4Y+tCDNX95vOsSDoQidw" async />
       </body>
     </html>
   )
