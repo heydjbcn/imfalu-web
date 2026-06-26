@@ -59,7 +59,8 @@ export function ContactForm() {
     )
   }
 
-  const field = "w-full rounded-xl border bg-white px-4 py-3 text-ink outline-none focus:border-burdeos"
+  const field = "flex h-11 w-full rounded-lg border border-line bg-white px-3.5 text-sm text-ink shadow-sm outline-none transition placeholder:text-warm-light focus-visible:border-burdeos focus-visible:ring-2 focus-visible:ring-burdeos/20"
+  const labelCls = "mb-1.5 block text-sm font-medium text-ink"
 
   return (
     <form onSubmit={onSubmit} className="space-y-4">
@@ -106,13 +107,15 @@ export function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-sm font-medium text-ink">Mensaje *</label>
-        <textarea name="mensaje" required rows={4} className={field} placeholder="Cuéntanos del edificio y la fachada…" />
+        <label className={labelCls}>Mensaje *</label>
+        <textarea name="mensaje" required rows={4} placeholder="Cuéntanos del edificio y la fachada…"
+          className="min-h-28 w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-sm text-ink shadow-sm outline-none transition placeholder:text-warm-light focus-visible:border-burdeos focus-visible:ring-2 focus-visible:ring-burdeos/20" />
       </div>
       {error ? <p className="text-sm text-burdeos">{error}</p> : null}
-      <button type="submit" disabled={sending} className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark disabled:opacity-60">
-        {sending ? "Enviando…" : <>Enviar <Send className="h-4 w-4" /></>}
+      <button type="submit" disabled={sending} className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg bg-burdeos px-6 text-sm font-semibold text-white shadow-sm transition hover:bg-burdeos-dark disabled:opacity-60 sm:w-auto">
+        {sending ? "Enviando…" : <>Enviar mensaje <Send className="h-4 w-4" /></>}
       </button>
+      <p className="text-xs text-warm">Respondemos en menos de 24 h. Al enviar aceptas nuestra política de privacidad.</p>
     </form>
   )
 }

@@ -14,7 +14,16 @@ export async function LocalBusinessJsonLd() {
     image: `${site.url}/og.jpg`,
     telephone: `+34${site.phone}`,
     areaServed: site.area,
-    address: { "@type": "PostalAddress", addressLocality: site.city, addressRegion: "Barcelona", addressCountry: "ES" },
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: site.address.street,
+      postalCode: site.address.postalCode,
+      addressLocality: site.address.locality,
+      addressRegion: site.address.region,
+      addressCountry: "ES",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: site.address.lat, longitude: site.address.lng },
+    hasMap: site.address.directions,
     ...(site.social.linkedin || site.social.instagram
       ? { sameAs: [site.social.linkedin, site.social.instagram].filter(Boolean) }
       : {}),

@@ -12,6 +12,17 @@ export const site = {
   email: "", // pendiente de confirmar email oficial
   city: "Barcelona",
   area: "Barcelona y área metropolitana",
+  address: {
+    street: "Carrer d'Antoni Alcalá Galiano, 3",
+    postalCode: "08940",
+    locality: "Cornellà de Llobregat",
+    region: "Barcelona",
+    full: "Carrer d'Antoni Alcalá Galiano, 3, 08940 Cornellà de Llobregat (Barcelona)",
+    lat: 41.352068,
+    lng: 2.0833613,
+    placeId: "ChIJr133M5-ipBIR7he5QqpBNbY",
+    directions: "https://www.google.com/maps/dir/?api=1&destination=41.352068,2.0833613&destination_place_id=ChIJr133M5-ipBIR7he5QqpBNbY",
+  },
   social: {
     linkedin: "", // rellenar con la URL real
     instagram: "",
