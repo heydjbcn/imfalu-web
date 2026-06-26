@@ -6,7 +6,7 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [x] que-es-muro-cortina
 - [ ] tipos-de-muro-cortina
 - [ ] muro-cortina-vs-fachada-acristalada
-- [ ] beneficios-muro-cortina-oficinas
+- [x] beneficios-muro-cortina-oficinas
 - [ ] fachada-ligera-vs-pesada
 - [ ] muro-cortina-de-aluminio
 - [ ] vidrio-en-el-muro-cortina
@@ -21,10 +21,10 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 ## B · Mantenimiento (pilar: mantenimiento-preventivo-fachadas)
 - [x] mantenimiento-preventivo-fachadas
 - [ ] correctivo-vs-preventivo
-- [ ] frecuencia-revision-fachada
+- [x] frecuencia-revision-fachada
 - [ ] contrato-mantenimiento-fachada
-- [ ] detectar-problemas-fachada-acristalada
-- [ ] senales-fachada-necesita-mantenimiento
+- [x] detectar-problemas-fachada-acristalada
+- [x] senales-fachada-necesita-mantenimiento
 - [ ] mantenimiento-sin-parar-actividad
 - [ ] guia-mantenimiento-administradores-fincas
 - [ ] mantenimiento-fachada-hoteles
@@ -38,13 +38,13 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [x] reposicion-cristales-fachada
 - [ ] cristal-roto-fachada-urgencias
 - [ ] cambio-vidrio-gran-formato-altura
-- [ ] tipos-vidrio-fachada
+- [x] tipos-vidrio-fachada
 - [ ] vidrio-templado-usos
-- [ ] vidrio-laminar-seguridad
+- [x] vidrio-laminar-seguridad
 - [ ] vidrio-control-solar
 - [ ] doble-acristalamiento-cuando-reponer
 - [ ] vidrio-esmerilado
-- [ ] filtraciones-agua-fachada
+- [x] filtraciones-agua-fachada
 - [ ] pruebas-estanqueidad-fachada
 - [ ] reparar-perfileria-aluminio
 - [ ] condensacion-vidrios
@@ -52,12 +52,12 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 
 ## D · Regeneración y rehabilitación (pilar: rehabilitacion-fachadas-barcelona)
 - [ ] regeneracion-fachada-recuperar-sin-sustituir
-- [ ] rehabilitar-o-sustituir-fachada
+- [x] rehabilitar-o-sustituir-fachada
 - [ ] rehabilitacion-fachadas-barcelona
 - [ ] recuperar-lacado-aluminio
 - [ ] restauracion-elementos-fachada
 - [ ] rehabilitacion-energetica-fachada
-- [ ] ayudas-rehabilitacion-fachadas-cataluna
+- [x] ayudas-rehabilitacion-fachadas-cataluna
 - [ ] planificar-rehabilitacion-fachada
 - [ ] rehabilitacion-edificios-singulares
 - [ ] costes-rehabilitacion-fachada
@@ -67,7 +67,7 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [ ] que-es-fotocatalisis
 - [ ] pureti-fachadas-fotocataliticas
 - [ ] fachadas-descontaminan-barcelona
-- [ ] ahorro-energetico-fachada
+- [x] ahorro-energetico-fachada
 - [ ] control-solar-confort-termico
 - [ ] proteccion-solar-lamas-fachada
 - [ ] luz-natural-edificios
