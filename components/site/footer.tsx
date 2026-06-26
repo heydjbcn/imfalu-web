@@ -3,45 +3,62 @@ import Image from "next/image"
 import { Phone, MapPin } from "lucide-react"
 import { services, site, telLink } from "@/lib/site"
 
+const TIPOS = [
+  { label: "Muro cortina", href: "/fachadas/muro-cortina" },
+  { label: "Muro cortina de aluminio", href: "/fachadas/muro-cortina-aluminio" },
+  { label: "Muro cortina de cristal", href: "/fachadas/muro-cortina-cristal" },
+  { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
+  { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
+  { label: "Rehabilitación", href: "/fachadas/rehabilitacion" },
+]
+
 export function Footer() {
+  const servicios = services.filter((s) => !["mantenimiento-preventivo", "mantenimiento-correctivo"].includes(s.slug))
   return (
     <footer className="bg-ink text-white/80">
-      <div className="container-x grid gap-10 py-14 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="container-x grid gap-10 py-14 md:grid-cols-12">
+        <div className="md:col-span-4">
           <Image src="/brand/logo-dark.png" alt={site.name} width={160} height={54} className="h-9 w-auto" />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
-            {site.tagline}. Más de 30 años manteniendo, reparando y rehabilitando
-            fachadas de aluminio y cristal en {site.area}.
+            {site.tagline}. Más de 30 años manteniendo, reparando y rehabilitando fachadas de aluminio y cristal en {site.area}.
+          </p>
+          <a href={telLink} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-burdeos">
+            <Phone className="h-4 w-4 text-burdeos" /> {site.phoneDisplay}
+          </a>
+          <p className="mt-2 flex items-center gap-2 text-sm text-white/60">
+            <MapPin className="h-4 w-4 text-burdeos" /> {site.address.full}
           </p>
         </div>
 
-        <div>
+        <div className="md:col-span-3">
           <h3 className="text-sm font-semibold text-white">Servicios</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            {services.map((s) => (
+            {servicios.map((s) => (
               <li key={s.slug}>
-                <Link href={`/servicios/${s.slug}`} className="text-white/60 transition-colors hover:text-white">
-                  {s.title}
-                </Link>
+                <Link href={`/servicios/${s.slug}`} className="text-white/60 transition-colors hover:text-white">{s.title}</Link>
               </li>
             ))}
           </ul>
         </div>
 
-        <div>
-          <h3 className="text-sm font-semibold text-white">Contacto</h3>
-          <ul className="mt-4 space-y-3 text-sm">
-            <li>
-              <a href={telLink} className="flex items-center gap-2 text-white/60 hover:text-white">
-                <Phone className="h-4 w-4 text-burdeos" /> {site.phoneDisplay}
-              </a>
-            </li>
-            <li className="flex items-center gap-2 text-white/60">
-              <MapPin className="h-4 w-4 text-burdeos" /> {site.area}
-            </li>
-            <li>
-              <Link href="/contacto" className="text-white/60 hover:text-white">Pedir presupuesto</Link>
-            </li>
+        <div className="md:col-span-3">
+          <h3 className="text-sm font-semibold text-white">Tipos de fachada</h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            {TIPOS.map((t) => (
+              <li key={t.href}>
+                <Link href={t.href} className="text-white/60 transition-colors hover:text-white">{t.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="md:col-span-2">
+          <h3 className="text-sm font-semibold text-white">Empresa</h3>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><Link href="/proyectos" className="text-white/60 hover:text-white">Proyectos</Link></li>
+            <li><Link href="/sobre-nosotros" className="text-white/60 hover:text-white">Sobre nosotros</Link></li>
+            <li><Link href="/contacto" className="text-white/60 hover:text-white">Contacto</Link></li>
+            <li><Link href="/contacto" className="font-medium text-white hover:text-burdeos">Pedir presupuesto</Link></li>
           </ul>
         </div>
       </div>

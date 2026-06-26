@@ -172,6 +172,19 @@ export function Landing({ data }: { data: LandingData }) {
               </ul>
             </div>
           ) : null}
+          <div className="rounded-2xl border p-6">
+            <h3 className="text-sm font-semibold text-ink">Otros tipos de fachada</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              {[
+                { label: "Muro cortina", href: "/fachadas/muro-cortina" },
+                { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
+                { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
+                { label: "Rehabilitación", href: "/fachadas/rehabilitacion" },
+              ].filter((t) => t.href !== `/${data.slug}`).map((t) => (
+                <li key={t.href}><Link href={t.href} className="text-warm hover:text-burdeos">{t.label}</Link></li>
+              ))}
+            </ul>
+          </div>
           <Link href="/proyectos" className="block overflow-hidden rounded-2xl border">
             <div className="relative aspect-[4/3] bg-cream">
               <Image src={projects[0].image} alt="Proyecto de fachada en Barcelona" fill className="object-cover" sizes="320px" />

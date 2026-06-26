@@ -39,7 +39,14 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const s = services.find((x) => x.slug === slug)
   if (!s) notFound()
   const faqs = FAQ_BY_SLUG[slug] ?? []
-  const others = services.filter((x) => x.slug !== slug)
+  const SUBS = ["mantenimiento-preventivo", "mantenimiento-correctivo"]
+  const others = services.filter((x) => x.slug !== slug && !SUBS.includes(x.slug))
+  const TIPOS_LINKS = [
+    { label: "Muro cortina", href: "/fachadas/muro-cortina" },
+    { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
+    { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
+    { label: "Rehabilitación de fachadas", href: "/fachadas/rehabilitacion" },
+  ]
   const TERMS: Record<string, string> = {
     "mantenimiento-fachadas": "el mantenimiento de fachadas",
     "mantenimiento-preventivo": "el mantenimiento preventivo",
@@ -234,6 +241,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             <p className="mt-2 text-sm text-warm">Aluminio y cristal, muro cortina y fachada acristalada. +150 edificios en Barcelona y área metropolitana.</p>
           </div>
 
+          {slug === "mantenimiento-fachadas" ? (
+            <div className="mt-5 rounded-2xl border p-6">
+              <h3 className="text-sm font-semibold text-ink">Tipo de mantenimiento</h3>
+              <ul className="mt-3 space-y-2 text-sm">
+                <li><Link href="/servicios/mantenimiento-preventivo" className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> Mantenimiento preventivo</Link></li>
+                <li><Link href="/servicios/mantenimiento-correctivo" className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> Mantenimiento correctivo</Link></li>
+              </ul>
+            </div>
+          ) : null}
+
           <div className="mt-5 rounded-2xl border p-6">
             <h3 className="text-sm font-semibold text-ink">Otros servicios</h3>
             <ul className="mt-3 space-y-2 text-sm">
@@ -241,6 +258,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <li key={o.slug}>
                   <Link href={`/servicios/${o.slug}`} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
                     <Building2 className="h-3.5 w-3.5" /> {o.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="mt-5 rounded-2xl border p-6">
+            <h3 className="text-sm font-semibold text-ink">Tipos de fachada</h3>
+            <ul className="mt-3 space-y-2 text-sm">
+              {TIPOS_LINKS.map((t) => (
+                <li key={t.href}>
+                  <Link href={t.href} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
+                    <ChevronRight className="h-3.5 w-3.5" /> {t.label}
                   </Link>
                 </li>
               ))}
