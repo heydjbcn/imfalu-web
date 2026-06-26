@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# deploy artifacts (build standalone ensamblado para MS01 LXC 113)
+/deploy
