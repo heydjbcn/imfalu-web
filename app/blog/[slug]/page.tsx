@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Contenido + aside */}
       <div className="container-x grid max-w-6xl gap-10 pb-16 lg:grid-cols-[1fr_300px] lg:gap-14">
-        <article className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-ink prose-h2:mt-10 prose-h2:scroll-mt-24 prose-h2:text-2xl prose-h3:scroll-mt-24 prose-p:text-warm prose-li:text-warm prose-a:font-medium prose-a:text-burdeos prose-a:no-underline hover:prose-a:underline prose-strong:text-ink">
+        <article className="prose prose-lg max-w-none prose-headings:font-bold prose-headings:text-ink prose-h2:mt-10 prose-h2:scroll-mt-24 prose-h2:text-2xl prose-h3:scroll-mt-24 prose-p:text-warm prose-li:text-warm prose-a:font-medium prose-a:text-burdeos prose-a:no-underline hover:prose-a:underline prose-strong:text-ink prose-img:w-full prose-img:rounded-2xl prose-img:border prose-img:my-9">
           <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             components={{

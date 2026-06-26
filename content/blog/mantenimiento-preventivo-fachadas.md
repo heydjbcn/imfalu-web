@@ -26,6 +26,8 @@ Se diferencia del **mantenimiento correctivo**, que actúa una vez que el daño 
 - **Limpieza** de elementos cuando procede.
 - Un **informe del estado** de la fachada tras cada revisión.
 
+![mantenimiento preventivo de fachadas](/blog/mantenimiento-preventivo-fachadas/mantenimiento-preventivo-fachadas.jpg)
+
 ## Cada cuánto hay que hacerlo
 
 Como referencia, **al menos una revisión anual**, y **dos al año** en edificios de mucha altura o muy expuestos (viento, contaminación, proximidad al mar). Un edificio con muro cortina o gran superficie acristalada se beneficia especialmente de la frecuencia mayor.
@@ -40,6 +42,8 @@ Como referencia, **al menos una revisión anual**, y **dos al año** en edificio
 ## Quién debería tener un contrato de mantenimiento
 
 Sobre todo **administradores de fincas, property managers y departamentos de mantenimiento** de edificios con fachada de aluminio y cristal. Un único especialista que conozca el edificio responde más rápido y con mejor criterio que ir buscando proveedor cada vez que surge una incidencia.
+
+![Plataforma de trabajo en altura en una fachada](/blog/mantenimiento-preventivo-fachadas/mantenimiento-preventivo-fachadas-2.jpg)
 
 ## Preguntas frecuentes
 

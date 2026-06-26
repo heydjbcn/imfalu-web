@@ -29,6 +29,8 @@ Aquí está la clave, y lo que diferencia una reparación que dura de un parche.
 
 La forma profesional es hacer [pruebas de estanqueidad](/servicios/pruebas-estanqueidad): se moja la fachada de manera controlada, por zonas, replicando la lluvia y el viento, hasta identificar exactamente el punto de entrada. Solo entonces se repara con seguridad de acertar.
 
+![filtraciones de agua por la fachada](/blog/filtraciones-agua-fachada/filtraciones-agua-fachada.jpg)
+
 ## Señales de que tienes una filtración por la fachada
 
 No siempre es un charco evidente. Atento a:
@@ -50,6 +52,8 @@ Una vez localizado el punto, la reparación es proporcional al daño y casi nunc
 4. **Limpieza de drenajes** para que el agua evacúe.
 
 Todo con medios de elevación y trabajo en altura. Lo ves en nuestro servicio de [reparación de fachadas](/servicios/reparacion).
+
+![Prueba de estanqueidad en una fachada acristalada](/blog/filtraciones-agua-fachada/filtraciones-agua-fachada-2.jpg)
 
 ## Preguntas frecuentes
 

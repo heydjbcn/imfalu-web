@@ -30,6 +30,8 @@ Las filtraciones son el problema más común y el peor diagnosticado, porque el 
 
 Las señales típicas son humedades que aparecen tras la lluvia o con viento de cara, cercos en techos y tabiques pegados al cerramiento, y olor a humedad cerca de las ventanas. Para confirmar el punto exacto de entrada se hacen [pruebas de estanqueidad](/servicios/pruebas-estanqueidad): se moja la fachada de forma controlada hasta localizar por dónde pasa el agua. Es la única manera fiable de no reparar a ciegas.
 
+![problemas en una fachada acristalada](/blog/detectar-problemas-fachada-acristalada/detectar-problemas-fachada-acristalada.jpg)
+
 ## Señales de que hay riesgo de desprendimiento
 
 Esta es la parte seria, porque afecta a la seguridad de las personas que pasan por debajo. Presta atención si observas:
@@ -56,6 +58,8 @@ Lo primero es **no improvisar en altura**: cualquier intervención sobre una fac
 3. **Prevención.** Si el deterioro es generalizado pero la estructura está sana, suele compensar una [regeneración](/servicios/regeneracion) antes que una sustitución completa.
 
 Detectar a tiempo no solo es más barato: mantiene la imagen del edificio y la seguridad de quien lo usa.
+
+![Operario revisando un muro cortina en altura](/blog/detectar-problemas-fachada-acristalada/detectar-problemas-fachada-acristalada-2.jpg)
 
 ## Preguntas frecuentes
 

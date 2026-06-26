@@ -22,6 +22,8 @@ Un **muro cortina** (o *curtain wall*) es una **fachada ligera** que se cuelga p
 - **Juntas y sellados**: las gomas y siliconas que garantizan la **estanqueidad** al agua y al aire.
 - **Fijaciones y anclajes**: lo que une el muro cortina a la estructura.
 
+![muro cortina de aluminio y cristal](/blog/que-es-muro-cortina/que-es-muro-cortina.jpg)
+
 ## Tipos de muro cortina
 
 - **De aluminio y cristal con perfil visto**: la retícula de aluminio queda a la vista.
@@ -40,6 +42,8 @@ Un mantenimiento adecuado revisa periódicamente sellados, vidrios, perfilería 
 - Sellados agrietados, despegados o ennegrecidos.
 - Vidrios con condensación interna (cámara perdida) o agrietados.
 - Ruidos o vibraciones con viento.
+
+![Detalle de una fachada ligera acristalada](/blog/que-es-muro-cortina/que-es-muro-cortina-2.jpg)
 
 ## Preguntas frecuentes
 

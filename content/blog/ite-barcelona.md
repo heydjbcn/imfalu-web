@@ -27,6 +27,8 @@ La fachada es uno de los elementos que más se inspeccionan porque afecta direct
 
 Una fachada de aluminio y cristal mal mantenida puede arrastrar deficiencias que luego hay que corregir con plazos y costes ajustados.
 
+![ITE en Barcelona](/blog/ite-barcelona/ite-barcelona.jpg)
+
 ## Cómo llegar preparado (y sin sorpresas)
 
 La mejor estrategia es **anticiparse** con un **informe técnico de fachada** antes de la inspección:
@@ -43,6 +45,8 @@ Con eso, llegas a la ITE sabiendo qué tienes y habiendo corregido lo urgente. E
 - **ITE/IITE**: la inspección obligatoria del estado del edificio.
 - **IEE (Informe de Evaluación del Edificio)**: amplía la ITE con accesibilidad y eficiencia energética.
 - **Libro del Edificio**: la herramienta donde se documenta el mantenimiento; el CTE refuerza su importancia.
+
+![Fachada de un edificio de oficinas en Barcelona](/blog/ite-barcelona/ite-barcelona-2.jpg)
 
 ## Preguntas frecuentes
 

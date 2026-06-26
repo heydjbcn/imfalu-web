@@ -29,6 +29,8 @@ Rehabilitar es la opción acertada cuando:
 
 En la mayoría de edificios de oficinas y hoteles de Barcelona con fachada de los últimos decenios, este es el caso.
 
+![rehabilitación de fachada de aluminio y cristal](/blog/rehabilitar-o-sustituir-fachada/rehabilitar-o-sustituir-fachada.jpg)
+
 ## ¿Cuándo conviene sustituir?
 
 La sustitución se justifica cuando:
@@ -44,6 +46,8 @@ Aun así, conviene contrastarlo: muchas veces lo que parece "para tirar" se recu
 Con un [informe técnico de la fachada](/servicios/informes-tecnicos). El diagnóstico evalúa el estado real del aluminio, los vidrios, los sellados y los anclajes, y propone un plan de actuación priorizado. A partir de ahí se compara el coste y el alcance de rehabilitar frente a sustituir, con datos y no con intuiciones.
 
 Hay, además, [ayudas a la rehabilitación de edificios en Cataluña](https://www.agenciahabitatge.gencat.cat/) que pueden inclinar la balanza, y el [Código Técnico de la Edificación](https://www.codigotecnico.org/) marca los requisitos a cumplir en cada caso.
+
+![Edificio con muro cortina rehabilitado](/blog/rehabilitar-o-sustituir-fachada/rehabilitar-o-sustituir-fachada-2.jpg)
 
 ## Preguntas frecuentes
 

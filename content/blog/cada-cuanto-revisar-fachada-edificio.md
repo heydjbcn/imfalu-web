@@ -28,6 +28,8 @@ No todas las fachadas envejecen igual. Como orientación:
 
 En todos los casos, lo ideal es un [contrato de mantenimiento preventivo](/servicios/mantenimiento-preventivo) que deje las revisiones programadas y documentadas, sin depender de que alguien se acuerde.
 
+![revisión de la fachada de un edificio](/blog/cada-cuanto-revisar-fachada-edificio/cada-cuanto-revisar-fachada-edificio.jpg)
+
 ## ¿Qué se inspecciona en una revisión de fachada?
 
 Una revisión completa de una fachada de aluminio y cristal cubre:
@@ -47,6 +49,8 @@ La [Inspección Técnica de Edificios (ITE)](/blog/ite-barcelona) tiene sus prop
 ## ¿Qué pasa si llevas años sin revisar la fachada?
 
 Lo primero, no entrar en pánico: lo habitual es que el deterioro esté en sellados y vidrios, no en la estructura. El orden recomendado es un [diagnóstico](/servicios/informes-tecnicos) para conocer el alcance real, después la [reparación o reposición](/servicios/reparacion) de lo urgente y, si el desgaste es generalizado, valorar una [regeneración](/servicios/regeneracion) antes que sustituir toda la fachada.
+
+![Fachada acristalada de oficinas en Barcelona](/blog/cada-cuanto-revisar-fachada-edificio/cada-cuanto-revisar-fachada-edificio-2.jpg)
 
 ## Preguntas frecuentes
 

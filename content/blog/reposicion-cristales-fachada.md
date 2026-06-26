@@ -30,6 +30,8 @@ No es un trabajo improvisable. El proceso suele incluir:
 
 La clave está en **reponer con el vidrio adecuado**: poner un cristal que no iguale las prestaciones del original genera problemas de condensación, confort térmico o seguridad.
 
+![reposición de cristales de fachada](/blog/reposicion-cristales-fachada/reposicion-cristales-fachada.jpg)
+
 ## Cristal roto: qué hacer (y qué no)
 
 Ante un cristal roto en fachada, sobre todo si hay **riesgo de caída**:
@@ -41,6 +43,8 @@ Ante un cristal roto en fachada, sobre todo si hay **riesgo de caída**:
 ## Reponer no siempre es sustituir toda la fachada
 
 En la mayoría de los casos se repone **solo el vidrio o los elementos afectados**, sin tocar el resto de la fachada. Es más rápido y mucho más económico. Lo ves en nuestro servicio de [reparación y reposición](/servicios/reparacion).
+
+![Sustitución de un vidrio de fachada en altura](/blog/reposicion-cristales-fachada/reposicion-cristales-fachada-2.jpg)
 
 ## Preguntas frecuentes
 

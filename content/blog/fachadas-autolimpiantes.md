@@ -24,6 +24,8 @@ El resultado, aplicado a una fachada, es doble:
 
 Se trata de un **recubrimiento transparente** que se aplica sobre el vidrio y los elementos de la fachada. No cambia el aspecto del edificio: actúa a nivel de superficie. Marcas como **Pureti** han popularizado este tipo de tratamientos.
 
+![fachada autolimpiante con fotocatálisis](/blog/fachadas-autolimpiantes/fachadas-autolimpiantes.jpg)
+
 ## Beneficios concretos
 
 - **Menos limpiezas**: la fachada se ensucia más despacio y se limpia con la lluvia, lo que reduce costes de mantenimiento.
@@ -40,6 +42,8 @@ No es teoría lejana: en Barcelona hay ejemplos de superficies que "se comen" la
 - Edificios en zonas con **mucha contaminación** o que se ensucian rápido.
 - Tras una **regeneración o rehabilitación** de fachada, para proteger el trabajo.
 - Propiedades que quieren **diferenciarse** con una mejora verde y reducir el mantenimiento a medio plazo.
+
+![Fachada de cristal reflejando el cielo](/blog/fachadas-autolimpiantes/fachadas-autolimpiantes-2.jpg)
 
 ## Preguntas frecuentes
 

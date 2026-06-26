@@ -31,6 +31,8 @@ Depende del uso y la orientación de la fachada:
 
 En la práctica, una unidad de fachada suele combinar varias de estas propiedades a la vez.
 
+![tipos de vidrio para fachadas](/blog/tipos-vidrio-fachada/tipos-vidrio-fachada.jpg)
+
 ## ¿Cómo sé qué vidrio reponer si se rompe uno?
 
 Esta es la pregunta clave cuando hay un [cristal roto o con la cámara perdida](/servicios/reparacion). Al reponer hay que **igualar las prestaciones del original**: mismo tipo (templado/laminar), misma cámara y el mismo control solar, además de la medida y el espesor exactos. Si no, se nota: un vidrio sin control solar recalienta la sala, y uno sin cámara condensa.
@@ -40,6 +42,8 @@ Por eso empezamos siempre identificando la composición del vidrio existente ant
 ## El vaho dentro del cristal: ¿qué significa?
 
 Si ves vaho o condensación **entre** los dos cristales (no en la superficie), la cámara del doble acristalamiento ha perdido estanqueidad. No se puede secar ni recuperar: la solución es reponer la unidad de vidrio. Es uno de los avisos más claros de que un vidrio ha llegado al final de su vida útil.
+
+![Vidrios de control solar en un muro cortina](/blog/tipos-vidrio-fachada/tipos-vidrio-fachada-2.jpg)
 
 ## Preguntas frecuentes
 
