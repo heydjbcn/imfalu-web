@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Phone, MapPin, Clock, MessageCircle, ShieldCheck, BadgeCheck, Award, Navigation } from "lucide-react"
+import { Phone, MapPin, Clock, MessageCircle, ShieldCheck, BadgeCheck, Award, Navigation, ArrowUpRight } from "lucide-react"
 import { site, telLink, waLink } from "@/lib/site"
 import { ContactForm } from "@/components/site/contact-form"
 
@@ -31,44 +31,73 @@ export default function ContactoPage() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_360px]">
-          <div className="rounded-2xl border bg-white p-6 md:p-8">
-            <ContactForm />
+        <div className="mt-10 grid gap-8 lg:grid-cols-[1fr_380px]">
+          {/* Formulario */}
+          <div className="rounded-2xl border bg-white shadow-sm">
+            <div className="border-b px-6 py-5 md:px-8">
+              <h2 className="text-lg font-bold text-ink">Cuéntanos tu caso</h2>
+              <p className="mt-1 text-sm text-warm">Rellena el formulario y te damos presupuesto sin compromiso.</p>
+            </div>
+            <div className="p-6 md:p-8">
+              <ContactForm />
+            </div>
           </div>
 
-          <aside className="space-y-4">
-            <a href={telLink} className="flex items-center gap-3 rounded-2xl border bg-white p-5 transition-colors hover:border-burdeos">
-              <Phone className="h-5 w-5 shrink-0 text-burdeos" />
-              <span><span className="block text-xs text-warm">Teléfono</span><span className="font-semibold text-ink">{site.phoneDisplay}</span></span>
-            </a>
-            <a href={waLink("Hola, quiero información sobre una fachada.")} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 rounded-2xl border bg-white p-5 transition-colors hover:border-burdeos">
-              <MessageCircle className="h-5 w-5 shrink-0 text-burdeos" />
-              <span><span className="block text-xs text-warm">WhatsApp</span><span className="font-semibold text-ink">Escríbenos ahora</span></span>
-            </a>
-            <div className="flex items-center gap-3 rounded-2xl border bg-white p-5">
-              <MapPin className="h-5 w-5 shrink-0 text-burdeos" />
-              <span><span className="block text-xs text-warm">Zona</span><span className="font-semibold text-ink">{site.area}</span></span>
-            </div>
-            <div className="flex items-center gap-3 rounded-2xl border bg-white p-5">
-              <Clock className="h-5 w-5 shrink-0 text-burdeos" />
-              <span><span className="block text-xs text-warm">Urgencias</span><span className="font-semibold text-ink">Servicio 24 h</span></span>
-            </div>
+          {/* Panel de contacto (oscuro, moderno) */}
+          <aside className="relative overflow-hidden rounded-2xl bg-ink p-7 text-white shadow-sm">
+            <div className="pointer-events-none absolute inset-0 opacity-80" style={{ background: "radial-gradient(75% 60% at 100% 0%, rgba(155,35,53,0.5), transparent 60%)" }} />
+            <div className="relative">
+              <h2 className="text-lg font-bold">Contacto directo</h2>
+              <p className="mt-1 text-sm text-white/55">Estamos a una llamada. Urgencias 24 h.</p>
 
-            {/* Trust */}
-            <div className="rounded-2xl border bg-cream p-5">
-              <ul className="space-y-3.5">
-                {TRUST.map((x) => (
-                  <li key={x.t} className="flex gap-3">
-                    <x.icon className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
-                    <span>
-                      <span className="block text-sm font-semibold text-ink">{x.t}</span>
-                      <span className="block text-xs text-warm">{x.d}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-5 divide-y divide-white/10">
+                {[
+                  { icon: Phone, label: "Teléfono", value: site.phoneDisplay, href: telLink, ext: false },
+                  { icon: MessageCircle, label: "WhatsApp", value: "Escríbenos ahora", href: waLink("Hola, quiero información sobre una fachada."), ext: true },
+                  { icon: MapPin, label: "Zona", value: site.area },
+                  { icon: Clock, label: "Horario", value: "L-V 8-17 · Urgencias 24 h" },
+                ].map((r) => {
+                  const Row = r.href ? "a" : "div"
+                  return (
+                    <Row
+                      key={r.label}
+                      {...(r.href ? { href: r.href, ...(r.ext ? { target: "_blank", rel: "noopener noreferrer" } : {}) } : {})}
+                      className={`group flex items-center gap-3.5 py-3.5 ${r.href ? "cursor-pointer" : ""}`}
+                    >
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 ring-1 ring-white/10 transition-colors group-hover:bg-white/15">
+                        <r.icon className="h-5 w-5 text-white" />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-xs text-white/55">{r.label}</span>
+                        <span className="block truncate font-semibold">{r.value}</span>
+                      </span>
+                      {r.href ? <ArrowUpRight className="ml-auto h-4 w-4 shrink-0 text-white/35 transition-colors group-hover:text-white" /> : null}
+                    </Row>
+                  )
+                })}
+              </div>
+
+              <div className="mt-6 grid grid-cols-2 gap-3">
+                <a href={telLink} className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-4 text-sm font-semibold text-ink transition hover:bg-white/90">
+                  <Phone className="h-4 w-4" /> Llamar
+                </a>
+                <a href={waLink("Hola, quiero información sobre una fachada.")} target="_blank" rel="noopener noreferrer" className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-burdeos px-4 text-sm font-semibold text-white transition hover:bg-burdeos-dark">
+                  <MessageCircle className="h-4 w-4" /> WhatsApp
+                </a>
+              </div>
             </div>
           </aside>
+        </div>
+
+        {/* Tira de confianza */}
+        <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border bg-line sm:grid-cols-2 lg:grid-cols-4">
+          {TRUST.map((x) => (
+            <div key={x.t} className="bg-white p-5">
+              <x.icon className="h-5 w-5 text-burdeos" />
+              <div className="mt-2.5 text-sm font-semibold text-ink">{x.t}</div>
+              <div className="mt-0.5 text-xs text-warm">{x.d}</div>
+            </div>
+          ))}
         </div>
       </section>
 
