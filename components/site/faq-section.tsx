@@ -34,9 +34,9 @@ export function FaqSection({
     <section className={bg === "cream" ? "bg-cream py-16" : "py-16"}>
       <div className="container-x">
         <JsonLd data={jsonLd} />
-        <h2 className="text-2xl font-bold text-ink md:text-3xl">{title}</h2>
+        <h2 className="text-center text-2xl font-bold text-ink md:text-3xl">{title}</h2>
 
-        <div className="mt-8 max-w-3xl space-y-3">
+        <div className="mx-auto mt-8 max-w-3xl space-y-3">
           {faqs.map((f, i) => {
             const isOpen = i === open
             return (
