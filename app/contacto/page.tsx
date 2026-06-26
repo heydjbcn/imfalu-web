@@ -55,7 +55,7 @@ export default function ContactoPage() {
                   { icon: Phone, label: "Teléfono", value: site.phoneDisplay, href: telLink, ext: false },
                   { icon: MessageCircle, label: "WhatsApp", value: "Escríbenos ahora", href: waLink("Hola, quiero información sobre una fachada."), ext: true },
                   { icon: MapPin, label: "Zona", value: site.area },
-                  { icon: Clock, label: "Horario", value: "L-V 8-17 · Urgencias 24 h" },
+                  { icon: Clock, label: "Horario", value: `${site.hours} · Urgencias 24 h` },
                 ].map((r) => {
                   const Row = r.href ? "a" : "div"
                   return (
@@ -123,7 +123,7 @@ export default function ContactoPage() {
               </div>
               <div className="flex gap-3">
                 <Clock className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" />
-                <div><span className="block text-xs text-warm">Horario</span><span className="font-semibold text-ink">L-V 8:00-17:00</span><span className="block text-sm text-warm">Urgencias 24 h</span></div>
+                <div><span className="block text-xs text-warm">Horario</span><span className="font-semibold text-ink">{site.hours}</span><span className="block text-sm text-warm">Urgencias 24 h</span></div>
               </div>
               <div className="mt-1 flex flex-col gap-2.5">
                 <a href={site.address.directions} target="_blank" rel="noopener noreferrer"

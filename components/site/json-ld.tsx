@@ -24,6 +24,12 @@ export async function LocalBusinessJsonLd() {
     },
     geo: { "@type": "GeoCoordinates", latitude: site.address.lat, longitude: site.address.lng },
     hasMap: site.address.directions,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:00",
+      closes: "18:00",
+    },
     ...(site.social.linkedin || site.social.instagram
       ? { sameAs: [site.social.linkedin, site.social.instagram].filter(Boolean) }
       : {}),

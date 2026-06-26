@@ -23,6 +23,7 @@ export const site = {
     placeId: "ChIJr133M5-ipBIR7he5QqpBNbY",
     directions: "https://www.google.com/maps/dir/?api=1&destination=41.352068,2.0833613&destination_place_id=ChIJr133M5-ipBIR7he5QqpBNbY",
   },
+  hours: "L-V 8:00-18:00",
   social: {
     linkedin: "", // rellenar con la URL real
     instagram: "",
