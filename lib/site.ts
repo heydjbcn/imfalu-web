@@ -176,6 +176,14 @@ export const services: Service[] = [
       "Antes de intervenir una fachada conviene saber exactamente en qué estado está. Elaboramos informes técnicos y auditorías de fachadas de aluminio y cristal: diagnóstico de patologías, evaluación de riesgos y un plan de actuación priorizado, con la documentación que permite decidir cualquier obra con criterio y sin sorpresas.",
     bullets: ["Diagnóstico de patologías", "Evaluación de riesgos", "Plan de actuación priorizado", "Documentación técnica", "Apoyo a la gestión del edificio"],
     when: ["Vas a presupuestar o planificar una intervención en la fachada", "Necesitas documentar el estado de la fachada del edificio", "Hay patologías visibles y quieres conocer su alcance", "Como apoyo técnico para la gestión del edificio", "Quieres priorizar actuaciones con criterio profesional"],
+    note: {
+      title: "Informe de fachada, ITE y Certificat d'Aptitud",
+      body: [
+        "En Catalunya, los edificios de viviendas a partir de cierta antigüedad están obligados a pasar la Inspección Técnica del Edificio (ITE), que evalúa, entre otros elementos, el estado de las fachadas. De su resultado depende el Certificat d'Aptitud que emite la Administración.",
+        "Nuestro informe técnico documenta el estado real del cerramiento de aluminio y cristal —patologías, evaluación de riesgos y plan de actuación priorizado— y sirve de base técnica para la ITE, para subsanar deficiencias o para presupuestar una intervención con criterio.",
+        "Cuando es necesario, coordinamos con el arquitecto o el técnico responsable de la ITE para que la documentación de la fachada quede correctamente reflejada.",
+      ],
+    },
   },
   {
     slug: "pruebas-estanqueidad",
@@ -196,6 +204,14 @@ export const services: Service[] = [
       "Cuando hay humedades, lo primero es saber por dónde entra el agua. Realizamos pruebas de estanqueidad controladas que localizan el punto exacto de filtración en la fachada de aluminio y cristal —muro cortina, ventanas, sellados y juntas— antes y después de una reparación, para resolver el problema de raíz y sin obras innecesarias.",
     bullets: ["Localización del punto de filtración", "Pruebas de agua controladas", "Verificación de sellados y juntas", "Comprobación antes y después de reparar", "Informe de resultados"],
     when: ["Aparecen humedades o manchas de agua tras la fachada", "Sospechas de filtraciones en el muro cortina", "Quieres verificar la fachada tras una reparación", "Antes de comprar o recepcionar un edificio acristalado", "No localizas el origen de una filtración recurrente"],
+    note: {
+      title: "Normativa: CTE DB-HS y ensayo de estanquidad al agua",
+      body: [
+        "El Código Técnico de la Edificación (CTE), en su Documento Básico HS1 «Protección frente a la humedad», exige que las fachadas impidan la penetración del agua de lluvia. Cuando aparecen filtraciones, la prueba de estanquidad al agua es la forma objetiva de comprobar si la fachada sigue cumpliendo ese requisito.",
+        "El ensayo reproduce de forma controlada la acción de la lluvia y el viento: se proyecta agua sobre la fachada —en muro cortina, con un peine de boquillas difusoras a una distancia y un caudal definidos— y se observa desde el interior si hay entrada de agua. Si la hay, el resultado es no satisfactorio y se localiza el punto exacto a reparar.",
+        "Seguimos los criterios de los documentos reconocidos de pruebas de servicio de estanquidad de fachadas, tanto para diagnosticar una filtración existente como para validar la fachada después de una reparación.",
+      ],
+    },
   },
   {
     slug: "fotocatalisis",
@@ -216,6 +232,14 @@ export const services: Service[] = [
       "La fotocatálisis es un recubrimiento que, con la acción de la luz, ayuda a autolimpiar la fachada y a reducir contaminantes del aire. El resultado: mejor aspecto durante más tiempo, menos necesidad de limpieza y un beneficio medioambiental. En IMFALÚ somos pioneros en aplicar tratamientos por fotocatálisis en fachadas de aluminio y cristal.",
     bullets: ["Efecto autolimpiante", "Reducción de contaminantes del aire", "Menor necesidad de limpieza", "Beneficio medioambiental", "Protege el resultado tras una rehabilitación"],
     when: ["Quieres reducir la frecuencia de limpieza de la fachada", "Buscas una opción más sostenible para el edificio", "La fachada se ensucia rápido por la contaminación", "Tras una rehabilitación, para proteger el resultado", "Quieres diferenciar tu edificio con una mejora verde"],
+    note: {
+      title: "Cómo funciona la fotocatálisis (TiO₂)",
+      body: [
+        "La fotocatálisis se basa en el dióxido de titanio (TiO₂), un semiconductor que, al recibir la luz —especialmente la radiación ultravioleta del sol—, activa una reacción que descompone la materia orgánica y la suciedad depositada sobre la fachada.",
+        "Esa reacción produce dos efectos. Descompone contaminantes del aire como los óxidos de nitrógeno (NOx) que emiten el tráfico y la industria; y vuelve la superficie superhidrófila, de modo que el agua de lluvia resbala formando una lámina que arrastra la suciedad ya descompuesta (efecto autolimpiante).",
+        "El resultado es una fachada con mejor aspecto durante más tiempo, menos necesidad de limpieza y un beneficio medioambiental. En IMFALÚ somos pioneros en aplicar tratamientos por fotocatálisis sobre fachadas de aluminio y cristal.",
+      ],
+    },
   },
 ]
 

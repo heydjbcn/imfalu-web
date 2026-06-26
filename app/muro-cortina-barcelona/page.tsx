@@ -36,6 +36,8 @@ const data: LandingData = {
     { q: "¿Hacéis mantenimiento de muro cortina en Barcelona?", a: "Sí, mantenemos fachadas ligeras de aluminio y cristal en edificios de oficinas, hoteles y singulares, con contrato y urgencias." },
     { q: "¿Reparáis filtraciones en muro cortina?", a: "Sí. Localizamos el punto de entrada de agua con pruebas de estanqueidad y reparamos sellados y vidrios afectados." },
     { q: "¿Trabajáis con arquitectos y constructoras?", a: "Sí, colaboramos con estudios de arquitectura, constructoras y property managers en el mantenimiento, la reparación y la rehabilitación de muro cortina de aluminio y cristal ya instalado. No fabricamos fachada nueva: nos especializamos en conservar y recuperar la que ya existe." },
+    { q: "¿Qué diferencia hay entre muro cortina y fachada ventilada?", a: "El muro cortina es una fachada ligera de aluminio y vidrio autoportante, colgada por delante de la estructura, a la que solo transmite su propio peso. La fachada ventilada es un revestimiento sobre la hoja del edificio con una cámara de aire intermedia. Nosotros nos especializamos en el mantenimiento, la reparación y la rehabilitación del muro cortina de aluminio y cristal." },
+    { q: "¿Cada cuánto hay que revisar un muro cortina?", a: "Al menos una revisión anual de sellados, juntas, anclajes y drenajes, y dos al año en edificios de gran altura o muy expuestos. Es la mejor forma de prevenir filtraciones y desprendimientos de vidrio en altura." },
   ],
 }
 
