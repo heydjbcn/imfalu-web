@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Pide presupuesto sin compromiso para el mantenimiento, reparación o rehabilitación de tu fachada de aluminio y cristal en Barcelona. Tel y WhatsApp.",
   alternates: { canonical: "/contacto" },
-  openGraph: { type: "website", url: "/contacto" },
+  openGraph: { type: "website", url: "/contacto", images: ["/og.jpg"] },
 }
 
 const TRUST = [

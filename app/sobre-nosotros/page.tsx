@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   description:
     "Más de 30 años, +300.000 m² y +150 edificios de fachada de aluminio y cristal en Barcelona. Empresa de referencia en mantenimiento y rehabilitación.",
   alternates: { canonical: "/sobre-nosotros" },
-  openGraph: { type: "website", url: "/sobre-nosotros" },
+  openGraph: { type: "website", url: "/sobre-nosotros", images: ["/og.jpg"] },
 }
 
 const HITOS = [

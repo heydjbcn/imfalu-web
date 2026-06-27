@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Edificios donde hemos intervenido la fachada de aluminio y cristal en Barcelona: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona.",
   alternates: { canonical: "/proyectos" },
-  openGraph: { type: "website", url: "/proyectos" },
+  openGraph: { type: "website", url: "/proyectos", images: ["/og.jpg"] },
 }
 
 export default function ProyectosPage() {

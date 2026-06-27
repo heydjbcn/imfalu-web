@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Guías y consejos sobre mantenimiento, reparación, rehabilitación y muro cortina de fachadas de aluminio y cristal en Barcelona.",
   alternates: { canonical: "/blog" },
-  openGraph: { type: "website", url: "/blog" },
+  openGraph: { type: "website", url: "/blog", images: ["/og.jpg"] },
 }
 
 export const revalidate = 1800
