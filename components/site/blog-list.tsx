@@ -44,7 +44,7 @@ export function BlogList({ posts }: { posts: PostCard[] }) {
 
   const featured = posts[0]
   const side = posts.slice(1, 4)
-  const grid = active === "Todos" ? posts.slice(4) : posts.filter((p) => p.cluster === active)
+  const grid = active === "Todos" ? posts : posts.filter((p) => p.cluster === active)
 
   return (
     <>
