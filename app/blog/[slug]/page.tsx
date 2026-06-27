@@ -5,7 +5,7 @@ import type { Metadata } from "next"
 import type { ReactNode } from "react"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
-import { Clock, ChevronRight } from "lucide-react"
+import { Clock, ChevronRight, ArrowRight } from "lucide-react"
 import { getAllPosts, getPost, tableOfContents, slugifyHeading, isPublished } from "@/lib/blog"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 import { site } from "@/lib/site"
@@ -139,13 +139,21 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`} className="group flex flex-col overflow-hidden rounded-2xl border bg-white transition-all hover:-translate-y-1 hover:shadow-lg">
-                  <div className="relative aspect-[16/10] overflow-hidden bg-white">
+                  <div className="relative aspect-[4/3] overflow-hidden">
                     <Image src={r.cover} alt={r.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:1024px) 50vw, 33vw" />
-                    <span className="absolute left-3 top-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-burdeos backdrop-blur">{r.cluster}</span>
+                    <span className="absolute left-4 top-4 bg-ink/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white backdrop-blur">{r.cluster}</span>
                   </div>
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="font-bold leading-snug text-ink group-hover:text-burdeos">{r.title}</h3>
-                    <p className="mt-2 text-sm text-warm">{r.excerpt}</p>
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="text-lg font-bold leading-snug text-ink transition-colors group-hover:text-burdeos">{r.title}</h3>
+                    <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-warm">{r.excerpt}</p>
+                    <div className="mt-6 flex items-center gap-3">
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-line text-burdeos transition-colors group-hover:border-burdeos group-hover:bg-burdeos group-hover:text-white">
+                        <ArrowRight className="h-4 w-4" />
+                      </span>
+                      <span className="text-sm font-semibold text-ink">Leer más</span>
+                      <span className="h-px flex-1 bg-line" />
+                      <span className="shrink-0 text-xs text-warm">{new Date(r.date).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" })}</span>
+                    </div>
                   </div>
                 </Link>
               ))}
