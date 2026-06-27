@@ -48,7 +48,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post || !isPublished(post.date)) notFound()
   const toc = tableOfContents(post.body)
   const url = `${site.url}/blog/${post.slug}`
-  const related = getAllPosts().filter((p) => p.slug !== post.slug && p.cluster === post.cluster).slice(0, 3)
+  const others = getAllPosts().filter((p) => p.slug !== post.slug)
+  const sameCluster = others.filter((p) => p.cluster === post.cluster)
+  const rest = others.filter((p) => p.cluster !== post.cluster)
+  const related = [...sameCluster, ...rest].slice(0, 3) // mismo cluster primero, rellena con los más recientes
 
   const jsonLd = {
     "@context": "https://schema.org",
