@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Menu, X, ChevronDown } from "lucide-react"
+import { Phone, Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import { navMenu, navLinks, site, telLink } from "@/lib/site"
 
 export function Header() {
@@ -24,21 +24,36 @@ export function Header() {
               </button>
               {/* Mega-panel (más ancho que alto, rejilla de tarjetas) */}
               <div className="invisible absolute left-0 top-full -translate-y-1 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                <div className={`grid gap-1 rounded-2xl border bg-white p-3 shadow-xl ${g.children.length > 4 ? "w-[680px] grid-cols-3" : "w-[460px] grid-cols-2"}`}>
-                  {g.children.map((c) => (
-                    <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
-                      <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
-                        <Image src={c.img} alt="" fill className="object-cover" sizes="40px" />
+                <div className="flex gap-2 rounded-2xl border bg-white p-3 shadow-xl">
+                  <div className={`grid gap-1 ${g.children.length > 4 ? "w-[560px] grid-cols-2" : "w-[440px] grid-cols-2"}`}>
+                    {g.children.map((c) => (
+                      <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
+                        <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
+                          <Image src={c.img} alt="" fill className="object-cover" sizes="40px" />
+                        </span>
+                        <span className="min-w-0">
+                          <span className="block text-sm font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
+                          <span className="mt-0.5 block text-[11px] leading-snug text-warm">{c.desc}</span>
+                          {c.sub ? (
+                            <span className="mt-0.5 block text-[11px] font-medium text-burdeos/80">{c.sub.map((s) => s.label).join(" · ")}</span>
+                          ) : null}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                  {/* Panel destacado (imagen grande + CTA) */}
+                  <Link href={g.featured.href} className="group/f relative w-[220px] shrink-0 overflow-hidden rounded-xl">
+                    <Image src={g.featured.img} alt="" fill className="object-cover transition-transform duration-500 group-hover/f:scale-105" sizes="220px" />
+                    <span className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
+                    <span className="absolute inset-x-0 bottom-0 p-4">
+                      <span className="block text-[15px] font-semibold leading-tight text-white">{g.featured.title}</span>
+                      <span className="mt-1 block text-[11px] leading-snug text-white/75">{g.featured.text}</span>
+                      <span className="mt-2.5 inline-flex items-center gap-1.5 text-[11px] font-semibold text-white">
+                        {g.featured.cta}
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover/f:translate-x-0.5" />
                       </span>
-                      <span className="min-w-0">
-                        <span className="block text-sm font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
-                        <span className="mt-0.5 block text-[11px] leading-snug text-warm">{c.desc}</span>
-                        {c.sub ? (
-                          <span className="mt-0.5 block text-[11px] font-medium text-burdeos/80">{c.sub.map((s) => s.label).join(" · ")}</span>
-                        ) : null}
-                      </span>
-                    </Link>
-                  ))}
+                    </span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -93,6 +108,15 @@ export function Header() {
                       ) : null}
                     </div>
                   ))}
+                  <Link href={g.featured.href} onClick={() => setOpen(false)} className="mt-1 flex items-center justify-between gap-2 rounded-xl bg-cream px-3 py-2.5">
+                    <span className="min-w-0">
+                      <span className="block text-sm font-semibold text-ink">{g.featured.title}</span>
+                      <span className="block text-[11px] text-warm">{g.featured.text}</span>
+                    </span>
+                    <span className="inline-flex shrink-0 items-center gap-1 text-[11px] font-semibold text-burdeos">
+                      {g.featured.cta} <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                  </Link>
                 </div>
               </details>
             ))}

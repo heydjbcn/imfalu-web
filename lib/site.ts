@@ -48,14 +48,14 @@ export interface NavItem {
 }
 export interface NavGroup {
   label: string
-  featured: { title: string; text: string; img: string; href: string }
+  featured: { title: string; text: string; img: string; href: string; cta: string }
   children: NavItem[]
 }
 
 export const navMenu: NavGroup[] = [
   {
     label: "Servicios",
-    featured: { title: "Urgencias 24 h", text: "Cristal roto o riesgo en fachada", img: "/galeria/reparacion-4.jpg", href: "/contacto" },
+    featured: { title: "Urgencias 24 h", text: "Cristal roto o riesgo en fachada", img: "/galeria/reparacion-4.jpg", href: "/contacto", cta: "Cuéntanos tu caso" },
     children: [
       { label: "Mantenimiento", href: "/servicios/mantenimiento-fachadas", desc: "Contrato anual y urgencias 24 h", img: "/servicios/mantenimiento-fachadas.jpg", sub: [{ label: "Preventivo", href: "/servicios/mantenimiento-preventivo" }, { label: "Correctivo", href: "/servicios/mantenimiento-correctivo" }] },
       { label: "Reparación", href: "/servicios/reparacion", desc: "Cristales, sellados y perfilería", img: "/servicios/reparacion.jpg" },
@@ -67,7 +67,7 @@ export const navMenu: NavGroup[] = [
   },
   {
     label: "Tipos de fachada",
-    featured: { title: "Más de 150 edificios", text: "Oficinas, hoteles y singulares", img: "/proyectos/ski/1.jpg", href: "/proyectos" },
+    featured: { title: "Más de 150 edificios", text: "Oficinas, hoteles y singulares", img: "/proyectos/ski/1.jpg", href: "/proyectos", cta: "Ver proyectos" },
     children: [
       { label: "Muro cortina", href: "/fachadas/muro-cortina", desc: "Fachada ligera de aluminio y cristal", img: "/proyectos/ski/2.jpg", sub: [{ label: "De aluminio", href: "/fachadas/muro-cortina-aluminio" }, { label: "De cristal", href: "/fachadas/muro-cortina-cristal" }] },
       { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada", desc: "Fachada de vidrio", img: "/proyectos/hotel/1.jpg" },
