@@ -125,9 +125,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream py-6 sm:py-8">
-        <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
-          <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
-        </ExpandOnScroll>
+        <div className="container-x">
+          <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
+            <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+          </ExpandOnScroll>
+        </div>
       </section>
 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">

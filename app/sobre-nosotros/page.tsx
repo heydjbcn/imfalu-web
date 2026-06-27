@@ -67,9 +67,11 @@ export default function SobreNosotrosPage() {
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream pb-6 sm:pb-8">
-        <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
-          <Image src="/headers/empresa.webp" alt={`Equipo de IMFALÚ trabajando en una fachada de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
-        </ExpandOnScroll>
+        <div className="container-x">
+          <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
+            <Image src="/headers/empresa.webp" alt={`Equipo de IMFALÚ trabajando en una fachada de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+          </ExpandOnScroll>
+        </div>
       </section>
 
       {/* Hitos */}

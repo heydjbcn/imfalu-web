@@ -58,9 +58,11 @@ export default function HomePage() {
 
       {/* BANDA DE IMAGEN (se ensancha al hacer scroll, estilo letaido) */}
       <section className="bg-cream py-6 sm:py-8">
-        <ExpandOnScroll className="bg-ink">
-          <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
-        </ExpandOnScroll>
+        <div className="container-x">
+          <ExpandOnScroll className="bg-ink">
+            <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+          </ExpandOnScroll>
+        </div>
       </section>
 
       {/* STATS */}

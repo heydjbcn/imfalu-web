@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import { Clock, ChevronRight } from "lucide-react"
 import { getAllPosts, getPost, tableOfContents, slugifyHeading, isPublished } from "@/lib/blog"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 import { site } from "@/lib/site"
 
 export const revalidate = 1800
@@ -106,11 +107,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
-      {/* Portada */}
+      {/* Portada (se ensancha al hacer scroll) */}
       <section className="container-x max-w-5xl py-8">
-        <div className="relative aspect-[16/8] w-full overflow-hidden rounded-2xl bg-ink">
-          <Image src={post.cover} alt={post.title} fill priority className="object-cover" sizes="(max-width:1024px) 100vw, 1024px" />
-        </div>
+        <ExpandOnScroll className="bg-ink" minHeight={260} maxHeight={460}>
+          <Image src={post.cover} alt={post.title} fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       {/* Contenido + aside */}

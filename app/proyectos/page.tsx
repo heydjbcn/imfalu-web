@@ -39,9 +39,11 @@ export default function ProyectosPage() {
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream pb-6 sm:pb-8">
-        <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
-          <Image src="/headers/proyectos.webp" alt={`Proyectos de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
-        </ExpandOnScroll>
+        <div className="container-x">
+          <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
+            <Image src="/headers/proyectos.webp" alt={`Proyectos de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+          </ExpandOnScroll>
+        </div>
       </section>
 
       <div className="container-x space-y-16 py-16">
