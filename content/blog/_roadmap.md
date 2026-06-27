@@ -5,7 +5,7 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 ## A · Muro cortina y fachada ligera (pilar: que-es-muro-cortina)
 - [x] que-es-muro-cortina
 - [x] tipos-de-muro-cortina
-- [ ] muro-cortina-vs-fachada-acristalada
+- [x] muro-cortina-vs-fachada-acristalada
 - [x] beneficios-muro-cortina-oficinas
 - [ ] fachada-ligera-vs-pesada
 - [ ] muro-cortina-de-aluminio
