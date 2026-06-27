@@ -62,7 +62,7 @@ export function ArticleAside({ toc, url, title }: { toc: Toc[]; url: string; tit
           <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir en LinkedIn" className="inline-flex h-9 w-9 items-center justify-center rounded-full border text-ink transition-colors hover:border-burdeos hover:text-burdeos">
             <Share2 className="h-4 w-4" />
           </a>
-          <a href={`https://wa.me/?text=${encodeURIComponent(title + " " + url)}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir por WhatsApp" className="inline-flex h-9 w-9 items-center justify-center rounded-full border text-ink transition-colors hover:border-burdeos hover:text-burdeos">
+          <a href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + url)}`} target="_blank" rel="noopener noreferrer" aria-label="Compartir por WhatsApp" className="inline-flex h-9 w-9 items-center justify-center rounded-full border text-ink transition-colors hover:border-burdeos hover:text-burdeos">
             <MessageCircle className="h-4 w-4" />
           </a>
         </div>

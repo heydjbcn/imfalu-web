@@ -397,5 +397,5 @@ export const projects: Project[] = [
 ]
 
 export const waLink = (text?: string) =>
-  `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`
+  `https://api.whatsapp.com/send?phone=${site.whatsapp}${text ? `&text=${encodeURIComponent(text)}` : ""}`
 export const telLink = `tel:+34${site.phone}`
