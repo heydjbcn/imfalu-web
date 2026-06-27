@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { getAllPosts } from "@/lib/blog"
 import { BlogList } from "@/components/site/blog-list"
+import { PageHero } from "@/components/site/page-hero"
 
 export const metadata: Metadata = {
   title: "Blog sobre fachadas de aluminio y cristal",
@@ -17,19 +18,17 @@ export default function BlogIndex() {
   }))
 
   return (
-    <section className="container-x py-14 md:py-20">
-      <div className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">Blog</p>
-        <h1 className="mt-3 text-3xl font-bold text-ink md:text-4xl">Blog sobre fachadas de aluminio y cristal</h1>
-        <p className="mt-4 text-lg text-warm">
-          Guías y consejos sobre mantenimiento, reparación, rehabilitación y muro cortina de fachadas de
-          aluminio y cristal, para propietarios, administradores de fincas y gestores de edificios en Barcelona.
-        </p>
-      </div>
-
-      <div className="mt-10">
+    <>
+      <PageHero
+        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Blog" }]}
+        eyebrow="Blog"
+        title="Historias, guías y consejos sobre fachadas"
+        subtitle="Mantenimiento, reparación, rehabilitación y muro cortina de fachadas de aluminio y cristal, para propietarios, administradores de fincas y gestores de edificios en Barcelona."
+        cta={false}
+      />
+      <section className="container-x py-14 md:py-20">
         {posts.length ? <BlogList posts={posts} /> : <p className="text-warm">Próximamente.</p>}
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
