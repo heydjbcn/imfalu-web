@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/site/cta-band"
 import { ProjectGallery } from "@/components/site/project-gallery"
 import { FaqSection } from "@/components/site/faq-section"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { PageHero } from "@/components/site/page-hero"
 
 const FAQS = [
   { q: "¿En qué tipo de edificios trabajáis?", a: "En oficinas, hoteles, comunidades y edificios singulares con fachada de aluminio y cristal o muro cortina. Algunos ejemplos: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona y Hotel Roselló." },
@@ -24,18 +25,12 @@ export const metadata: Metadata = {
 export default function ProyectosPage() {
   return (
     <>
-      <section className="border-b bg-cream">
-        <div className="container-x py-14 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Proyectos</p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-            Proyectos de fachadas de aluminio y cristal en Barcelona
-          </h1>
-          <p className="mt-4 max-w-2xl text-lg text-warm">
-            Edificios donde hemos trabajado: más de 150 edificios y +300.000 m² de fachada de aluminio
-            y cristal intervenida en {site.area}.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Proyectos" }]}
+        eyebrow="Proyectos"
+        title="Proyectos de fachadas de aluminio y cristal en Barcelona"
+        subtitle={`Edificios donde hemos trabajado: más de 150 edificios y +300.000 m² de fachada de aluminio y cristal intervenida en ${site.area}.`}
+      />
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream pb-6 sm:pb-8">

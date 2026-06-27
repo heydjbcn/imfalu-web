@@ -11,8 +11,8 @@ import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
-import { AnswerBlock } from "@/components/site/answer-block"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { PageHero, type Crumb } from "@/components/site/page-hero"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
@@ -100,28 +100,17 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <JsonLd data={jsonLd} />
 
       {/* Cabecera */}
-      <section className="bg-cream">
-        <div className="container-x py-12 md:py-16">
-          <nav className="mb-5 flex items-center gap-1.5 text-sm text-warm">
-            <Link href="/" className="hover:text-burdeos">Inicio</Link>
-            <ChevronRight className="h-3.5 w-3.5" />
-            <Link href="/#servicios" className="hover:text-burdeos">Servicios</Link>
-            <ChevronRight className="h-3.5 w-3.5" />
-            {isSubMantenimiento ? (
-              <>
-                <Link href="/servicios/mantenimiento-fachadas" className="hover:text-burdeos">Mantenimiento</Link>
-                <ChevronRight className="h-3.5 w-3.5" />
-              </>
-            ) : null}
-            <span className="text-ink">{s.title}</span>
-          </nav>
-          <h1 className="max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-            {s.seoTitle}
-          </h1>
-          <AnswerBlock>{s.answer}</AnswerBlock>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-warm">{s.intro}</p>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={[
+          { label: "Inicio", href: "/" },
+          { label: "Servicios", href: "/#servicios" },
+          ...(isSubMantenimiento ? [{ label: "Mantenimiento", href: "/servicios/mantenimiento-fachadas" }] : []),
+          { label: s.title },
+        ] as Crumb[]}
+        eyebrow="Servicio"
+        title={s.seoTitle}
+        subtitle={s.answer}
+      />
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream py-6 sm:py-8">
@@ -134,8 +123,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
+          <p className="text-lg leading-relaxed text-warm">{s.intro}</p>
           {/* Qué incluye */}
-          <h2 className="text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {s.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">

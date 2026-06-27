@@ -11,6 +11,7 @@ import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 import { BrandWatermark } from "@/components/site/brand-watermark"
+import { PageHero } from "@/components/site/page-hero"
 
 const FAQS = [
   { q: "¿Cuántos años de experiencia tiene IMFALÚ?", a: "Más de 30 años especializados en fachadas de aluminio y cristal, con más de 300.000 m² intervenidos y más de 150 edificios en Barcelona y su área metropolitana." },
@@ -51,19 +52,18 @@ export default function SobreNosotrosPage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b bg-cream">
-        <div className="container-x py-14 md:py-20">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">La empresa</p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-            Empresa de fachadas de aluminio y cristal en Barcelona
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-warm">
+      <PageHero
+        breadcrumb={[{ label: "Inicio", href: "/" }, { label: "Empresa" }]}
+        eyebrow="La empresa"
+        title="Empresa de fachadas de aluminio y cristal en Barcelona"
+        subtitle={
+          <>
             <strong className="text-ink">Cuidamos la piel de los edificios.</strong> Los profesionales que
-            formamos IMFALÚ acumulamos una amplia experiencia en mantenimiento y rehabilitación de
-            fachadas de aluminio y cristal, con más de 300.000 m² intervenidos en Barcelona y su área metropolitana.
-          </p>
-        </div>
-      </section>
+            formamos IMFALÚ acumulamos una amplia experiencia en mantenimiento y rehabilitación de fachadas
+            de aluminio y cristal, con más de 300.000 m² intervenidos en Barcelona y su área metropolitana.
+          </>
+        }
+      />
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream pb-6 sm:pb-8">

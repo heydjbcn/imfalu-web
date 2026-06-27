@@ -1,13 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Check, ChevronRight, MapPin } from "lucide-react"
-import { projects, services, site, telLink, type GalleryItem } from "@/lib/site"
+import { projects, services, site, type GalleryItem } from "@/lib/site"
 import { PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
-import { AnswerBlock } from "@/components/site/answer-block"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { PageHero } from "@/components/site/page-hero"
 
 export interface LandingData {
   slug: string
@@ -61,33 +61,12 @@ export function Landing({ data }: { data: LandingData }) {
     <>
       <JsonLd data={jsonLd} />
 
-      <section className="relative overflow-hidden bg-ink text-white">
-        <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "radial-gradient(60% 80% at 80% 0%, rgba(155,35,53,0.5), transparent 60%)" }} />
-        <div className="container-x relative py-16 md:py-20">
-          {data.breadcrumb?.length ? (
-            <nav className="mb-4 flex flex-wrap items-center gap-1.5 text-sm text-white/60">
-              {data.breadcrumb.map((b, i) => (
-                <span key={b.label} className="flex items-center gap-1.5">
-                  {i > 0 ? <ChevronRight className="h-3.5 w-3.5" /> : null}
-                  {b.href ? <Link href={b.href} className="hover:text-white">{b.label}</Link> : <span className="text-white/90">{b.label}</span>}
-                </span>
-              ))}
-            </nav>
-          ) : null}
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-warm-light">{data.kicker}</p>
-          <h1 className="mt-4 max-w-3xl text-3xl font-bold md:text-4xl">{data.h1}</h1>
-          {data.answer ? <AnswerBlock>{data.answer}</AnswerBlock> : null}
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">{data.intro}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/contacto" className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
-              Pide presupuesto <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a href={telLink} className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10">
-              {site.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        breadcrumb={data.breadcrumb}
+        eyebrow={data.kicker}
+        title={data.h1}
+        subtitle={data.answer ?? data.intro}
+      />
 
       {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream py-6 sm:py-8">
@@ -100,7 +79,8 @@ export function Landing({ data }: { data: LandingData }) {
 
       <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-ink">Qué hacemos en {term}</h2>
+          {data.answer ? <p className="text-lg leading-relaxed text-warm">{data.intro}</p> : null}
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué hacemos en {term}</h2>
           <ul className="mt-5 grid gap-3 sm:grid-cols-2">
             {data.bullets.map((b) => (
               <li key={b} className="flex items-start gap-2.5 text-ink">
