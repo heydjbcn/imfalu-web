@@ -49,7 +49,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post || !isPublished(post.date)) notFound()
   const toc = tableOfContents(post.body)
   const url = `${site.url}/blog/${post.slug}`
-  const others = getAllPosts().filter((p) => p.slug !== post.slug)
+  const allPub = getAllPosts()
+  const publishedSlugs = new Set(allPub.map((p) => p.slug))
+  const others = allPub.filter((p) => p.slug !== post.slug)
   const sameCluster = others.filter((p) => p.cluster === post.cluster)
   const rest = others.filter((p) => p.cluster !== post.cluster)
   const related = [...sameCluster, ...rest].slice(0, 3) // mismo cluster primero, rellena con los más recientes
@@ -122,6 +124,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             components={{
               h2: ({ children }) => <h2 id={slugifyHeading(toText(children))}>{children}</h2>,
               h3: ({ children }) => <h3 id={slugifyHeading(toText(children))}>{children}</h3>,
+              // No enlazar a artículos del blog aún no publicados (evita 404 internos)
+              a: ({ href, children }) => {
+                const m = typeof href === "string" ? href.match(/^\/blog\/([a-z0-9-]+)\/?$/) : null
+                if (m && !publishedSlugs.has(m[1])) return <span className="font-medium text-ink">{children}</span>
+                return <a href={href}>{children}</a>
+              },
             }}
           >
             {post.body}
