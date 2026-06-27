@@ -77,7 +77,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         name: s.seoTitle,
         serviceType: s.title,
         areaServed: site.area,
-        provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
+        provider: { "@id": `${site.url}/#org` },
         description: s.answer,
       },
       {

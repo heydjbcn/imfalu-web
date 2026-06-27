@@ -45,7 +45,7 @@ export function Landing({ data }: { data: LandingData }) {
         "@type": "Service",
         name: data.h1,
         areaServed: site.area,
-        provider: { "@type": "HomeAndConstructionBusiness", name: site.name, telephone: `+34${site.phone}` },
+        provider: { "@id": `${site.url}/#org` },
         description: data.answer ?? data.intro,
       },
       data.breadcrumb?.length
