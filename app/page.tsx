@@ -10,6 +10,7 @@ import { services, projects, site, waLink, telLink } from "@/lib/site"
 import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { BrandWatermark } from "@/components/site/brand-watermark"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
@@ -107,8 +108,9 @@ export default function HomePage() {
       </section>
 
       {/* POR QUÉ IMFALÚ */}
-      <section className="bg-cream py-20">
-        <div className="container-x grid gap-12 md:grid-cols-2">
+      <section className="relative isolate overflow-hidden bg-sand py-20">
+        <BrandWatermark />
+        <div className="container-x relative z-10 grid gap-12 md:grid-cols-2">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Por qué IMFALÚ</p>
             <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">
@@ -171,8 +173,9 @@ export default function HomePage() {
       </section>
 
       {/* SECTORES */}
-      <section className="bg-cream py-20">
-        <div className="container-x">
+      <section className="relative isolate overflow-hidden bg-sand py-20">
+        <BrandWatermark />
+        <div className="container-x relative z-10">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Sectores</p>
             <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios que cuidamos</h2>

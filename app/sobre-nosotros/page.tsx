@@ -10,6 +10,7 @@ import { CtaBand } from "@/components/site/cta-band"
 import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { BrandWatermark } from "@/components/site/brand-watermark"
 
 const FAQS = [
   { q: "¿Cuántos años de experiencia tiene IMFALÚ?", a: "Más de 30 años especializados en fachadas de aluminio y cristal, con más de 300.000 m² intervenidos y más de 150 edificios en Barcelona y su área metropolitana." },
@@ -111,8 +112,9 @@ export default function SobreNosotrosPage() {
       </section>
 
       {/* Qué hacemos */}
-      <section className="bg-cream py-20">
-        <div className="container-x">
+      <section className="relative isolate overflow-hidden bg-sand py-20">
+        <BrandWatermark />
+        <div className="container-x relative z-10">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">Qué hacemos</p>
             <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Todo el ciclo de la fachada</h2>
