@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight, Clock } from "lucide-react"
@@ -41,6 +41,22 @@ function Meta({ p }: { p: PostCard }) {
 export function BlogList({ posts }: { posts: PostCard[] }) {
   const clusters = ["Todos", ...Array.from(new Set(posts.map((p) => p.cluster)))]
   const [active, setActive] = useState("Todos")
+
+  // Preselecciona categoría desde el hash (#cat=...) — usado por el mega menú del blog.
+  useEffect(() => {
+    const apply = () => {
+      if (!window.location.hash.startsWith("#cat=")) return
+      const c = decodeURIComponent(window.location.hash.slice(5))
+      if (clusters.includes(c)) {
+        setActive(c)
+        document.getElementById("todos-articulos")?.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    }
+    apply()
+    window.addEventListener("hashchange", apply)
+    return () => window.removeEventListener("hashchange", apply)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const featured = posts[0]
   const side = posts.slice(1, 4)
@@ -91,7 +107,7 @@ export function BlogList({ posts }: { posts: PostCard[] }) {
 
       {/* Todos los artículos */}
       {posts.length > 1 ? (
-        <section className="mt-16 border-t border-line pt-12">
+        <section id="todos-articulos" className="mt-16 scroll-mt-24 border-t border-line pt-12">
           <h2 className="text-xl font-bold text-ink md:text-2xl">Todos los artículos</h2>
 
           <div className="mt-5 flex flex-wrap gap-2">

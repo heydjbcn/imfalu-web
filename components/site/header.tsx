@@ -6,7 +6,13 @@ import Image from "next/image"
 import { Phone, Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import { navMenu, navLinks, site, telLink } from "@/lib/site"
 
-export function Header() {
+type BlogPost = { slug: string; title: string; cover: string; date: string; cluster: string }
+
+function fmtShort(d: string) {
+  return d ? new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" }) : ""
+}
+
+export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: BlogPost[]; blogClusters?: string[] }) {
   const [open, setOpen] = useState(false)
   return (
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur">
@@ -58,11 +64,47 @@ export function Header() {
               </div>
             </div>
           ))}
-          {navLinks.map((n) => (
-            <Link key={n.href} href={n.href} className="text-sm font-medium text-ink/80 transition-colors hover:text-burdeos">
-              {n.label}
-            </Link>
-          ))}
+          {navLinks.map((n) =>
+            n.label === "Blog" && blogPosts.length ? (
+              <div key={n.href} className="group relative">
+                <Link href="/blog" className="flex items-center gap-1 py-5 text-sm font-medium text-ink/80 transition-colors group-hover:text-burdeos">
+                  Blog <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
+                </Link>
+                <div className="invisible absolute right-0 top-full -translate-y-1 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="flex gap-2 rounded-2xl border bg-white p-3 shadow-xl">
+                    <div className="grid w-[460px] grid-cols-2 gap-1">
+                      {blogPosts.map((p) => (
+                        <Link key={p.slug} href={`/blog/${p.slug}`} className="group/i flex gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
+                          <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
+                            <Image src={p.cover} alt="" fill className="object-cover" sizes="48px" />
+                          </span>
+                          <span className="min-w-0">
+                            <span className="line-clamp-2 text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{p.title}</span>
+                            <span className="mt-0.5 block text-[11px] text-warm">{fmtShort(p.date)}</span>
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="w-[180px] shrink-0 rounded-xl bg-cream p-4">
+                      <p className="text-[11px] font-semibold uppercase tracking-wider text-warm">Categorías</p>
+                      <div className="mt-3 flex flex-col gap-2">
+                        {blogClusters.map((c) => (
+                          <Link key={c} href={`/blog#cat=${encodeURIComponent(c)}`} className="text-sm leading-tight text-ink transition-colors hover:text-burdeos">{c}</Link>
+                        ))}
+                      </div>
+                      <Link href="/blog" className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-burdeos">
+                        Ver todo el blog <ArrowRight className="h-3.5 w-3.5" />
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link key={n.href} href={n.href} className="text-sm font-medium text-ink/80 transition-colors hover:text-burdeos">
+                {n.label}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">

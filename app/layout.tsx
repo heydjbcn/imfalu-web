@@ -7,6 +7,7 @@ import { Footer } from "@/components/site/footer"
 import { WhatsAppFab } from "@/components/site/whatsapp-fab"
 import { LocalBusinessJsonLd, SiteJsonLd } from "@/components/site/json-ld"
 import { site } from "@/lib/site"
+import { getAllPosts } from "@/lib/blog"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -46,11 +47,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const allPosts = getAllPosts()
+  const blogPosts = allPosts.slice(0, 4).map((p) => ({ slug: p.slug, title: p.title, cover: p.cover, date: p.date, cluster: p.cluster }))
+  const blogClusters = Array.from(new Set(allPosts.map((p) => p.cluster)))
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-ink" suppressHydrationWarning>
         <TopBar />
-        <Header />
+        <Header blogPosts={blogPosts} blogClusters={blogClusters} />
         <main className="flex-1 bg-white">{children}</main>
         <Footer />
         <WhatsAppFab />
