@@ -4,7 +4,7 @@ import { notFound } from "next/navigation"
 import type { Metadata } from "next"
 import {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
-  ArrowRight, Check, ChevronRight, AlertCircle, Award, Building2, FileText,
+  ArrowRight, ChevronRight, AlertCircle, Award, Building2, FileText,
 } from "lucide-react"
 import { services, site } from "@/lib/site"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
@@ -12,6 +12,7 @@ import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { CheckList } from "@/components/site/check-list"
 import { PageHero, type Crumb } from "@/components/site/page-hero"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -126,13 +127,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <p className="text-lg leading-relaxed text-warm">{s.intro}</p>
           {/* Qué incluye */}
           <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {s.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2.5 text-ink">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" /> <span>{b}</span>
-              </li>
-            ))}
-          </ul>
+          <CheckList items={s.bullets} className="mt-6" />
 
           {/* Cuándo lo necesitas */}
           <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cuándo necesitas {term}</h2>

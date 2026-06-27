@@ -1,12 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Check, ChevronRight, MapPin } from "lucide-react"
+import { ArrowRight, ChevronRight, MapPin } from "lucide-react"
 import { projects, services, site, type GalleryItem } from "@/lib/site"
 import { PROCESS } from "@/lib/service-faqs"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { CheckList } from "@/components/site/check-list"
 import { PageHero } from "@/components/site/page-hero"
 
 export interface LandingData {
@@ -81,13 +82,7 @@ export function Landing({ data }: { data: LandingData }) {
         <div>
           {data.answer ? <p className="text-lg leading-relaxed text-warm">{data.intro}</p> : null}
           <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué hacemos en {term}</h2>
-          <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-            {data.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-2.5 text-ink">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-burdeos" /> <span>{b}</span>
-              </li>
-            ))}
-          </ul>
+          <CheckList items={data.bullets} className="mt-6" />
 
           <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cómo trabajamos</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
