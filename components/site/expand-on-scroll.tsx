@@ -6,24 +6,29 @@ import { useEffect, useRef, useState, type ReactNode } from "react"
  * Banda que empieza "dentro de un contenedor" (más estrecha, con esquinas
  * redondeadas) y se ensancha hasta ocupar todo el ancho a medida que se hace
  * scroll (estilo letaido.com). Progreso 0→1 según la posición en el viewport.
+ * El margen inicial es proporcional al ancho (con tope) para que en móvil no
+ * quede demasiado estrecha.
  */
 export function ExpandOnScroll({
   children,
   className = "",
-  minHeight = 300,
-  maxHeight = 480,
-  maxInset = 56,
-  maxRadius = 28,
+  minHeight = 260,
+  maxHeight = 460,
+  insetRatio = 0.07,
+  maxInset = 130,
+  maxRadius = 32,
 }: {
   children: ReactNode
   className?: string
   minHeight?: number
   maxHeight?: number
+  insetRatio?: number
   maxInset?: number
   maxRadius?: number
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [p, setP] = useState(0)
+  const [w, setW] = useState(1280)
 
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -35,6 +40,7 @@ export function ExpandOnScroll({
       raf = 0
       const el = ref.current
       if (!el) return
+      setW(window.innerWidth)
       const top = el.getBoundingClientRect().top
       const vh = window.innerHeight
       const start = vh * 0.85 // contraído cuando el borde superior está abajo
@@ -55,7 +61,8 @@ export function ExpandOnScroll({
     }
   }, [])
 
-  const inset = maxInset * (1 - p)
+  const startInset = Math.min(maxInset, w * insetRatio)
+  const inset = startInset * (1 - p)
   const radius = maxRadius * (1 - p)
   const height = minHeight + (maxHeight - minHeight) * p
 

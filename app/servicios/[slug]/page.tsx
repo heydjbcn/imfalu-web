@@ -12,6 +12,7 @@ import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
 import { AnswerBlock } from "@/components/site/answer-block"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
@@ -122,9 +123,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </div>
       </section>
 
-      {/* Banda de imagen */}
-      <section className="relative h-[240px] w-full overflow-hidden bg-ink md:h-[380px]">
-        <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+      {/* Banda de imagen (se ensancha al hacer scroll) */}
+      <section className="bg-cream py-6 sm:py-8">
+        <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
+          <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
