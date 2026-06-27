@@ -14,15 +14,15 @@ function fmtShort(d: string) {
 
 // "pastilla" interna de cada item del nav (mantiene el área de hover a toda altura para el mega-menú)
 const pill =
-  "flex items-center gap-1 rounded-full px-3.5 py-2 text-sm font-medium text-ink/80 transition-colors group-hover:bg-ink/[0.05] group-hover:text-burdeos"
+  "flex items-center gap-1 whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-ink/80 transition-colors group-hover:bg-ink/[0.05] group-hover:text-burdeos"
 
 export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: BlogPost[]; blogClusters?: string[] }) {
   const [open, setOpen] = useState(false)
   return (
     <header className="sticky top-0 z-50">
       <div className="container-x">
-        <div className="mt-3 flex h-16 items-center justify-between gap-4 rounded-2xl border border-line/70 bg-white/80 pl-5 pr-3 shadow-[0_8px_30px_rgb(36,31,27,0.06)] ring-1 ring-white/40 backdrop-blur-xl">
-          <Link href="/" className="flex items-center" aria-label={site.name}>
+        <div className="mt-3 flex h-16 items-center justify-between gap-2 rounded-2xl border border-line/70 bg-white/80 pl-4 pr-2 shadow-[0_8px_30px_rgb(36,31,27,0.06)] ring-1 ring-white/40 backdrop-blur-xl">
+          <Link href="/" className="flex shrink-0 items-center" aria-label={site.name}>
             <Image src="/brand/logo.png" alt={site.name} width={150} height={51} priority className="h-8 w-auto" />
           </Link>
 
@@ -109,19 +109,19 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                   </div>
                 </div>
               ) : (
-                <Link key={n.href} href={n.href} className="rounded-full px-3.5 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-ink/[0.05] hover:text-burdeos">
+                <Link key={n.href} href={n.href} className="whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-ink/80 transition-colors hover:bg-ink/[0.05] hover:text-burdeos">
                   {n.label}
                 </Link>
               )
             )}
           </nav>
 
-          <div className="hidden items-center gap-1.5 lg:flex">
-            <a href={telLink} className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink/[0.05]">
+          <div className="hidden shrink-0 items-center gap-1.5 lg:flex">
+            <a href={telLink} className="flex items-center gap-2 whitespace-nowrap rounded-full px-3 py-2 text-sm font-semibold text-ink transition-colors hover:bg-ink/[0.05]">
               <Phone className="h-4 w-4 text-burdeos" />
               {site.phoneDisplay}
             </a>
-            <Link href="/contacto" className="group inline-flex items-center gap-1.5 rounded-full bg-burdeos px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-burdeos-dark hover:shadow-md">
+            <Link href="/contacto" className="group inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-burdeos px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-burdeos-dark hover:shadow-md">
               Pide presupuesto
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
