@@ -13,7 +13,7 @@ export function BrandWatermark({ className = "" }: { className?: string }) {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/brand/logo-watermark.webp"
-        alt=""
+        alt="IMFALÚ"
         className="w-[185%] max-w-none opacity-90 md:w-[112%]"
       />
     </span>

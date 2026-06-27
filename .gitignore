@@ -45,3 +45,6 @@ next-env.d.ts
 
 # GEO eval (datasets, prompts y resultados del test de ranking)
 /geo-eval
+
+# Originales de trabajo (fotos reales + plan de blog), no desplegar
+/Imfalu-fotos-antigua/
