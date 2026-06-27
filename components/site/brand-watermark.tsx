@@ -14,7 +14,7 @@ export function BrandWatermark({ className = "" }: { className?: string }) {
       <img
         src="/brand/logo-watermark.webp"
         alt=""
-        className="w-[150%] max-w-none opacity-90 md:w-[78%]"
+        className="w-[185%] max-w-none opacity-90 md:w-[112%]"
       />
     </span>
   )
