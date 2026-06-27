@@ -173,9 +173,8 @@ export default function HomePage() {
       </section>
 
       {/* SECTORES */}
-      <section className="relative isolate overflow-hidden bg-sand py-20">
-        <BrandWatermark />
-        <div className="container-x relative z-10">
+      <section className="bg-cream py-20">
+        <div className="container-x">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Sectores</p>
             <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios que cuidamos</h2>
