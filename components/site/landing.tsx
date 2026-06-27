@@ -7,6 +7,7 @@ import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
 import { AnswerBlock } from "@/components/site/answer-block"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 
 export interface LandingData {
   slug: string
@@ -86,6 +87,13 @@ export function Landing({ data }: { data: LandingData }) {
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Banda de imagen (se ensancha al hacer scroll) */}
+      <section className="bg-cream py-6 sm:py-8">
+        <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
+          <Image src={`/${data.slug}.webp`} alt={`${data.h1} en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">

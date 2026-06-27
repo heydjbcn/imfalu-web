@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { MapPin, Target, Wrench, CheckCircle2 } from "lucide-react"
 import { projects, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
 import { ProjectGallery } from "@/components/site/project-gallery"
 import { FaqSection } from "@/components/site/faq-section"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 
 const FAQS = [
   { q: "¿En qué tipo de edificios trabajáis?", a: "En oficinas, hoteles, comunidades y edificios singulares con fachada de aluminio y cristal o muro cortina. Algunos ejemplos: WTC Cornellà, Edificio Ski (Meliá), Parc Vallsolana, Torre Tarragona y Hotel Roselló." },
@@ -33,6 +35,13 @@ export default function ProyectosPage() {
             y cristal intervenida en {site.area}.
           </p>
         </div>
+      </section>
+
+      {/* Banda de imagen (se ensancha al hacer scroll) */}
+      <section className="bg-cream pb-6 sm:pb-8">
+        <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
+          <Image src="/headers/proyectos.webp" alt={`Proyectos de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       <div className="container-x space-y-16 py-16">

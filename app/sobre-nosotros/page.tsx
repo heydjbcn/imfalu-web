@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import {
   Award, Building2, Ruler, TrendingUp, ShieldCheck, Leaf, Clock,
   Hotel, Users, Landmark, ArrowRight, ChevronRight,
@@ -8,6 +9,7 @@ import { services, site } from "@/lib/site"
 import { CtaBand } from "@/components/site/cta-band"
 import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 
 const FAQS = [
   { q: "¿Cuántos años de experiencia tiene IMFALÚ?", a: "Más de 30 años especializados en fachadas de aluminio y cristal, con más de 300.000 m² intervenidos y más de 150 edificios en Barcelona y su área metropolitana." },
@@ -60,6 +62,13 @@ export default function SobreNosotrosPage() {
             fachadas de aluminio y cristal, con más de 300.000 m² intervenidos en Barcelona y su área metropolitana.
           </p>
         </div>
+      </section>
+
+      {/* Banda de imagen (se ensancha al hacer scroll) */}
+      <section className="bg-cream pb-6 sm:pb-8">
+        <ExpandOnScroll className="bg-ink" minHeight={240} maxHeight={440}>
+          <Image src="/headers/empresa.webp" alt={`Equipo de IMFALÚ trabajando en una fachada de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       {/* Hitos */}
