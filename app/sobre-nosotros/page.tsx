@@ -73,12 +73,12 @@ export default function SobreNosotrosPage() {
 
       {/* Hitos */}
       <section className="border-b bg-white">
-        <div className="container-x grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4 md:divide-x md:gap-y-0">
-          {HITOS.map((h, i) => (
-            <div key={h.v} className={i > 0 ? "md:pl-8" : ""}>
-              <h.icon className="h-6 w-6 text-burdeos" />
+        <div className="container-x grid grid-cols-2 gap-y-8 py-12 text-center md:flex md:flex-wrap md:items-start md:justify-center md:gap-y-0 md:divide-x md:divide-line">
+          {HITOS.map((h) => (
+            <div key={h.v} className="px-4 md:px-10">
+              <h.icon className="mx-auto h-6 w-6 text-burdeos" />
               <div className="mt-3 whitespace-nowrap text-2xl font-bold text-ink md:text-3xl">{h.v}</div>
-              <div className="mt-1 text-sm text-warm">{h.d}</div>
+              <div className="mx-auto mt-1 max-w-[170px] text-sm text-warm">{h.d}</div>
             </div>
           ))}
         </div>

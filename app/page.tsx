@@ -64,13 +64,13 @@ export default function HomePage() {
 
       {/* STATS */}
       <section className="border-b bg-white">
-        <div className="container-x grid grid-cols-2 gap-y-8 py-12 md:grid-cols-4 md:divide-x md:gap-y-0">
-          {site.stats.map((s, i) => (
-            <div key={s.label} className={i > 0 ? "md:pl-8" : ""}>
+        <div className="container-x grid grid-cols-2 gap-y-8 py-12 text-center md:flex md:flex-wrap md:items-center md:justify-center md:gap-y-0 md:divide-x md:divide-line">
+          {site.stats.map((s) => (
+            <div key={s.label} className="px-4 md:px-10">
               <div className="whitespace-nowrap text-2xl font-bold text-burdeos sm:text-3xl md:text-4xl">
                 {s.value}<span className="text-warm">{s.suffix}</span>
               </div>
-              <div className="mt-1 text-sm text-warm">{s.label}</div>
+              <div className="mx-auto mt-1 max-w-[170px] text-sm text-warm">{s.label}</div>
             </div>
           ))}
         </div>
