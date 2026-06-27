@@ -13,6 +13,7 @@ export async function LocalBusinessJsonLd() {
     url: site.url,
     image: `${site.url}/og.jpg`,
     telephone: `+34${site.phone}`,
+    priceRange: "€€",
     areaServed: site.area,
     address: {
       "@type": "PostalAddress",

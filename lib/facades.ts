@@ -49,7 +49,7 @@ export const facades: Facade[] = [
     slug: "muro-cortina-aluminio",
     metaTitle: "Muro cortina de aluminio en Barcelona: mantenimiento",
     metaDescription:
-      "Muro cortina de aluminio en Barcelona: ventajas del aluminio, mantenimiento, reparación de perfilería y regeneración del lacado. Trabajo en altura certificado.",
+      "Muro cortina de aluminio en Barcelona: mantenimiento, reparación de perfilería y regeneración del lacado, con trabajo en altura certificado.",
     metaKeywords: ["muro cortina de aluminio", "perfilería de aluminio fachada", "lacado aluminio fachada", "mantenimiento muro cortina aluminio"],
     breadcrumb: [{ label: "Inicio", href: "/" }, { label: "Muro cortina", href: "/fachadas/muro-cortina" }, { label: "De aluminio" }],
     kicker: "Tipos de fachada · Muro cortina de aluminio",
@@ -149,7 +149,7 @@ export const facades: Facade[] = [
   },
   {
     slug: "fachada-aluminio",
-    metaTitle: "Fachada de aluminio en Barcelona: mantenimiento y regeneración",
+    metaTitle: "Fachada de aluminio en Barcelona: mantenimiento",
     metaDescription:
       "Fachada de aluminio en Barcelona: ventajas del aluminio, paneles, regeneración del lacado y mantenimiento. Recuperamos la fachada sin sustituirla.",
     metaKeywords: ["fachada de aluminio Barcelona", "fachada metálica", "regeneración lacado aluminio", "paneles de aluminio fachada"],
@@ -183,7 +183,7 @@ export const facades: Facade[] = [
   },
   {
     slug: "rehabilitacion",
-    metaTitle: "Rehabilitación de fachadas de aluminio y cristal en Barcelona",
+    metaTitle: "Rehabilitación de fachadas en Barcelona",
     metaDescription:
       "Rehabilitación de fachadas de aluminio y cristal en Barcelona. +30 años, +300.000 m² y +150 edificios. Diagnóstico, regeneración y reparación.",
     metaKeywords: ["rehabilitación de fachadas Barcelona", "rehabilitar fachada aluminio", "rehabilitación fachada cristal", "rehabilitación fachada acristalada"],

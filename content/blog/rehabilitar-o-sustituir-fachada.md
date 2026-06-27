@@ -1,6 +1,6 @@
 ---
 title: "¿Rehabilitar o sustituir la fachada? Cómo decidir"
-description: "Rehabilitar o sustituir la fachada de aluminio y cristal: cuándo compensa cada opción, qué cuesta menos y cómo decidir con un diagnóstico previo en Barcelona."
+description: "Rehabilitar o sustituir la fachada de aluminio y cristal: cuándo compensa cada opción y cómo decidir con un diagnóstico previo en Barcelona."
 date: "2026-06-23"
 cluster: "Rehabilitación"
 keywords: ["rehabilitar o sustituir fachada", "rehabilitación de fachada Barcelona", "regeneración de fachada"]

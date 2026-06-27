@@ -152,9 +152,9 @@ export const services: Service[] = [
       "Programa de revisiones periódicas y pequeñas actuaciones sobre el cerramiento para conservar la fachada en buen estado y alargar su vida útil, antes de que aparezcan los problemas.",
     icon: "ShieldCheck",
     image: "/servicios/mantenimiento-fachadas.jpg",
-    seoTitle: "Mantenimiento preventivo de fachadas de aluminio y cristal en Barcelona",
+    seoTitle: "Mantenimiento preventivo de fachadas en Barcelona",
     metaDescription:
-      "Mantenimiento preventivo de fachadas de aluminio y cristal en Barcelona: revisiones programadas de sellados, juntas y anclajes para evitar filtraciones y desprendimientos.",
+      "Mantenimiento preventivo de fachadas de aluminio y cristal en Barcelona: revisiones programadas de sellados y juntas para evitar filtraciones y desprendimientos.",
     keywords: ["mantenimiento preventivo de fachadas", "mantenimiento preventivo muro cortina", "revisión de fachada Barcelona"],
     secondaryKeywords: ["revisión de sellados", "inspección de fachada", "conservación de fachada", "contrato de mantenimiento"],
     answer:
@@ -177,7 +177,7 @@ export const services: Service[] = [
       "Reparación de las incidencias que ya se han producido en la fachada —cristales, sellados, perfilería— con reposición y acopio de materiales, y servicio de urgencias 24 h.",
     icon: "Wrench",
     image: "/servicios/reparacion.jpg",
-    seoTitle: "Mantenimiento correctivo de fachadas de aluminio y cristal en Barcelona",
+    seoTitle: "Mantenimiento correctivo de fachadas en Barcelona",
     metaDescription:
       "Mantenimiento correctivo de fachadas en Barcelona: resolvemos incidencias del cerramiento (cristales, sellados, perfilería) con reposición y urgencias 24 h.",
     keywords: ["mantenimiento correctivo de fachadas", "reparación de incidencias fachada", "urgencias fachada Barcelona"],

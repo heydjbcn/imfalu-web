@@ -35,7 +35,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                     {g.children.map((c) => (
                       <Link key={c.href} href={c.href} className="group/i flex items-start gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
                         <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
-                          <Image src={c.img} alt="" fill className="object-cover" sizes="40px" />
+                          <Image src={c.img} alt={c.label} fill className="object-cover" sizes="40px" />
                         </span>
                         <span className="min-w-0">
                           <span className="block text-sm font-semibold leading-tight text-ink group-hover/i:text-burdeos">{c.label}</span>
@@ -49,7 +49,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                   </div>
                   {/* Panel destacado (imagen grande + CTA) */}
                   <Link href={g.featured.href} className="group/f relative w-[220px] shrink-0 overflow-hidden rounded-xl">
-                    <Image src={g.featured.img} alt="" fill className="object-cover transition-transform duration-500 group-hover/f:scale-105" sizes="220px" />
+                    <Image src={g.featured.img} alt={g.featured.title} fill className="object-cover transition-transform duration-500 group-hover/f:scale-105" sizes="220px" />
                     <span className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                     <span className="absolute inset-x-0 bottom-0 p-4">
                       <span className="block text-[15px] font-semibold leading-tight text-white">{g.featured.title}</span>
@@ -76,7 +76,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                       {blogPosts.map((p) => (
                         <Link key={p.slug} href={`/blog/${p.slug}`} className="group/i flex gap-2.5 rounded-xl p-2.5 transition-colors hover:bg-cream">
                           <span className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-cream ring-1 ring-line">
-                            <Image src={p.cover} alt="" fill className="object-cover" sizes="48px" />
+                            <Image src={p.cover} alt={p.title} fill className="object-cover" sizes="48px" />
                           </span>
                           <span className="min-w-0">
                             <span className="line-clamp-2 text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{p.title}</span>
@@ -137,7 +137,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                     <div key={c.href} className="py-1.5">
                       <Link href={c.href} onClick={() => setOpen(false)} className="flex items-center gap-3 text-sm font-medium text-ink">
                         <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-lg bg-cream">
-                          <Image src={c.img} alt="" fill className="object-cover" sizes="36px" />
+                          <Image src={c.img} alt={c.label} fill className="object-cover" sizes="36px" />
                         </span>
                         {c.label}
                       </Link>
