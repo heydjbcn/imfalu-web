@@ -9,6 +9,7 @@ import { SectorsTabs } from "@/components/site/sectors-tabs"
 import { services, projects, site, waLink, telLink } from "@/lib/site"
 import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
+import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
@@ -54,9 +55,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BANDA DE IMAGEN */}
-      <section className="relative h-[280px] w-full overflow-hidden bg-ink md:h-[440px]">
-        <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+      {/* BANDA DE IMAGEN (se ensancha al hacer scroll, estilo letaido) */}
+      <section className="bg-cream py-6 sm:py-8">
+        <ExpandOnScroll className="bg-ink" minHeight={260} maxHeight={460} maxInset={56} maxRadius={28}>
+          <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+        </ExpandOnScroll>
       </section>
 
       {/* STATS */}
