@@ -1,7 +1,7 @@
 ---
 title: "Muro cortina de aluminio: soluciones eficientes y duraderas"
 description: "Descubre las ventajas del muro cortina de aluminio para tus proyectos arquitectónicos."
-date: "2026-07-10T12:25:00+02:00"
+date: "2026-07-09T12:25:00+02:00"
 cluster: "Muro cortina"
 keywords: ["muro cortina de aluminio","fachada acristalada","mantenimiento de fachadas"]
 cover: "/blog/muro-cortina-de-aluminio/muro-cortina-de-aluminio-cover.jpg"

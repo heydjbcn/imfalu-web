@@ -1,7 +1,7 @@
 ---
 title: "Ahorro energético a través de la fachada"
 description: "Cómo conseguir ahorro energético a través de la fachada de aluminio y cristal: control solar, estanqueidad y aislamiento en edificios de Barcelona."
-date: "2026-07-06T12:20:00+02:00"
+date: "2026-07-05T12:20:00+02:00"
 cluster: "Fotocatálisis"
 keywords: ["ahorro energético fachada", "eficiencia energética fachada", "control solar fachada"]
 cover: "/servicios/fotocatalisis.jpg"

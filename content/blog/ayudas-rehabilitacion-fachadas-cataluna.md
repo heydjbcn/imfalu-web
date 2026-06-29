@@ -1,7 +1,7 @@
 ---
 title: "Ayudas a la rehabilitación de fachadas en Cataluña"
 description: "Ayudas a la rehabilitación de fachadas en Cataluña: qué subvenciona, quién puede pedirlas y cómo encaja la rehabilitación de fachada de aluminio y cristal."
-date: "2026-07-05T12:40:00+02:00"
+date: "2026-07-04T12:40:00+02:00"
 cluster: "Rehabilitación"
 keywords: ["ayudas rehabilitación fachadas Cataluña", "subvenciones rehabilitación fachada", "ayudas fachada Barcelona"]
 cover: "/proyectos/ski/1.jpg"

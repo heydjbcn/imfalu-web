@@ -1,7 +1,7 @@
 ---
 title: "Beneficios del muro cortina en edificios de oficinas"
 description: "Beneficios del muro cortina en oficinas: luz natural, imagen, eficiencia y ligereza. Qué aporta y qué mantenimiento exige en edificios de Barcelona."
-date: "2026-07-02T12:15:00+02:00"
+date: "2026-07-01T12:15:00+02:00"
 cluster: "Muro cortina"
 keywords: ["beneficios del muro cortina", "muro cortina oficinas", "fachada ligera edificio"]
 cover: "/proyectos/ski/2.jpg"

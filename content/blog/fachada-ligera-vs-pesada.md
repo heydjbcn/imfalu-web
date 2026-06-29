@@ -1,7 +1,7 @@
 ---
 title: "Fachada ligera vs pesada: ¿Cuál elegir para tu edificio?"
 description: "Descubre las diferencias entre fachada ligera vs pesada y cómo afectan al mantenimiento y estética de tu edificio."
-date: "2026-07-09T12:12:00+02:00"
+date: "2026-07-08T12:12:00+02:00"
 cluster: "Tipos de fachada"
 keywords: ["fachada ligera vs pesada","tipos de fachada","mantenimiento fachadas"]
 cover: "/blog/fachada-ligera-vs-pesada/fachada-ligera-vs-pesada-cover.jpg"

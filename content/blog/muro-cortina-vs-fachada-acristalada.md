@@ -1,7 +1,7 @@
 ---
 title: "Muro cortina vs fachada acristalada: ¿cuál elegir?"
 description: "Descubre las diferencias entre muro cortina y fachada acristalada para tu proyecto en Barcelona."
-date: "2026-07-08T12:23:00+02:00"
+date: "2026-07-07T12:23:00+02:00"
 cluster: "Tipos de fachada"
 keywords: ["muro cortina vs fachada acristalada","muro cortina","fachada acristalada"]
 cover: "/blog/muro-cortina-vs-fachada-acristalada/muro-cortina-vs-fachada-acristalada-cover.jpg"

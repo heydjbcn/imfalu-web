@@ -1,7 +1,7 @@
 ---
 title: "Tipos de muro cortina: características y aplicaciones"
 description: "Descubre los tipos de muro cortina, sus características y aplicaciones en fachadas de aluminio y cristal."
-date: "2026-07-07T12:41:00+02:00"
+date: "2026-07-06T12:41:00+02:00"
 cluster: "Muro cortina"
 keywords: ["tipos de muro cortina","muro cortina de aluminio","muro cortina de cristal"]
 cover: "/blog/tipos-de-muro-cortina/tipos-de-muro-cortina-cover.jpg"

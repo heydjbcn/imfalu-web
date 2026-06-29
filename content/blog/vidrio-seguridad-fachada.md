@@ -1,7 +1,7 @@
 ---
 title: "Vidrio de seguridad en fachadas: templado y laminar"
 description: "Vidrio de seguridad en fachadas: diferencias entre templado y laminar, cuándo es obligatorio y cuál reponer en una fachada de aluminio y cristal en Barcelona."
-date: "2026-07-04T12:10:00+02:00"
+date: "2026-07-03T12:10:00+02:00"
 cluster: "Reparación y vidrio"
 keywords: ["vidrio de seguridad fachada", "vidrio templado", "vidrio laminar"]
 cover: "/proyectos/hotel/1.jpg"

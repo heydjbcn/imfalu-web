@@ -1,7 +1,7 @@
 ---
 title: "Señales de que tu fachada necesita mantenimiento"
 description: "Las señales de que una fachada de aluminio y cristal necesita mantenimiento: manchas, sellados agrietados, vidrios con vaho, óxido y ruidos. Guía para Barcelona."
-date: "2026-07-03T12:35:00+02:00"
+date: "2026-07-02T12:35:00+02:00"
 cluster: "Mantenimiento"
 keywords: ["señales fachada necesita mantenimiento", "fachada deteriorada", "mantenimiento de fachada Barcelona"]
 cover: "/servicios/mantenimiento-fachadas.jpg"
