@@ -9,7 +9,7 @@ export const site = {
   phone: "697158466",
   phoneDisplay: "697 15 84 66",
   whatsapp: "34697158466",
-  email: "info@imfalu.es",
+  email: "mtvaldivieso@imfalu.com",
   city: "Barcelona",
   area: "Barcelona y área metropolitana",
   address: {
