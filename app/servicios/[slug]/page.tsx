@@ -8,6 +8,7 @@ import {
 } from "lucide-react"
 import { services, site } from "@/lib/site"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
+import { SECTIONS_BY_SLUG } from "@/lib/service-content"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
@@ -41,6 +42,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   const s = services.find((x) => x.slug === slug)
   if (!s) notFound()
   const faqs = FAQ_BY_SLUG[slug] ?? []
+  const sections = SECTIONS_BY_SLUG[slug] ?? []
   const SUBS = ["mantenimiento-preventivo", "mantenimiento-correctivo"]
   const others = services.filter((x) => x.slug !== slug && !SUBS.includes(x.slug))
   const TIPOS_LINKS = [
@@ -125,6 +127,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       <div className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
           <p className="text-lg leading-relaxed text-warm">{s.intro}</p>
+
+          {/* Secciones de profundidad (GEO: contenido citable) */}
+          {sections.map((sec) => (
+            <section key={sec.h}>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{sec.h}</h2>
+              <div className="mt-4 space-y-4 leading-relaxed text-warm">
+                {sec.body.map((p) => (
+                  <p key={p}>{p}</p>
+                ))}
+              </div>
+            </section>
+          ))}
+
           {/* Qué incluye */}
           <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
           <CheckList items={s.bullets} className="mt-6" />
