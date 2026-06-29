@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const allPosts = getAllPosts()
-  const blogPosts = allPosts.slice(0, 4).map((p) => ({ slug: p.slug, title: p.title, cover: p.cover, date: p.date, cluster: p.cluster }))
+  const blogPosts = allPosts.slice(0, 6).map((p) => ({ slug: p.slug, title: p.title, cover: p.cover, date: p.date, cluster: p.cluster }))
   const blogClusters = Array.from(new Set(allPosts.map((p) => p.cluster)))
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
