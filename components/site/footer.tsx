@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, MapPin } from "lucide-react"
+import { Phone, MapPin, Mail } from "lucide-react"
 import { services, site, telLink } from "@/lib/site"
 
 const TIPOS = [
@@ -24,6 +24,9 @@ export function Footer() {
           </p>
           <a href={telLink} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-burdeos">
             <Phone className="h-4 w-4 text-burdeos" /> {site.phoneDisplay}
+          </a>
+          <a href={`mailto:${site.email}`} className="mt-2 flex items-center gap-2 text-sm text-white/60 hover:text-white">
+            <Mail className="h-4 w-4 text-burdeos" /> {site.email}
           </a>
           <p className="mt-2 flex items-center gap-2 text-sm text-white/60">
             <MapPin className="h-4 w-4 text-burdeos" /> {site.address.full}

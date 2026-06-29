@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Phone, MapPin, Clock, MessageCircle, ShieldCheck, BadgeCheck, Award, Navigation, ArrowUpRight } from "lucide-react"
+import { Phone, MapPin, Clock, MessageCircle, ShieldCheck, BadgeCheck, Award, Navigation, ArrowUpRight, Mail } from "lucide-react"
 import { site, telLink, waLink } from "@/lib/site"
 import { ContactForm } from "@/components/site/contact-form"
 
@@ -55,6 +55,7 @@ export default function ContactoPage() {
                 {[
                   { icon: Phone, label: "Teléfono", value: site.phoneDisplay, href: telLink, ext: false },
                   { icon: MessageCircle, label: "WhatsApp", value: "Escríbenos ahora", href: waLink("Hola, quiero información sobre una fachada."), ext: true },
+                  { icon: Mail, label: "Email", value: site.email, href: `mailto:${site.email}`, ext: false },
                   { icon: MapPin, label: "Zona", value: site.area },
                   { icon: Clock, label: "Horario", value: `${site.hours} · Urgencias 24 h` },
                 ].map((r) => {
