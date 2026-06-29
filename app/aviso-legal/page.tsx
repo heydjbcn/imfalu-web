@@ -24,6 +24,7 @@ export default function Page() {
         <br /><strong>Teléfono:</strong> {site.legal.phoneDisplay}
         <br /><strong>Email:</strong> <a href={`mailto:${site.email}`}>{site.email}</a>
         <br /><strong>Sitio web:</strong> {site.url}
+        <br /><strong>Datos registrales:</strong> {site.legal.registroMercantil}.
       </p>
 
       <h2>2. Objeto</h2>

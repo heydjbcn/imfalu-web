@@ -36,6 +36,7 @@ export const site = {
     razonSocial: "IMFALU 2021, S.L.",
     nif: "B61577045",
     phoneDisplay: "935 18 02 26",
+    registroMercantil: "Registro Mercantil de Barcelona, Tomo 30578, Folio 189, Hoja B-174917",
     updated: "27 de junio de 2026",
   },
   stats: [
