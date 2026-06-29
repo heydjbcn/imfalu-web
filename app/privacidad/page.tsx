@@ -58,7 +58,7 @@ export default function Page() {
       <p>No cedemos tus datos a terceros, salvo obligación legal. Para prestar el servicio nos apoyamos en proveedores que actúan como encargados del tratamiento:</p>
       <ul>
         <li><strong>Hetzner Online GmbH</strong> — alojamiento del sitio y servidores (Unión Europea).</li>
-        <li><strong>Resend</strong> — envío del correo electrónico generado por el formulario de contacto, cuando esté activo.</li>
+        <li><strong>Resend</strong> — envío del correo electrónico generado por el formulario de contacto.</li>
         <li><strong>Ahrefs</strong> — analítica web sin cookies y de forma agregada (no identifica a usuarios individuales).</li>
         <li><strong>Google (Google Maps)</strong> — mapa incrustado en la página de contacto.</li>
       </ul>
