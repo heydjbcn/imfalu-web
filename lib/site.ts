@@ -9,7 +9,7 @@ export const site = {
   phone: "697158466",
   phoneDisplay: "697 15 84 66",
   whatsapp: "34697158466",
-  email: "", // pendiente de confirmar email oficial
+  email: "info@imfalu.es",
   city: "Barcelona",
   area: "Barcelona y área metropolitana",
   address: {
@@ -30,6 +30,13 @@ export const site = {
   social: {
     linkedin: "", // rellenar con la URL real
     instagram: "",
+  },
+  // Datos fiscales (páginas legales)
+  legal: {
+    razonSocial: "IMFALU 2021, S.L.",
+    nif: "B61577045",
+    phoneDisplay: "935 18 02 26",
+    updated: "27 de junio de 2026",
   },
   stats: [
     { value: "30", suffix: " años", label: "de experiencia en el sector" },
