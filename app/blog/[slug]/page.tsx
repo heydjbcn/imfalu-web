@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm"
 import { Clock, ChevronRight, ArrowRight } from "lucide-react"
 import { getAllPosts, getPost, tableOfContents, slugifyHeading, isPublished } from "@/lib/blog"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
+import { fmtDate } from "@/lib/format"
 import { site } from "@/lib/site"
 
 export const revalidate = 1800
@@ -32,9 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
-function fmt(d: string) {
-  return d ? new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" }) : ""
-}
+const fmt = (d: string) => fmtDate(d, "long")
 
 function toText(c: ReactNode): string {
   if (typeof c === "string") return c
@@ -160,7 +159,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       </span>
                       <span className="text-sm font-semibold text-ink">Leer más</span>
                       <span className="h-px flex-1 bg-line" />
-                      <span className="shrink-0 text-xs text-warm">{new Date(r.date).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" })}</span>
+                      <span className="shrink-0 text-xs text-warm">{fmtDate(r.date)}</span>
                     </div>
                   </div>
                 </Link>

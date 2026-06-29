@@ -14,7 +14,9 @@ export function BrandWatermark({ className = "" }: { className?: string }) {
       <img
         src="/brand/logo-watermark.webp"
         alt="IMFALÚ"
-        className="w-[185%] max-w-none opacity-90 md:w-[112%]"
+        width={1400}
+        height={541}
+        className="h-auto w-[185%] max-w-none opacity-90 md:w-[112%]"
       />
     </span>
   )

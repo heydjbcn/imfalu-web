@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight, Clock } from "lucide-react"
+import { fmtDate } from "@/lib/format"
 
 export type PostCard = {
   slug: string
@@ -15,10 +16,7 @@ export type PostCard = {
   readingMin: number
 }
 
-function fmt(date: string) {
-  if (!date) return ""
-  return new Date(date).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" })
-}
+const fmt = (date: string) => fmtDate(date)
 
 function Chip({ children }: { children: React.ReactNode }) {
   return (

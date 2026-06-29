@@ -5,12 +5,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { Phone, Menu, X, ChevronDown, ArrowRight } from "lucide-react"
 import { navMenu, navLinks, site, telLink } from "@/lib/site"
+import { fmtDate } from "@/lib/format"
 
 type BlogPost = { slug: string; title: string; cover: string; date: string; cluster: string }
-
-function fmtShort(d: string) {
-  return d ? new Date(d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" }) : ""
-}
 
 // "pastilla" interna de cada item del nav (mantiene el área de hover a toda altura para el mega-menú)
 const pill =
@@ -89,7 +86,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
                             </span>
                             <span className="min-w-0">
                               <span className="line-clamp-2 text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{p.title}</span>
-                              <span className="mt-0.5 block text-[11px] text-warm">{fmtShort(p.date)}</span>
+                              <span className="mt-0.5 block text-[11px] text-warm">{fmtDate(p.date)}</span>
                             </span>
                           </Link>
                         ))}
