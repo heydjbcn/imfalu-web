@@ -13,11 +13,11 @@ export const site = {
   city: "Barcelona",
   area: "Barcelona y área metropolitana",
   address: {
-    street: "Carrer d'Antoni Alcalá Galiano, 3",
+    street: "Carrer d'Antoni Alcalá Galiano, 3 bis",
     postalCode: "08940",
     locality: "Cornellà de Llobregat",
     region: "Barcelona",
-    full: "Carrer d'Antoni Alcalá Galiano, 3, 08940 Cornellà de Llobregat (Barcelona)",
+    full: "Carrer d'Antoni Alcalá Galiano, 3 bis, 08940 Cornellà de Llobregat (Barcelona)",
     lat: 41.352068,
     lng: 2.0833613,
     placeId: "ChIJr133M5-ipBIR7he5QqpBNbY",
