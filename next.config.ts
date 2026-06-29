@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "standalone",
   outputFileTracingRoot: __dirname,
-  images: { unoptimized: true },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2678400, // 31 días
+  },
   // 301 del WordPress viejo (imfalu.com) a las URLs de la web nueva.
   async redirects() {
     return [
