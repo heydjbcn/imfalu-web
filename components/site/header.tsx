@@ -21,7 +21,7 @@ export function Header({ blogPosts = [], blogClusters = [] }: { blogPosts?: Blog
   return (
     <header className="sticky top-0 z-50">
       <div className="container-x">
-        <div className="mt-3 flex h-16 items-center justify-between gap-2 rounded-2xl bg-gradient-to-b from-white/25 to-white/5 pl-4 pr-2 backdrop-blur-3xl backdrop-saturate-200 backdrop-brightness-110">
+        <div className="mt-3 flex h-16 items-center justify-between gap-2 rounded-2xl bg-gradient-to-b from-white/15 to-white/[0.03] pl-4 pr-2 backdrop-blur-[48px] backdrop-saturate-[2.5] backdrop-brightness-110">
           <Link href="/" className="flex shrink-0 items-center" aria-label={site.name}>
             <Image src="/brand/logo.png" alt={site.name} width={150} height={51} priority className="h-8 w-auto" />
           </Link>
