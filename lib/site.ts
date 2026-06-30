@@ -6,8 +6,8 @@ export const site = {
   tagline: "Mantenimiento y rehabilitación de fachadas de aluminio y cristal",
   // Dominio final (se ajusta al apuntar imfalu.com)
   url: "https://imfalu.com",
-  phone: "697158466",
-  phoneDisplay: "697 15 84 66",
+  phone: "935180226",
+  phoneDisplay: "935 18 02 26",
   whatsapp: "34697158466",
   email: "mtvaldivieso@imfalu.com",
   city: "Barcelona",
