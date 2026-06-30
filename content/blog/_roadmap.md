@@ -9,7 +9,7 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [x] beneficios-muro-cortina-oficinas
 - [x] fachada-ligera-vs-pesada
 - [x] muro-cortina-de-aluminio
-- [ ] vidrio-en-el-muro-cortina
+- [x] vidrio-en-el-muro-cortina
 - [ ] problemas-muro-cortina
 - [ ] vida-util-muro-cortina
 - [ ] fachada-doble-piel
