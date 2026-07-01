@@ -4,6 +4,7 @@ import { site, services, projects, navMenu, navLinks, type Service, type Project
 import { facades, type Facade } from "@/lib/facades"
 import { siteCaText, servicesCaText, projectsCaText, navMenuCa, navLinksCa } from "@/lib/site-ca"
 import { facadesCaText } from "@/lib/facades-ca"
+import { tGallery } from "@/lib/gallery-ca"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
 import { SECTIONS_BY_SLUG } from "@/lib/service-content"
 import { FAQ_BY_SLUG_CA, PROCESS_CA } from "@/lib/service-faqs-ca"
@@ -25,7 +26,7 @@ export function getServices(lang: Locale): Service[] {
   return services.map((s) => {
     const t = servicesCaText[s.slug]
     if (!t) return s
-    return { ...s, title: t.title, short: t.short, description: t.description, seoTitle: t.seoTitle, metaDescription: t.metaDescription, answer: t.answer, intro: t.intro, bullets: t.bullets, when: t.when, note: t.note ?? s.note }
+    return { ...s, title: t.title, short: t.short, description: t.description, seoTitle: t.seoTitle, metaDescription: t.metaDescription, answer: t.answer, intro: t.intro, bullets: t.bullets, when: t.when, note: t.note ?? s.note, gallery: tGallery(s.gallery) }
   })
 }
 
@@ -93,7 +94,7 @@ export function getFacades(lang: Locale): Facade[] {
       if (i === (f.breadcrumb!.length - 1)) return { ...b, label: t.crumbLast }
       return b
     })
-    return { ...f, metaTitle: t.metaTitle, metaDescription: t.metaDescription, kicker: t.kicker, h1: t.h1, term: t.term, answer: t.answer, intro: t.intro, bullets: t.bullets, faqs: t.faqs, breadcrumb }
+    return { ...f, metaTitle: t.metaTitle, metaDescription: t.metaDescription, kicker: t.kicker, h1: t.h1, term: t.term, answer: t.answer, intro: t.intro, bullets: t.bullets, faqs: t.faqs, breadcrumb, gallery: tGallery(f.gallery) }
   })
 }
 
