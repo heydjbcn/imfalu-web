@@ -8,7 +8,8 @@ import { WhatsAppFab } from "@/components/site/whatsapp-fab"
 import { LocalBusinessJsonLd, SiteJsonLd } from "@/components/site/json-ld"
 import { site } from "@/lib/site"
 import { getAllPosts } from "@/lib/blog"
-import { locales, hasLocale, defaultLocale, ogLocale, type Locale } from "@/lib/i18n"
+import { locales, hasLocale, defaultLocale, ogLocale, getDictionary, type Locale } from "@/lib/i18n"
+import { getNavMenu, getNavLinks } from "@/lib/content"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -58,17 +59,18 @@ export default async function RootLayout({
 }: Readonly<{ children: React.ReactNode; params: Promise<{ lang: string }> }>) {
   const { lang } = await params
   const l: Locale = hasLocale(lang) ? lang : defaultLocale
+  const dict = await getDictionary(l)
   const allPosts = getAllPosts()
   const blogPosts = allPosts.slice(0, 6).map((p) => ({ slug: p.slug, title: p.title, cover: p.cover, date: p.date, cluster: p.cluster }))
   const blogClusters = Array.from(new Set(allPosts.map((p) => p.cluster)))
   return (
     <html lang={l} className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-ink" suppressHydrationWarning>
-        <TopBar />
-        <Header blogPosts={blogPosts} blogClusters={blogClusters} />
+        <TopBar lang={l} dict={dict} />
+        <Header lang={l} dict={dict} navMenu={getNavMenu(l)} navLinks={getNavLinks(l)} blogPosts={blogPosts} blogClusters={blogClusters} />
         <main className="flex-1 bg-white">{children}</main>
-        <Footer />
-        <WhatsAppFab />
+        <Footer lang={l} dict={dict} />
+        <WhatsAppFab dict={dict} />
         <LocalBusinessJsonLd />
         <SiteJsonLd />
         <script src="https://analytics.ahrefs.com/analytics.js" data-key="Lx4Y+tCDNX95vOsSDoQidw" async />

@@ -1,12 +1,13 @@
 import { waLink } from "@/lib/site"
+import type { Dict } from "@/lib/i18n"
 
-export function WhatsAppFab() {
+export function WhatsAppFab({ dict }: { dict: Dict }) {
   return (
     <a
-      href={waLink("Hola, me gustaría información sobre el mantenimiento/rehabilitación de una fachada.")}
+      href={waLink(dict.whatsapp.msg)}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Escríbenos por WhatsApp"
+      aria-label={dict.whatsapp.aria}
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/20 transition-transform hover:scale-105"
     >
       <svg viewBox="0 0 32 32" className="h-7 w-7 fill-white" aria-hidden="true">
