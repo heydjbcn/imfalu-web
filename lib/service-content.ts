@@ -63,6 +63,13 @@ export const SECTIONS_BY_SLUG: Record<string, { h: string; body: string[] }[]> =
         "Para las situaciones que no esperan —un cristal roto en altura, un elemento suelto con riesgo de caída, una filtración activa— disponemos de servicio de urgencias 24 h en Barcelona y área metropolitana, priorizando siempre la seguridad antes que cualquier otra cosa.",
       ],
     },
+    {
+      h: "Garantía en los cambios de vidrio y en la mano de obra",
+      body: [
+        "Trabajamos con la máxima premura en el cambio de los elementos constructivos dañados que afectan a las prestaciones de la fachada —vidrios, paneles, perfilería—, ya sean roturas derivadas de un accidente o deterioros detectados a través del contrato de mantenimiento. En las roturas de vidrios técnicos reponemos siempre por un vidrio del mismo tipo y con la misma clasificación, para no comprometer las prestaciones acústicas, térmicas o de seguridad del cerramiento.",
+        "Todos nuestros cambios de vidrio incluyen garantía de un año en la mano de obra. La garantía de los materiales utilizados —cristales, siliconas, elementos constructivos— es la que marca el fabricante en cada caso, y suele oscilar entre 5 y 10 años. Así queda por escrito quién responde de cada parte de la reparación.",
+      ],
+    },
   ],
   regeneracion: [
     {
@@ -76,6 +83,13 @@ export const SECTIONS_BY_SLUG: Record<string, { h: string; body: string[] }[]> =
       h: "Cómo recuperamos el lacado del aluminio y los vidrios",
       body: [
         "La regeneración del aluminio combina limpieza técnica, tratamiento de la superficie y restauración del lacado, devolviendo color y protección a la perfilería sin desmontarla ni sustituirla. En los vidrios actuamos según su estado, recuperando los que son viables. El resultado es una fachada que vuelve a lucir como el primer día y que mejora la imagen del edificio sin el impacto de una gran obra.",
+      ],
+    },
+    {
+      h: "Tratamientos profesionales para el metal y el vidrio",
+      body: [
+        "En los elementos metálicos limpiamos y desengrasamos primero la polución y la suciedad adheridas, y después aplicamos un sellado protector que forma una película fina y transparente sobre la superficie. Ese sellado protege frente a la corrosión, es antiadherente de la polución y tiene un alto poder hidrofugante, de modo que la fachada se mantiene limpia más tiempo; además, aporta estabilidad frente a la radiación ultravioleta y resistencia a la abrasión, sin ser una pintura termoplástica. Aseguramos la restauración del color original de los revestimientos, tanto en acabados anodizados como lacados.",
+        "En el vidrio actuamos sobre la suciedad incrustada por agentes externos —chorreras de óxido, cal, polución— que con productos de limpieza estándar es imposible eliminar, y aplicamos un tratamiento preventivo frente a nuevas incrustaciones de cal. En muchos casos esto evita tener que sustituir vidrios muy deteriorados, con el ahorro de coste que supone. Puedes solicitar una muestra física gratuita en tu propia fachada, tanto en metal como en vidrio, para ver el resultado antes de decidir.",
       ],
     },
   ],
@@ -122,6 +136,20 @@ export const SECTIONS_BY_SLUG: Record<string, { h: string; body: string[] }[]> =
       body: [
         "El resultado práctico es una fachada que se ensucia menos y mantiene mejor aspecto durante más tiempo, con la consiguiente reducción de la frecuencia y el coste de limpieza —algo especialmente valioso en edificios altos o de difícil acceso—. A ello se suma el componente ambiental: una fachada tratada contribuye, de forma pasiva y continua, a reducir contaminantes del aire de su entorno.",
         "En IMFALÚ somos pioneros en aplicar tratamientos por fotocatálisis sobre fachadas de aluminio y cristal. El momento idóneo para aplicarla es tras una rehabilitación o regeneración, para proteger y prolongar el resultado, aunque valoramos cada caso con un diagnóstico previo. La fotocatálisis no sustituye al mantenimiento: lo complementa, reduciendo la suciedad mientras la fachada sigue beneficiándose de revisiones periódicas.",
+      ],
+    },
+    {
+      h: "Aplicadores exclusivos de Pureti™ en Barcelona y Madrid",
+      body: [
+        "Aplicamos el tratamiento fotocatalítico de Pureti™, marca pionera en fotocatálisis con las más altas certificaciones internacionales, de la que somos aplicadores en exclusiva tanto en Barcelona como en Madrid. El tratamiento consiste en una nanocapa de dióxido de titanio (TiO₂), de aspecto invisible, que se aplica sobre la superficie acristalada de la fachada; a partir de ahí, la radiación ultravioleta del sol y la humedad hacen el resto, descomponiendo de forma natural las partículas orgánicas y convirtiendo el vidrio en una superficie superhidrófila y autolimpiante.",
+        "Su repercusión ambiental es medible: se estima que el efecto de aplicar el producto sobre un metro cuadrado de cristal equivale a plantar un árbol. Además de purificar el aire de su entorno (NOx, SOx y compuestos orgánicos volátiles), la superficie tratada gana propiedades antibacterianas y anti-musgo, protección anti-UV, efecto antiestático y desodorizante, y puede contribuir a la obtención de puntos LEED o BREEAM en la certificación del edificio.",
+      ],
+    },
+    {
+      h: "Menos del 50% de limpiezas y 5 años de protección",
+      body: [
+        "El efecto autolimpiante no significa que el edificio se mantenga siempre como recién limpiado, pero sí reduce la frecuencia de limpieza en un 50% como mínimo; y esa limpieza deja de necesitar productos químicos: basta el agua, aprovechando la propia lluvia para arrastrar por hidrofilia las partículas ya descompuestas. La superficie, además, se mantiene siempre desinfectada.",
+        "Garantizamos una protección de hasta 5 años para los cristales tratados. Y como el tratamiento se aplica recorriendo toda la fachada, nuestros técnicos aprovechan la intervención para elaborar un informe del estado del cerramiento, de modo que el tratamiento fotocatalítico se convierte también en una revisión técnica de la fachada.",
       ],
     },
   ],

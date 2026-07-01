@@ -18,7 +18,11 @@ const nextConfig: NextConfig = {
       { source: "/reparacion-reposicion", destination: "/servicios/reparacion", permanent: true },
       { source: "/informes-tecnicos", destination: "/servicios/informes-tecnicos", permanent: true },
       { source: "/tratamientos-del-cristal-por-fotocalasis", destination: "/servicios/fotocatalisis", permanent: true },
-      { source: "/noticias", destination: "/", permanent: true },
+      // Contenido recuperado del WP viejo → artículos de blog nuevos
+      { source: "/ventanas-de-madera-aluminio", destination: "/blog/ventanas-madera-aluminio", permanent: true },
+      { source: "/participacion-de-imfalu-en-la-iv-edicion-de-los-premios-nacionales-facility-ms", destination: "/blog/premios-facility-ms-2018", permanent: true },
+      { source: "/5-aniversario", destination: "/blog/imfalu-5-aniversario", permanent: true },
+      { source: "/noticias", destination: "/blog", permanent: true },
       // Reestructuración silo (tipos de fachada)
       { source: "/muro-cortina-barcelona", destination: "/fachadas/muro-cortina", permanent: true },
       { source: "/rehabilitacion-de-fachadas-barcelona", destination: "/fachadas/rehabilitacion", permanent: true },

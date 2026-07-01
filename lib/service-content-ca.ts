@@ -61,6 +61,13 @@ export const SECTIONS_BY_SLUG_CA: Record<string, { h: string; body: string[] }[]
         "Per a les situacions que no esperen —un vidre trencat en alçada, un element solt amb risc de caiguda, una filtració activa— disposem de servei d'urgències 24 h a Barcelona i àrea metropolitana, prioritzant sempre la seguretat abans que qualsevol altra cosa.",
       ],
     },
+    {
+      h: "Garantia en els canvis de vidre i en la mà d'obra",
+      body: [
+        "Treballem amb la màxima promptitud en el canvi dels elements constructius danyats que afecten les prestacions de la façana —vidres, plafons, perfileria—, ja siguin trencaments derivats d'un accident o deterioraments detectats a través del contracte de manteniment. En els trencaments de vidres tècnics reposem sempre per un vidre del mateix tipus i amb la mateixa classificació, per no comprometre les prestacions acústiques, tèrmiques o de seguretat del tancament.",
+        "Tots els nostres canvis de vidre inclouen garantia d'un any en la mà d'obra. La garantia dels materials utilitzats —vidres, silicones, elements constructius— és la que marca el fabricant en cada cas, i sol oscil·lar entre 5 i 10 anys. Així queda per escrit qui respon de cada part de la reparació.",
+      ],
+    },
   ],
   regeneracion: [
     {
@@ -74,6 +81,13 @@ export const SECTIONS_BY_SLUG_CA: Record<string, { h: string; body: string[] }[]
       h: "Com recuperem el lacat de l'alumini i els vidres",
       body: [
         "La regeneració de l'alumini combina neteja tècnica, tractament de la superfície i restauració del lacat, tornant color i protecció a la perfileria sense desmuntar-la ni substituir-la. En els vidres actuem segons el seu estat, recuperant els que són viables. El resultat és una façana que torna a lluir com el primer dia i que millora la imatge de l'edifici sense l'impacte d'una gran obra.",
+      ],
+    },
+    {
+      h: "Tractaments professionals per al metall i el vidre",
+      body: [
+        "En els elements metàl·lics netegem i desengreixem primer la pol·lució i la brutícia adherides, i després apliquem un segellat protector que forma una pel·lícula fina i transparent sobre la superfície. Aquest segellat protegeix davant la corrosió, és antiadherent de la pol·lució i té un alt poder hidrofugant, de manera que la façana es manté neta més temps; a més, aporta estabilitat davant la radiació ultraviolada i resistència a l'abrasió, sense ser una pintura termoplàstica. Assegurem la restauració del color original dels revestiments, tant en acabats anoditzats com lacats.",
+        "En el vidre actuem sobre la brutícia incrustada per agents externs —regalims d'òxid, calç, pol·lució— que amb productes de neteja estàndard és impossible eliminar, i apliquem un tractament preventiu davant noves incrustacions de calç. En molts casos això evita haver de substituir vidres molt deteriorats, amb l'estalvi de cost que suposa. Pots sol·licitar una mostra física gratuïta a la teva pròpia façana, tant en metall com en vidre, per veure el resultat abans de decidir.",
       ],
     },
   ],
@@ -120,6 +134,20 @@ export const SECTIONS_BY_SLUG_CA: Record<string, { h: string; body: string[] }[]
       body: [
         "El resultat pràctic és una façana que s'embruta menys i manté millor aspecte durant més temps, amb la consegüent reducció de la freqüència i el cost de neteja —cosa especialment valuosa en edificis alts o de difícil accés—. A això s'hi suma el component ambiental: una façana tractada contribueix, de forma passiva i contínua, a reduir contaminants de l'aire del seu entorn.",
         "A IMFALÚ som pioners a aplicar tractaments per fotocatàlisi sobre façanes d'alumini i vidre. El moment idoni per aplicar-la és després d'una rehabilitació o regeneració, per protegir i prolongar el resultat, tot i que valorem cada cas amb un diagnòstic previ. La fotocatàlisi no substitueix el manteniment: el complementa, reduint la brutícia mentre la façana continua beneficiant-se de revisions periòdiques.",
+      ],
+    },
+    {
+      h: "Aplicadors exclusius de Pureti™ a Barcelona i Madrid",
+      body: [
+        "Apliquem el tractament fotocatalític de Pureti™, marca pionera en fotocatàlisi amb les certificacions internacionals més altes, de la qual som aplicadors en exclusiva tant a Barcelona com a Madrid. El tractament consisteix en una nanocapa de diòxid de titani (TiO₂), d'aspecte invisible, que s'aplica sobre la superfície acristallada de la façana; a partir d'aquí, la radiació ultraviolada del sol i la humitat fan la resta, descomponent de forma natural les partícules orgàniques i convertint el vidre en una superfície superhidròfila i autonetejant.",
+        "La seva repercussió ambiental és mesurable: s'estima que l'efecte d'aplicar el producte sobre un metre quadrat de vidre equival a plantar un arbre. A més de purificar l'aire del seu entorn (NOx, SOx i compostos orgànics volàtils), la superfície tractada guanya propietats antibacterianes i anti-molsa, protecció anti-UV, efecte antiestàtic i desodoritzant, i pot contribuir a l'obtenció de punts LEED o BREEAM en la certificació de l'edifici.",
+      ],
+    },
+    {
+      h: "Menys del 50% de netejes i 5 anys de protecció",
+      body: [
+        "L'efecte autonetejant no vol dir que l'edifici es mantingui sempre com acabat de netejar, però sí que redueix la freqüència de neteja en un 50% com a mínim; i aquesta neteja deixa de necessitar productes químics: n'hi ha prou amb l'aigua, aprofitant la mateixa pluja per arrossegar per hidrofília les partícules ja descompostes. La superfície, a més, es manté sempre desinfectada.",
+        "Garantim una protecció de fins a 5 anys per als vidres tractats. I com que el tractament s'aplica recorrent tota la façana, els nostres tècnics aprofiten la intervenció per elaborar un informe de l'estat del tancament, de manera que el tractament fotocatalític es converteix també en una revisió tècnica de la façana.",
       ],
     },
   ],

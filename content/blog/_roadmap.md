@@ -9,6 +9,11 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [ ] mantenimiento-fachadas-barcelona
 - [ ] muro-cortina-barcelona
 
+## R · Recuperados de la web vieja (publicados a mano, NO regenerar)
+- [x] ventanas-madera-aluminio
+- [x] premios-facility-ms-2018
+- [x] imfalu-5-aniversario
+
 ## A · Muro cortina y fachada ligera (pilar: que-es-muro-cortina)
 - [x] que-es-muro-cortina
 - [x] tipos-de-muro-cortina

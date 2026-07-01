@@ -248,9 +248,11 @@ export const services: Service[] = [
     bullets: ["Restauración de aluminio y lacados", "Recuperación de vidrios", "Tratamiento de oxidación y deterioro", "Alternativa a la sustitución total", "Recuperación del aspecto y prestaciones"],
     when: ["El aluminio o el lacado se ven envejecidos o con óxido", "La fachada ha perdido aspecto pero la estructura está bien", "Quieres una alternativa más barata que sustituir toda la fachada", "Hay vidrios deteriorados pero recuperables", "Buscas mejorar la imagen del edificio sin una gran obra"],
     gallery: [
+      { src: "/servicios/recuperadas/regeneracion-restauracion-color.jpg", label: "Restauración del color", caption: "Recuperación del lacado del aluminio" },
+      { src: "/servicios/recuperadas/regeneracion-anti-adherencia.jpg", label: "Sellado anti-adherencia", caption: "Protección hidrófuga OXYSTOP®" },
+      { src: "/servicios/recuperadas/regeneracion-cristal-fachada.jpg", label: "Regeneración de cristal", caption: "Tratamiento del vidrio de fachada" },
       { src: "/proyectos/barbera/1.jpg", label: "Oficinas Barberà", caption: "Regeneración · Barberà del Vallès" },
       { src: "/proyectos/ski/2.jpg", label: "Edificio Ski", caption: "Rehabilitación · Barcelona" },
-      { src: "/proyectos/cornella/2.jpg", label: "WTC Cornellà", caption: "Oficinas · Cornellà" },
     ],
   },
   {
@@ -328,6 +330,11 @@ export const services: Service[] = [
       "La fotocatálisis es un recubrimiento que, con la acción de la luz, ayuda a autolimpiar la fachada y a reducir contaminantes del aire. El resultado: mejor aspecto durante más tiempo, menos necesidad de limpieza y un beneficio medioambiental. En IMFALÚ somos pioneros en aplicar tratamientos por fotocatálisis en fachadas de aluminio y cristal.",
     bullets: ["Efecto autolimpiante", "Reducción de contaminantes del aire", "Menor necesidad de limpieza", "Beneficio medioambiental", "Protege el resultado tras una rehabilitación"],
     when: ["Quieres reducir la frecuencia de limpieza de la fachada", "Buscas una opción más sostenible para el edificio", "La fachada se ensucia rápido por la contaminación", "Tras una rehabilitación, para proteger el resultado", "Quieres diferenciar tu edificio con una mejora verde"],
+    gallery: [
+      { src: "/servicios/recuperadas/fotocatalisis-ciclo.jpg", label: "Ciclo de la fotocatálisis", caption: "Acción del TiO₂ activado por la luz" },
+      { src: "/servicios/recuperadas/fotocatalisis-antes-despues.jpg", label: "Antes y después", caption: "Cristal tratado con fotocatálisis" },
+      { src: "/servicios/recuperadas/fotocatalisis-esquema.jpg", label: "Esquema del tratamiento", caption: "Nanocapa de dióxido de titanio" },
+    ],
     note: {
       title: "Cómo funciona la fotocatálisis (TiO₂)",
       body: [

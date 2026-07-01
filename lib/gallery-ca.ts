@@ -26,6 +26,19 @@ export const GALLERY_CA: Record<string, string> = {
   "Torre en Diagonal": "Torre a Diagonal",
   "Trabajo en altura": "Treball en alçada",
   "Vidrio de gran formato": "Vidre de gran format",
+  // Servicios · fotos recuperadas de la web antigua
+  "Restauración del color": "Restauració del color",
+  "Recuperación del lacado del aluminio": "Recuperació del lacat de l'alumini",
+  "Sellado anti-adherencia": "Segellat antiadherència",
+  "Protección hidrófuga OXYSTOP®": "Protecció hidròfuga OXYSTOP®",
+  "Regeneración de cristal": "Regeneració de vidre",
+  "Tratamiento del vidrio de fachada": "Tractament del vidre de façana",
+  "Ciclo de la fotocatálisis": "Cicle de la fotocatàlisi",
+  "Acción del TiO₂ activado por la luz": "Acció del TiO₂ activat per la llum",
+  "Antes y después": "Abans i després",
+  "Cristal tratado con fotocatálisis": "Vidre tractat amb fotocatàlisi",
+  "Esquema del tratamiento": "Esquema del tractament",
+  "Nanocapa de dióxido de titanio": "Nanocapa de diòxid de titani",
 }
 
 export function tGallery<T extends { label: string; caption?: string }>(items: T[] | undefined): T[] | undefined {
