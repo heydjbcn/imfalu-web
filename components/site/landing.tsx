@@ -1,8 +1,9 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ChevronRight, MapPin } from "lucide-react"
-import { projects, services, site, type GalleryItem } from "@/lib/site"
-import { PROCESS } from "@/lib/service-faqs"
+import { site, type GalleryItem } from "@/lib/site"
+import { getServices, getProjects, getProcess, getSite } from "@/lib/content"
+import { getDictionary, localizedPath, type Locale } from "@/lib/i18n"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
@@ -18,39 +19,48 @@ export interface LandingData {
   bullets: string[]
   relatedSlugs: string[]
   faqs: { q: string; a: string }[]
-  /** Respuesta directa y citable (answer-first), se muestra bajo el H1. */
   answer?: string
-  /** Término para enriquecer los H2 con keyword secundaria, p.ej. "el muro cortina" */
   term?: string
-  /** Fotos reales de trabajos */
   gallery?: GalleryItem[]
-  /** Miga de pan (silo). Último item sin href = página actual. */
   breadcrumb?: { label: string; href?: string }[]
 }
 
-export function Landing({ data }: { data: LandingData }) {
-  const related = services.filter((s) => data.relatedSlugs.includes(s.slug))
-  const term = data.term ?? "fachadas de aluminio y cristal"
+export async function Landing({ data, lang = "es" }: { data: LandingData; lang?: Locale }) {
+  const dict = await getDictionary(lang)
+  const siteL = getSite(lang)
+  const projects = getProjects(lang)
+  const related = getServices(lang).filter((s) => data.relatedSlugs.includes(s.slug))
+  const process = getProcess(lang)
+  const term = data.term ?? (lang === "ca" ? "façanes d'alumini i vidre" : "fachadas de aluminio y cristal")
+  const lp = (p: string) => localizedPath(lang, p)
+  const crumbs = data.breadcrumb?.map((b) => ({ ...b, href: b.href ? lp(b.href) : undefined }))
+  const otros = [
+    { label: dict.landing.tipos.muroCortina, href: "/fachadas/muro-cortina" },
+    { label: dict.landing.tipos.acristalada, href: "/fachadas/fachada-acristalada" },
+    { label: dict.landing.tipos.aluminio, href: "/fachadas/fachada-aluminio" },
+    { label: dict.landing.tipos.rehabilitacion, href: "/fachadas/rehabilitacion" },
+  ].filter((t) => t.href !== `/${data.slug}`)
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
         name: data.h1,
-        url: `${site.url}/${data.slug}`,
+        url: `${site.url}${lp(`/${data.slug}`)}`,
         datePublished: site.lastUpdated,
         dateModified: site.lastUpdated,
-        inLanguage: "es-ES",
+        inLanguage: lang === "ca" ? "ca-ES" : "es-ES",
       },
       {
         "@type": "Service",
         name: data.h1,
-        areaServed: site.area,
+        areaServed: siteL.area,
         provider: { "@id": `${site.url}/#org` },
         description: data.answer ?? data.intro,
       },
       data.breadcrumb?.length
-        ? { "@type": "BreadcrumbList", itemListElement: data.breadcrumb.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.label, ...(b.href ? { item: `${site.url}${b.href}` } : {}) })) }
+        ? { "@type": "BreadcrumbList", itemListElement: data.breadcrumb.map((b, i) => ({ "@type": "ListItem", position: i + 1, name: b.label, ...(b.href ? { item: `${site.url}${lp(b.href)}` } : {}) })) }
         : null,
       data.faqs.length
         ? { "@type": "FAQPage", mainEntity: data.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }
@@ -62,18 +72,12 @@ export function Landing({ data }: { data: LandingData }) {
     <>
       <JsonLd data={jsonLd} />
 
-      <PageHero
-        breadcrumb={data.breadcrumb}
-        eyebrow={data.kicker}
-        title={data.h1}
-        subtitle={data.answer ?? data.intro}
-      />
+      <PageHero lang={lang} breadcrumb={crumbs} eyebrow={data.kicker} title={data.h1} subtitle={data.answer ?? data.intro} />
 
-      {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream py-6 sm:py-8">
         <div className="container-x">
           <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
-            <Image src={`/${data.slug}.webp`} alt={`${data.h1} en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+            <Image src={`/${data.slug}.webp`} alt={`${data.h1} · ${site.city}`} fill priority className="object-cover" sizes="100vw" />
           </ExpandOnScroll>
         </div>
       </section>
@@ -81,12 +85,12 @@ export function Landing({ data }: { data: LandingData }) {
       <section className="container-x grid gap-12 py-16 lg:grid-cols-[1fr_320px]">
         <div>
           {data.answer ? <p className="text-lg leading-relaxed text-warm">{data.intro}</p> : null}
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué hacemos en {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.landing.queHacemos} {term}</h2>
           <CheckList items={data.bullets} className="mt-6" />
 
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cómo trabajamos</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.comoTrabajamos}</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
-            {PROCESS.map((p, i) => (
+            {process.map((p, i) => (
               <li key={p.t} className="rounded-2xl border bg-white p-5">
                 <span className="text-sm font-bold text-burdeos">0{i + 1}</span>
                 <h3 className="mt-1 font-semibold text-ink">{p.t}</h3>
@@ -95,15 +99,10 @@ export function Landing({ data }: { data: LandingData }) {
             ))}
           </ol>
 
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
-          <p className="mt-4 text-warm">
-            No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
-            aluminio y cristal, y es lo único que hacemos. Esa concentración —más de 30 años, trabajo
-            en altura certificado y servicio de urgencias 24 h— es la mayor garantía para
-            administradores de fincas, property managers y departamentos de mantenimiento de {site.area}.
-          </p>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.porQueElegir} {term}</h2>
+          <p className="mt-4 text-warm">{dict.landing.porQueTexto} {siteL.area}.</p>
           <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-[1fr_1.45fr_0.85fr_0.85fr]">
-            {site.stats.map((st) => (
+            {siteL.stats.map((st) => (
               <div key={st.label} className="rounded-2xl border bg-cream px-5 py-4">
                 <div className="whitespace-nowrap text-xl font-bold text-burdeos sm:text-2xl">{st.value}<span className="text-warm">{st.suffix}</span></div>
                 <div className="mt-1 text-xs text-warm">{st.label}</div>
@@ -113,16 +112,14 @@ export function Landing({ data }: { data: LandingData }) {
 
           {data.gallery?.length ? (
             <>
-              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Algunos de nuestros trabajos</h2>
-              <div className="mt-5">
-                <ExpandingGallery items={data.gallery} />
-              </div>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.algunosTrabajos}</h2>
+              <div className="mt-5"><ExpandingGallery items={data.gallery} /></div>
             </>
           ) : null}
 
           {data.faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.preguntasSobre} {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {data.faqs.map((f) => (
                   <details key={f.q} className="group p-5">
@@ -136,52 +133,47 @@ export function Landing({ data }: { data: LandingData }) {
             </>
           ) : null}
 
-          <p className="mt-10 text-xs text-warm">Última actualización: {site.lastUpdatedLabel}</p>
+          <p className="mt-10 text-xs text-warm">{dict.common.actualizado}: {site.lastUpdatedLabel}</p>
         </div>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl border bg-cream p-6">
-            <h3 className="font-semibold text-ink">Presupuesto sin compromiso</h3>
-            <p className="mt-2 text-sm text-warm">Más de 30 años y +300.000 m² de fachada en {site.city}.</p>
-            <Link href="/contacto" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-burdeos px-5 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
-              Pedir presupuesto <ArrowRight className="h-4 w-4" />
+            <h3 className="font-semibold text-ink">{dict.landing.presupuestoTitulo}</h3>
+            <p className="mt-2 text-sm text-warm">{dict.landing.presupuestoTexto} {site.city}.</p>
+            <Link href={lp("/contacto")} className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-burdeos px-5 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
+              {dict.cta.pedirPresupuesto} <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
           {related.length ? (
             <div className="rounded-2xl border p-6">
-              <h3 className="text-sm font-semibold text-ink">Servicios relacionados</h3>
+              <h3 className="text-sm font-semibold text-ink">{dict.landing.serviciosRelacionados}</h3>
               <ul className="mt-3 space-y-2 text-sm">
                 {related.map((s) => (
-                  <li key={s.slug}><Link href={`/servicios/${s.slug}`} className="text-warm hover:text-burdeos">{s.title}</Link></li>
+                  <li key={s.slug}><Link href={lp(`/servicios/${s.slug}`)} className="text-warm hover:text-burdeos">{s.title}</Link></li>
                 ))}
               </ul>
             </div>
           ) : null}
           <div className="rounded-2xl border p-6">
-            <h3 className="text-sm font-semibold text-ink">Otros tipos de fachada</h3>
+            <h3 className="text-sm font-semibold text-ink">{dict.landing.otrosTipos}</h3>
             <ul className="mt-3 space-y-2 text-sm">
-              {[
-                { label: "Muro cortina", href: "/fachadas/muro-cortina" },
-                { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
-                { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
-                { label: "Rehabilitación", href: "/fachadas/rehabilitacion" },
-              ].filter((t) => t.href !== `/${data.slug}`).map((t) => (
-                <li key={t.href}><Link href={t.href} className="text-warm hover:text-burdeos">{t.label}</Link></li>
+              {otros.map((t) => (
+                <li key={t.href}><Link href={lp(t.href)} className="text-warm hover:text-burdeos">{t.label}</Link></li>
               ))}
             </ul>
           </div>
-          <Link href="/proyectos" className="block overflow-hidden rounded-2xl border">
+          <Link href={lp("/proyectos")} className="block overflow-hidden rounded-2xl border">
             <div className="relative aspect-[4/3] bg-cream">
-              <Image src={projects[0].image} alt="Proyecto de fachada en Barcelona" fill className="object-cover" sizes="320px" />
+              <Image src={projects[0].image} alt={`${dict.landing.verProyectos} · Barcelona`} fill className="object-cover" sizes="320px" />
             </div>
             <div className="flex items-center gap-1.5 p-4 text-sm font-semibold text-burdeos">
-              <MapPin className="h-4 w-4" /> Ver proyectos
+              <MapPin className="h-4 w-4" /> {dict.landing.verProyectos}
             </div>
           </Link>
         </aside>
       </section>
 
-      <CtaBand />
+      <CtaBand lang={lang} />
     </>
   )
 }

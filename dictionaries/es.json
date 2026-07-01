@@ -127,5 +127,15 @@
       { "q": "¿Tenéis servicio de urgencias?", "a": "Sí, disponemos de servicio de urgencias 24 h para incidencias en fachada como cristales rotos, riesgo de desprendimiento o filtraciones." },
       { "q": "¿Cuánto cuesta intervenir una fachada?", "a": "Depende del estado del cerramiento, la altura del edificio y el alcance de la intervención. Hacemos un diagnóstico previo y un presupuesto sin compromiso; en muchos casos rehabilitar o regenerar resulta más económico que sustituir toda la fachada." }
     ]
+  },
+  "landing": {
+    "queHacemos": "Qué hacemos en",
+    "porQueTexto": "No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de aluminio y cristal, y es lo único que hacemos. Esa concentración —más de 30 años, trabajo en altura certificado y servicio de urgencias 24 h— es la mayor garantía para administradores de fincas, property managers y departamentos de mantenimiento de",
+    "presupuestoTitulo": "Presupuesto sin compromiso",
+    "presupuestoTexto": "Más de 30 años y +300.000 m² de fachada en",
+    "serviciosRelacionados": "Servicios relacionados",
+    "otrosTipos": "Otros tipos de fachada",
+    "verProyectos": "Ver proyectos",
+    "tipos": { "muroCortina": "Muro cortina", "acristalada": "Fachada acristalada", "aluminio": "Fachada de aluminio", "rehabilitacion": "Rehabilitación" }
   }
 }

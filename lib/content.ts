@@ -1,7 +1,9 @@
 // Resolutor de contenido por idioma: fusiona las traducciones CA (site-ca.ts)
 // sobre la base ES (site.ts). Los consumidores llaman getX(lang).
 import { site, services, projects, navMenu, navLinks, type Service, type Project, type NavGroup } from "@/lib/site"
+import { facades, type Facade } from "@/lib/facades"
 import { siteCaText, servicesCaText, projectsCaText, navMenuCa, navLinksCa } from "@/lib/site-ca"
+import { facadesCaText } from "@/lib/facades-ca"
 import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
 import { SECTIONS_BY_SLUG } from "@/lib/service-content"
 import { FAQ_BY_SLUG_CA, PROCESS_CA } from "@/lib/service-faqs-ca"
@@ -78,4 +80,23 @@ export function getServiceSections(lang: Locale, slug: string): { h: string; bod
 
 export function getProcess(lang: Locale) {
   return lang === "ca" ? PROCESS_CA : PROCESS
+}
+
+export function getFacades(lang: Locale): Facade[] {
+  if (lang === "es") return facades
+  return facades.map((f) => {
+    const t = facadesCaText[f.slug]
+    if (!t) return f
+    const breadcrumb = f.breadcrumb?.map((b, i) => {
+      if (i === 0) return { ...b, label: "Inici" }
+      if (b.href === "/fachadas/muro-cortina") return { ...b, label: t.crumbMuroCortina ?? b.label }
+      if (i === (f.breadcrumb!.length - 1)) return { ...b, label: t.crumbLast }
+      return b
+    })
+    return { ...f, metaTitle: t.metaTitle, metaDescription: t.metaDescription, kicker: t.kicker, h1: t.h1, term: t.term, answer: t.answer, intro: t.intro, bullets: t.bullets, faqs: t.faqs, breadcrumb }
+  })
+}
+
+export function getFacade(lang: Locale, slug: string): Facade | undefined {
+  return getFacades(lang).find((f) => f.slug === slug)
 }

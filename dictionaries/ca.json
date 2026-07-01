@@ -127,5 +127,15 @@
       { "q": "Teniu servei d'urgències?", "a": "Sí, disposem de servei d'urgències 24 h per a incidències en façana com vidres trencats, risc de despreniment o filtracions." },
       { "q": "Quant costa intervenir una façana?", "a": "Depèn de l'estat del tancament, l'alçada de l'edifici i l'abast de la intervenció. Fem un diagnòstic previ i un pressupost sense compromís; en molts casos rehabilitar o regenerar resulta més econòmic que substituir tota la façana." }
     ]
+  },
+  "landing": {
+    "queHacemos": "Què fem en",
+    "porQueTexto": "No som una empresa d'obra ni un multiservei: som especialistes en façanes d'alumini i vidre, i és l'únic que fem. Aquesta concentració —més de 30 anys, treball en alçada certificat i servei d'urgències 24 h— és la major garantia per a administradors de finques, property managers i departaments de manteniment de",
+    "presupuestoTitulo": "Pressupost sense compromís",
+    "presupuestoTexto": "Més de 30 anys i +300.000 m² de façana a",
+    "serviciosRelacionados": "Serveis relacionats",
+    "otrosTipos": "Altres tipus de façana",
+    "verProyectos": "Veure projectes",
+    "tipos": { "muroCortina": "Mur cortina", "acristalada": "Façana acristallada", "aluminio": "Façana d'alumini", "rehabilitacion": "Rehabilitació" }
   }
 }
