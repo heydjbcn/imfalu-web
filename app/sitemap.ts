@@ -8,7 +8,7 @@ export const revalidate = 3600
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url
   const staticRoutes = ["", "/sobre-nosotros", "/contacto", "/proyectos", "/blog"]
-  const posts = getAllPosts()
+  const posts = getAllPosts("es")
   // Las páginas legales son noindex: NO se incluyen en el sitemap.
 
   const urls = [
@@ -18,10 +18,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...posts.map((p) => ({ path: `/blog/${p.slug}`, priority: 0.6 })),
   ]
 
+  // Una entrada por URL (ES canónica) con alternates hreflang es/ca.
   return urls.map((u) => ({
-    url: `${base}${u.path}`,
+    url: `${base}${u.path || "/"}`,
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: u.priority,
+    alternates: {
+      languages: {
+        es: `${base}${u.path || "/"}`,
+        ca: `${base}/ca${u.path}`,
+      },
+    },
   }))
 }
