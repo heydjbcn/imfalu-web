@@ -2,6 +2,13 @@
 
 Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 
+## P · PRIORIDAD comercial (keywords money — el bot las publica ANTES que el resto, en orden)
+- [ ] empresa-fachadas-barcelona
+- [ ] rehabilitacion-fachadas-barcelona
+- [ ] reparacion-fachadas-barcelona
+- [ ] mantenimiento-fachadas-barcelona
+- [ ] muro-cortina-barcelona
+
 ## A · Muro cortina y fachada ligera (pilar: que-es-muro-cortina)
 - [x] que-es-muro-cortina
 - [x] tipos-de-muro-cortina
@@ -53,7 +60,6 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 ## D · Regeneración y rehabilitación (pilar: rehabilitacion-fachadas-barcelona)
 - [ ] regeneracion-fachada-recuperar-sin-sustituir
 - [x] rehabilitar-o-sustituir-fachada
-- [ ] rehabilitacion-fachadas-barcelona
 - [ ] recuperar-lacado-aluminio
 - [ ] restauracion-elementos-fachada
 - [ ] rehabilitacion-energetica-fachada
