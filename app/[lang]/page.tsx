@@ -1,66 +1,71 @@
 import Link from "next/link"
 import Image from "next/image"
+import type { Metadata } from "next"
 import {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
-  ArrowRight, Phone, Building2, Clock, Award, MapPin,
-  BadgeCheck, ChevronRight,
+  ArrowRight, Building2, Clock, Award, MapPin, BadgeCheck, ChevronRight,
 } from "lucide-react"
 import { SectorsTabs } from "@/components/site/sectors-tabs"
-import { services, projects, site, waLink, telLink } from "@/lib/site"
+import { site, waLink } from "@/lib/site"
+import { getServices, getProjects, getSite } from "@/lib/content"
+import { getDictionary, hasLocale, defaultLocale, localizedPath, type Locale } from "@/lib/i18n"
 import { Reviews } from "@/components/site/reviews"
 import { FaqSection } from "@/components/site/faq-section"
 import { ExpandOnScroll } from "@/components/site/expand-on-scroll"
 import { BrandWatermark } from "@/components/site/brand-watermark"
+import { CtaBand } from "@/components/site/cta-band"
 
 const ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   ShieldCheck, Wrench, RefreshCw, ClipboardCheck, Droplets, Leaf,
 }
+const FEATURE_ICONS = [Award, Clock, ShieldCheck, Building2]
+const CONFIANZA_ICONS = [ShieldCheck, BadgeCheck, Clock, Award]
 
-const FAQS = [
-  { q: "¿Qué hace IMFALÚ?", a: "IMFALÚ es una empresa especializada en el mantenimiento, la reparación, la regeneración y la rehabilitación de fachadas de aluminio y cristal —muro cortina y fachadas acristaladas— en Barcelona y su área metropolitana. No hacemos obra de albañilería: intervenimos sobre el aluminio y el vidrio del cerramiento." },
-  { q: "¿En qué zona trabajáis?", a: "En Barcelona y toda su área metropolitana, con sede en Cornellà de Llobregat. Hemos intervenido más de 150 edificios entre oficinas, hoteles, comunidades y edificios singulares." },
-  { q: "¿Trabajáis con administradores de fincas y property managers?", a: "Sí. La mayoría de nuestros clientes son administradores de fincas, property managers, arquitectos y departamentos de mantenimiento de edificios." },
-  { q: "¿Tenéis servicio de urgencias?", a: "Sí, disponemos de servicio de urgencias 24 h para incidencias en fachada como cristales rotos, riesgo de desprendimiento o filtraciones." },
-  { q: "¿Cuánto cuesta intervenir una fachada?", a: "Depende del estado del cerramiento, la altura del edificio y el alcance de la intervención. Hacemos un diagnóstico previo y un presupuesto sin compromiso; en muchos casos rehabilitar o regenerar resulta más económico que sustituir toda la fachada." },
-]
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params
+  const l: Locale = hasLocale(lang) ? lang : defaultLocale
+  return { alternates: { canonical: l === "es" ? "/" : "/ca", languages: { es: "/", ca: "/ca", "x-default": "/" } } }
+}
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {
+  const { lang } = await params
+  const l: Locale = hasLocale(lang) ? lang : defaultLocale
+  const dict = await getDictionary(l)
+  const h = dict.home
+  const siteL = getSite(l)
+  const services = getServices(l)
+  const projects = getProjects(l)
+  const lp = (p: string) => localizedPath(l, p)
   return (
     <>
       {/* HERO */}
       <section className="bg-cream">
         <div className="container-x grid gap-10 py-16 md:py-20">
           <div className="max-w-4xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">
-              Mantenimiento · Reparación · Rehabilitación
-            </p>
-            <h1 className="mt-5 max-w-3xl text-3xl font-bold text-ink md:text-4xl">
-              Fachadas de aluminio y cristal en Barcelona
-            </h1>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">{h.heroEyebrow}</p>
+            <h1 className="mt-5 max-w-3xl text-3xl font-bold text-ink md:text-4xl">{h.heroTitle}</h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-warm">
-              <strong className="text-ink">Cuidamos la piel de tu edificio.</strong> Mantenemos,
-              reparamos y rehabilitamos fachadas metálicas, acristaladas y muro cortina. Más de 30 años,
-              +150 edificios y +300.000 m² de fachada intervenida, con trabajo en altura certificado y urgencias 24 h.
+              <strong className="text-ink">{h.heroLeadStrong}</strong> {h.heroLeadRest}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/contacto"
+              <Link href={lp("/contacto")}
                 className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-burdeos-dark">
-                Pide presupuesto <ArrowRight className="h-4 w-4" />
+                {dict.cta.presupuesto} <ArrowRight className="h-4 w-4" />
               </Link>
-              <a href={waLink("Hola, quiero información sobre una fachada.")} target="_blank" rel="noopener noreferrer"
+              <a href={waLink(dict.whatsapp.msg)} target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink/5">
-                Escríbenos por WhatsApp
+                {dict.cta.whatsapp}
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* BANDA DE IMAGEN (se ensancha al hacer scroll, estilo letaido) */}
+      {/* BANDA DE IMAGEN */}
       <section className="bg-cream py-6 sm:py-8">
         <div className="container-x">
           <ExpandOnScroll className="bg-ink">
-            <Image src="/headers/home.webp" alt="Fachada de aluminio y cristal de un edificio de oficinas en Barcelona" fill priority className="object-cover" sizes="100vw" />
+            <Image src="/headers/home.webp" alt={h.heroImgAlt} fill priority className="object-cover" sizes="100vw" />
           </ExpandOnScroll>
         </div>
       </section>
@@ -68,7 +73,7 @@ export default function HomePage() {
       {/* STATS */}
       <section className="border-b bg-white">
         <div className="container-x grid grid-cols-2 gap-y-8 py-12 text-center md:grid-cols-[1fr_1.15fr_1.15fr_0.75fr] md:items-center md:gap-y-0 md:divide-x md:divide-line">
-          {site.stats.map((s) => (
+          {siteL.stats.map((s) => (
             <div key={s.label} className="px-3 md:px-5">
               <div className="whitespace-nowrap text-2xl font-bold text-burdeos md:text-2xl lg:text-4xl">
                 {s.value}<span className="text-warm">{s.suffix}</span>
@@ -79,21 +84,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICIOS (lista numerada) */}
+      {/* SERVICIOS */}
       <section id="servicios" className="container-x py-20">
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">Servicios</p>
-          <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Todo para la fachada, de principio a fin</h2>
-          <p className="mt-4 text-lg text-warm">
-            Del diagnóstico al mantenimiento continuo, cubrimos el ciclo completo de la fachada
-            de aluminio y cristal.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-burdeos">{h.serviciosEyebrow}</p>
+          <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">{h.serviciosTitle}</h2>
+          <p className="mt-4 text-lg text-warm">{h.serviciosText}</p>
         </div>
         <div className="mt-10 border-y divide-y">
           {services.map((s, i) => {
             const Icon = ICONS[s.icon] ?? ShieldCheck
             return (
-              <Link key={s.slug} href={`/servicios/${s.slug}`}
+              <Link key={s.slug} href={lp(`/servicios/${s.slug}`)}
                 className="group grid grid-cols-[2rem_1fr_auto] items-center gap-4 py-5 md:gap-8 md:py-6">
                 <span className="font-mono text-sm font-bold text-burdeos md:text-base">{String(i + 1).padStart(2, "0")}</span>
                 <div className="grid gap-1 md:grid-cols-[280px_1fr] md:items-baseline md:gap-8">
@@ -114,33 +116,24 @@ export default function HomePage() {
         <BrandWatermark />
         <div className="container-x relative z-10 grid gap-12 md:grid-cols-2">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Por qué IMFALÚ</p>
-            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">
-              30 años cuidando fachadas en Barcelona
-            </h2>
-            <p className="mt-4 text-lg text-warm">
-              Somos una empresa de referencia en mantenimiento y rehabilitación de fachada de aluminio
-              y cristal en Barcelona, con más de 300.000 m² intervenidos y pioneros en tratamientos por
-              fotocatálisis. Damos servicio a propietarios, administradores de fincas y departamentos de
-              mantenimiento que necesitan un especialista de confianza.
-            </p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">{h.porQueEyebrow}</p>
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">{h.porQueTitle}</h2>
+            <p className="mt-4 text-lg text-warm">{h.porQueText}</p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { icon: Award, t: "Especialistas", d: "Solo fachadas de aluminio y cristal. Es lo único que hacemos." },
-              { icon: Clock, t: "Urgencias 24 h", d: "Respuesta rápida ante cristales rotos o filtraciones." },
-              { icon: ShieldCheck, t: "Trabajo en altura", d: "Personal y medios certificados para trabajo vertical seguro." },
-              { icon: Building2, t: "Para edificios", d: "Oficinas, hoteles y comunidades. Tratamos con quien gestiona." },
-            ].map((f) => (
-              <div key={f.t} className="group relative overflow-hidden rounded-2xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-burdeos/40 hover:shadow-[0_14px_40px_-14px_rgba(155,35,53,0.3)]">
-                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-burdeos/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl bg-burdeos/10 text-burdeos transition-colors duration-300 group-hover:bg-burdeos group-hover:text-white">
-                  <f.icon className="h-5 w-5" />
-                </span>
-                <h3 className="relative mt-4 font-semibold text-ink">{f.t}</h3>
-                <p className="relative mt-1.5 text-sm leading-relaxed text-warm">{f.d}</p>
-              </div>
-            ))}
+            {h.features.map((f, i) => {
+              const Icon = FEATURE_ICONS[i] ?? Award
+              return (
+                <div key={f.t} className="group relative overflow-hidden rounded-2xl border bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-burdeos/40 hover:shadow-[0_14px_40px_-14px_rgba(155,35,53,0.3)]">
+                  <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-burdeos/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  <span className="relative inline-flex h-11 w-11 items-center justify-center rounded-xl bg-burdeos/10 text-burdeos transition-colors duration-300 group-hover:bg-burdeos group-hover:text-white">
+                    <Icon className="h-5 w-5" />
+                  </span>
+                  <h3 className="relative mt-4 font-semibold text-ink">{f.t}</h3>
+                  <p className="relative mt-1.5 text-sm leading-relaxed text-warm">{f.d}</p>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -149,11 +142,11 @@ export default function HomePage() {
       <section className="container-x py-20">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Proyectos</p>
-            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios donde hemos trabajado</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">{h.proyectosEyebrow}</p>
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">{h.proyectosTitle}</h2>
           </div>
-          <Link href="/proyectos" className="inline-flex items-center gap-1.5 text-sm font-semibold text-burdeos">
-            Ver proyectos <ArrowRight className="h-4 w-4" />
+          <Link href={lp("/proyectos")} className="inline-flex items-center gap-1.5 text-sm font-semibold text-burdeos">
+            {h.verProyectos} <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -178,56 +171,37 @@ export default function HomePage() {
       <section className="bg-cream py-20">
         <div className="container-x">
           <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">Sectores</p>
-            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">Edificios que cuidamos</h2>
-            <p className="mt-4 text-lg text-warm">Trabajamos para administradores de fincas, property managers, arquitectos y departamentos de mantenimiento.</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-burdeos">{h.sectoresEyebrow}</p>
+            <h2 className="mt-3 text-2xl font-bold text-ink md:text-3xl">{h.sectoresTitle}</h2>
+            <p className="mt-4 text-lg text-warm">{h.sectoresText}</p>
           </div>
-          <SectorsTabs />
+          <SectorsTabs lang={l} />
         </div>
       </section>
 
       {/* CONFIANZA */}
       <section className="container-x py-14">
         <div className="grid gap-4 rounded-2xl border bg-white p-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: ShieldCheck, t: "Trabajo en altura certificado", d: "Personal y medios homologados." },
-            { icon: BadgeCheck, t: "Garantía de los trabajos", d: "Respondemos por lo que hacemos." },
-            { icon: Clock, t: "Urgencias 24 h", d: "Cristales rotos, riesgos en fachada." },
-            { icon: Award, t: "+30 años · +150 edificios", d: "Experiencia que avala." },
-          ].map((c) => (
-            <div key={c.t} className="flex gap-3">
-              <c.icon className="mt-0.5 h-6 w-6 shrink-0 text-burdeos" />
-              <div>
-                <h3 className="text-sm font-semibold text-ink">{c.t}</h3>
-                <p className="text-sm text-warm">{c.d}</p>
+          {h.confianza.map((c, i) => {
+            const Icon = CONFIANZA_ICONS[i] ?? ShieldCheck
+            return (
+              <div key={c.t} className="flex gap-3">
+                <Icon className="mt-0.5 h-6 w-6 shrink-0 text-burdeos" />
+                <div>
+                  <h3 className="text-sm font-semibold text-ink">{c.t}</h3>
+                  <p className="text-sm text-warm">{c.d}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          })}
         </div>
       </section>
 
-      {/* RESEÑAS (oculto si no hay datos de Places API) */}
       <Reviews />
 
-      {/* FAQ */}
-      <FaqSection title="Preguntas frecuentes sobre fachadas de aluminio y cristal" faqs={FAQS} bg="cream" />
+      <FaqSection title={h.faqTitle} faqs={h.faqs} bg="cream" />
 
-      {/* CTA */}
-      <section className="bg-burdeos">
-        <div className="container-x flex flex-col items-center gap-6 py-16 text-center">
-          <h2 className="max-w-2xl text-3xl font-bold text-white md:text-4xl">
-            ¿Necesitas intervenir una fachada? Te damos presupuesto sin compromiso
-          </h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/contacto" className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-burdeos transition-colors hover:bg-white/90">
-              Pedir presupuesto <ArrowRight className="h-4 w-4" />
-            </Link>
-            <a href={telLink} className="inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10">
-              <Phone className="h-4 w-4" /> {site.phoneDisplay}
-            </a>
-          </div>
-        </div>
-      </section>
+      <CtaBand lang={l} />
     </>
   )
 }

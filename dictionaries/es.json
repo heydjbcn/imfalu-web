@@ -88,5 +88,44 @@
     "informes-tecnicos": "el informe técnico de fachada",
     "pruebas-estanqueidad": "las pruebas de estanqueidad",
     "fotocatalisis": "la fotocatálisis"
+  },
+  "home": {
+    "heroEyebrow": "Mantenimiento · Reparación · Rehabilitación",
+    "heroTitle": "Fachadas de aluminio y cristal en Barcelona",
+    "heroLeadStrong": "Cuidamos la piel de tu edificio.",
+    "heroLeadRest": "Mantenemos, reparamos y rehabilitamos fachadas metálicas, acristaladas y muro cortina. Más de 30 años, +150 edificios y +300.000 m² de fachada intervenida, con trabajo en altura certificado y urgencias 24 h.",
+    "heroImgAlt": "Fachada de aluminio y cristal de un edificio de oficinas en Barcelona",
+    "serviciosEyebrow": "Servicios",
+    "serviciosTitle": "Todo para la fachada, de principio a fin",
+    "serviciosText": "Del diagnóstico al mantenimiento continuo, cubrimos el ciclo completo de la fachada de aluminio y cristal.",
+    "porQueEyebrow": "Por qué IMFALÚ",
+    "porQueTitle": "30 años cuidando fachadas en Barcelona",
+    "porQueText": "Somos una empresa de referencia en mantenimiento y rehabilitación de fachada de aluminio y cristal en Barcelona, con más de 300.000 m² intervenidos y pioneros en tratamientos por fotocatálisis. Damos servicio a propietarios, administradores de fincas y departamentos de mantenimiento que necesitan un especialista de confianza.",
+    "features": [
+      { "t": "Especialistas", "d": "Solo fachadas de aluminio y cristal. Es lo único que hacemos." },
+      { "t": "Urgencias 24 h", "d": "Respuesta rápida ante cristales rotos o filtraciones." },
+      { "t": "Trabajo en altura", "d": "Personal y medios certificados para trabajo vertical seguro." },
+      { "t": "Para edificios", "d": "Oficinas, hoteles y comunidades. Tratamos con quien gestiona." }
+    ],
+    "proyectosEyebrow": "Proyectos",
+    "proyectosTitle": "Edificios donde hemos trabajado",
+    "verProyectos": "Ver proyectos",
+    "sectoresEyebrow": "Sectores",
+    "sectoresTitle": "Edificios que cuidamos",
+    "sectoresText": "Trabajamos para administradores de fincas, property managers, arquitectos y departamentos de mantenimiento.",
+    "confianza": [
+      { "t": "Trabajo en altura certificado", "d": "Personal y medios homologados." },
+      { "t": "Garantía de los trabajos", "d": "Respondemos por lo que hacemos." },
+      { "t": "Urgencias 24 h", "d": "Cristales rotos, riesgos en fachada." },
+      { "t": "+30 años · +150 edificios", "d": "Experiencia que avala." }
+    ],
+    "faqTitle": "Preguntas frecuentes sobre fachadas de aluminio y cristal",
+    "faqs": [
+      { "q": "¿Qué hace IMFALÚ?", "a": "IMFALÚ es una empresa especializada en el mantenimiento, la reparación, la regeneración y la rehabilitación de fachadas de aluminio y cristal —muro cortina y fachadas acristaladas— en Barcelona y su área metropolitana. No hacemos obra de albañilería: intervenimos sobre el aluminio y el vidrio del cerramiento." },
+      { "q": "¿En qué zona trabajáis?", "a": "En Barcelona y toda su área metropolitana, con sede en Cornellà de Llobregat. Hemos intervenido más de 150 edificios entre oficinas, hoteles, comunidades y edificios singulares." },
+      { "q": "¿Trabajáis con administradores de fincas y property managers?", "a": "Sí. La mayoría de nuestros clientes son administradores de fincas, property managers, arquitectos y departamentos de mantenimiento de edificios." },
+      { "q": "¿Tenéis servicio de urgencias?", "a": "Sí, disponemos de servicio de urgencias 24 h para incidencias en fachada como cristales rotos, riesgo de desprendimiento o filtraciones." },
+      { "q": "¿Cuánto cuesta intervenir una fachada?", "a": "Depende del estado del cerramiento, la altura del edificio y el alcance de la intervención. Hacemos un diagnóstico previo y un presupuesto sin compromiso; en muchos casos rehabilitar o regenerar resulta más económico que sustituir toda la fachada." }
+    ]
   }
 }
