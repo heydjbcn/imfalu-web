@@ -102,7 +102,7 @@ export function Header({
                             </span>
                             <span className="min-w-0">
                               <span className="line-clamp-2 text-[13px] font-semibold leading-tight text-ink group-hover/i:text-burdeos">{p.title}</span>
-                              <span className="mt-0.5 block text-[11px] text-warm">{fmtDate(p.date)}</span>
+                              <span className="mt-0.5 block text-[11px] text-warm">{fmtDate(p.date, "short", lang)}</span>
                             </span>
                           </Link>
                         ))}

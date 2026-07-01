@@ -111,7 +111,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
           <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-warm">
             <span>{t.por} <strong className="font-semibold text-ink">{post.author}</strong></span>
             <span className="text-warm/50">·</span>
-            <span>{t.actualizado} {fmt(post.updated || post.date)}</span>
+            <span>{t.actualizado} {fmtDate(post.updated || post.date, "long", l)}</span>
             <span className="text-warm/50">·</span>
             <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {post.readingMin} {t.minLectura}</span>
           </div>
@@ -166,7 +166,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
                       </span>
                       <span className="text-sm font-semibold text-ink">{t.leerMas}</span>
                       <span className="h-px flex-1 bg-line" />
-                      <span className="shrink-0 text-xs text-warm">{fmtDate(r.date)}</span>
+                      <span className="shrink-0 text-xs text-warm">{fmtDate(r.date, "short", l)}</span>
                     </div>
                   </div>
                 </Link>

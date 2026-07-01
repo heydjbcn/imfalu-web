@@ -24,7 +24,16 @@ const CONFIANZA_ICONS = [ShieldCheck, BadgeCheck, Clock, Award]
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params
   const l: Locale = hasLocale(lang) ? lang : defaultLocale
-  return { alternates: { canonical: l === "es" ? "/" : "/ca", languages: { es: "/", ca: "/ca", "x-default": "/" } } }
+  const title = l === "ca" ? "Façanes d'alumini i vidre a Barcelona · IMFALÚ" : "Fachadas de aluminio y cristal en Barcelona · IMFALÚ"
+  const description = l === "ca"
+    ? "Empresa de referència en manteniment, reparació i rehabilitació de façanes d'alumini i vidre a Barcelona. Més de 30 anys d'experiència."
+    : "Empresa de referencia en mantenimiento, reparación y rehabilitación de fachadas de aluminio y cristal en Barcelona. Más de 30 años de experiencia."
+  return {
+    title: { absolute: title },
+    description,
+    alternates: { canonical: l === "es" ? "/" : "/ca", languages: { es: "/", ca: "/ca", "x-default": "/" } },
+    openGraph: { title, description, url: l === "es" ? site.url : `${site.url}/ca` },
+  }
 }
 
 export default async function HomePage({ params }: { params: Promise<{ lang: string }> }) {

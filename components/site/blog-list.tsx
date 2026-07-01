@@ -22,8 +22,6 @@ const T = {
   ca: { destacados: "Articles destacats", todosArticulos: "Tots els articles", todos: "Tots", none: "Encara no hi ha articles en aquesta categoria.", min: "min" },
 }
 
-const fmt = (date: string) => fmtDate(date)
-
 function Chip({ children }: { children: React.ReactNode }) {
   return (
     <span className="inline-flex rounded-full border border-line px-2.5 py-0.5 text-xs font-medium text-warm">
@@ -32,10 +30,10 @@ function Chip({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Meta({ p, min }: { p: PostCard; min: string }) {
+function Meta({ p, min, lang }: { p: PostCard; min: string; lang: Locale }) {
   return (
     <div className="flex items-center gap-2 text-xs font-medium text-warm">
-      <span>{fmt(p.date)}</span>
+      <span>{fmtDate(p.date, "short", lang)}</span>
       <span className="text-warm/40">·</span>
       <span className="inline-flex items-center gap-1"><Clock className="h-3.5 w-3.5" /> {p.readingMin} {min}</span>
     </div>
@@ -79,7 +77,7 @@ export function BlogList({ posts, lang = "es" }: { posts: PostCard[]; lang?: Loc
                 <Image src={featured.cover} alt={featured.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:1024px) 100vw, 50vw" />
               </div>
               <div className="mt-5">
-                <Meta p={featured} min={t.min} />
+                <Meta p={featured} min={t.min} lang={lang} />
                 <h3 className="mt-2 flex items-start justify-between gap-3 text-2xl font-bold leading-snug text-ink transition-colors group-hover:text-burdeos">
                   <span>{featured.title}</span>
                   <ArrowUpRight className="mt-1 h-6 w-6 shrink-0 text-warm transition-colors group-hover:text-burdeos" />
@@ -96,7 +94,7 @@ export function BlogList({ posts, lang = "es" }: { posts: PostCard[]; lang?: Loc
                     <Image src={p.cover} alt={p.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="160px" />
                   </div>
                   <div className="min-w-0">
-                    <Meta p={p} min={t.min} />
+                    <Meta p={p} min={t.min} lang={lang} />
                     <h3 className="mt-1.5 line-clamp-2 font-bold leading-snug text-ink transition-colors group-hover:text-burdeos">{p.title}</h3>
                     <p className="mt-1.5 line-clamp-2 text-sm text-warm">{p.excerpt}</p>
                     <div className="mt-2"><Chip>{p.cluster}</Chip></div>
@@ -137,7 +135,7 @@ export function BlogList({ posts, lang = "es" }: { posts: PostCard[]; lang?: Loc
                     <Image src={p.cover} alt={p.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width:1024px) 50vw, 33vw" />
                   </div>
                   <div className="mt-5 flex flex-1 flex-col">
-                    <Meta p={p} min={t.min} />
+                    <Meta p={p} min={t.min} lang={lang} />
                     <h3 className="mt-2 flex items-start justify-between gap-3 text-lg font-bold leading-snug text-ink transition-colors group-hover:text-burdeos">
                       <span>{p.title}</span>
                       <ArrowUpRight className="mt-0.5 h-5 w-5 shrink-0 text-warm transition-colors group-hover:text-burdeos" />
