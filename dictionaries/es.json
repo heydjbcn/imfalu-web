@@ -1,1 +1,60 @@
-{}
+{
+  "topbar": { "specialists": "Especialistas en fachadas de aluminio y cristal" },
+  "nav": {
+    "servicios": "Servicios",
+    "tiposFachada": "Tipos de fachada",
+    "proyectos": "Proyectos",
+    "empresa": "Empresa",
+    "blog": "Blog",
+    "contacto": "Contacto",
+    "verTodoBlog": "Ver todo el blog",
+    "categorias": "Categorías"
+  },
+  "cta": {
+    "presupuesto": "Pide presupuesto",
+    "pedirPresupuesto": "Pedir presupuesto",
+    "presupuestoSinCompromiso": "Pide presupuesto sin compromiso",
+    "whatsapp": "Escríbenos por WhatsApp",
+    "llamar": "Llámanos",
+    "verMas": "Ver más",
+    "volverInicio": "Volver al inicio",
+    "contactar": "Contactar",
+    "seguirLeyendo": "Sigue leyendo",
+    "leerMas": "Leer más"
+  },
+  "footer": {
+    "taglineDesc": "Más de 30 años manteniendo, reparando y rehabilitando fachadas de aluminio y cristal en",
+    "servicios": "Servicios",
+    "tiposFachada": "Tipos de fachada",
+    "empresa": "Empresa",
+    "proyectos": "Proyectos",
+    "sobreNosotros": "Sobre nosotros",
+    "blog": "Blog",
+    "contacto": "Contacto",
+    "pedirPresupuesto": "Pedir presupuesto",
+    "derechos": "Todos los derechos reservados",
+    "desarrolladoPor": "Desarrollado por",
+    "avisoLegal": "Aviso legal",
+    "privacidad": "Privacidad",
+    "cookies": "Cookies"
+  },
+  "whatsapp": {
+    "aria": "Escríbenos por WhatsApp",
+    "msg": "Hola, me gustaría información sobre el mantenimiento/rehabilitación de una fachada."
+  },
+  "switcher": { "label": "Idioma", "es": "ES", "ca": "CA" },
+  "common": {
+    "actualizado": "Última actualización",
+    "servicio": "Servicio",
+    "inicio": "Inicio",
+    "otrosServicios": "Otros servicios",
+    "tiposDeFachada": "Tipos de fachada"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Página no encontrada",
+    "text": "La página que buscas no existe o se ha movido. Puede que el enlace esté mal escrito. Te dejamos por dónde seguir.",
+    "servicios": "Nuestros servicios",
+    "ayuda": "¿Necesitas ayuda con una fachada? Llámanos al"
+  }
+}

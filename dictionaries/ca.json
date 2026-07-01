@@ -1,1 +1,60 @@
-{}
+{
+  "topbar": { "specialists": "Especialistes en façanes d'alumini i vidre" },
+  "nav": {
+    "servicios": "Serveis",
+    "tiposFachada": "Tipus de façana",
+    "proyectos": "Projectes",
+    "empresa": "Empresa",
+    "blog": "Blog",
+    "contacto": "Contacte",
+    "verTodoBlog": "Veure tot el blog",
+    "categorias": "Categories"
+  },
+  "cta": {
+    "presupuesto": "Demana pressupost",
+    "pedirPresupuesto": "Demanar pressupost",
+    "presupuestoSinCompromiso": "Demana pressupost sense compromís",
+    "whatsapp": "Escriu-nos per WhatsApp",
+    "llamar": "Truca'ns",
+    "verMas": "Veure més",
+    "volverInicio": "Tornar a l'inici",
+    "contactar": "Contactar",
+    "seguirLeyendo": "Continua llegint",
+    "leerMas": "Llegir més"
+  },
+  "footer": {
+    "taglineDesc": "Més de 30 anys mantenint, reparant i rehabilitant façanes d'alumini i vidre a",
+    "servicios": "Serveis",
+    "tiposFachada": "Tipus de façana",
+    "empresa": "Empresa",
+    "proyectos": "Projectes",
+    "sobreNosotros": "Sobre nosaltres",
+    "blog": "Blog",
+    "contacto": "Contacte",
+    "pedirPresupuesto": "Demanar pressupost",
+    "derechos": "Tots els drets reservats",
+    "desarrolladoPor": "Desenvolupat per",
+    "avisoLegal": "Avís legal",
+    "privacidad": "Privacitat",
+    "cookies": "Cookies"
+  },
+  "whatsapp": {
+    "aria": "Escriu-nos per WhatsApp",
+    "msg": "Hola, m'agradaria informació sobre el manteniment/rehabilitació d'una façana."
+  },
+  "switcher": { "label": "Idioma", "es": "ES", "ca": "CA" },
+  "common": {
+    "actualizado": "Última actualització",
+    "servicio": "Servei",
+    "inicio": "Inici",
+    "otrosServicios": "Altres serveis",
+    "tiposDeFachada": "Tipus de façana"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Pàgina no trobada",
+    "text": "La pàgina que busques no existeix o s'ha mogut. Potser l'enllaç està mal escrit. Et deixem per on seguir.",
+    "servicios": "Els nostres serveis",
+    "ayuda": "Necessites ajuda amb una façana? Truca'ns al"
+  }
+}
