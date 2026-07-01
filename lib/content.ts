@@ -2,6 +2,10 @@
 // sobre la base ES (site.ts). Los consumidores llaman getX(lang).
 import { site, services, projects, navMenu, navLinks, type Service, type Project, type NavGroup } from "@/lib/site"
 import { siteCaText, servicesCaText, projectsCaText, navMenuCa, navLinksCa } from "@/lib/site-ca"
+import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
+import { SECTIONS_BY_SLUG } from "@/lib/service-content"
+import { FAQ_BY_SLUG_CA, PROCESS_CA } from "@/lib/service-faqs-ca"
+import { SECTIONS_BY_SLUG_CA } from "@/lib/service-content-ca"
 import type { Locale } from "@/lib/i18n"
 
 export function getSite(lang: Locale) {
@@ -62,4 +66,16 @@ export function getNavMenu(lang: Locale): NavGroup[] {
 export function getNavLinks(lang: Locale): { label: string; href: string }[] {
   if (lang === "es") return navLinks.map((n) => ({ ...n }))
   return navLinks.map((n, i) => ({ href: n.href, label: navLinksCa[i] ?? n.label }))
+}
+
+export function getServiceFaqs(lang: Locale, slug: string): { q: string; a: string }[] {
+  return (lang === "ca" ? FAQ_BY_SLUG_CA[slug] : FAQ_BY_SLUG[slug]) ?? []
+}
+
+export function getServiceSections(lang: Locale, slug: string): { h: string; body: string[] }[] {
+  return (lang === "ca" ? SECTIONS_BY_SLUG_CA[slug] : SECTIONS_BY_SLUG[slug]) ?? []
+}
+
+export function getProcess(lang: Locale) {
+  return lang === "ca" ? PROCESS_CA : PROCESS
 }
