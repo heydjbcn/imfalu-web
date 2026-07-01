@@ -7,8 +7,8 @@ import {
   ArrowRight, ChevronRight, AlertCircle, Award, Building2, FileText,
 } from "lucide-react"
 import { services, site } from "@/lib/site"
-import { FAQ_BY_SLUG, PROCESS } from "@/lib/service-faqs"
-import { SECTIONS_BY_SLUG } from "@/lib/service-content"
+import { getService, getServices, getServiceFaqs, getServiceSections, getProcess, getSite } from "@/lib/content"
+import { getDictionary, hasLocale, defaultLocale, localizedPath, type Locale } from "@/lib/i18n"
 import { CtaBand } from "@/components/site/cta-band"
 import { JsonLd } from "@/components/site/json-ld"
 import { ExpandingGallery } from "@/components/site/expanding-gallery"
@@ -24,44 +24,41 @@ export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }))
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params
-  const s = services.find((x) => x.slug === slug)
+export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }): Promise<Metadata> {
+  const { lang, slug } = await params
+  const l: Locale = hasLocale(lang) ? lang : defaultLocale
+  const s = getService(l, slug)
   if (!s) return {}
+  const path = `/servicios/${s.slug}`
   return {
     title: s.seoTitle,
     description: s.metaDescription,
     keywords: [...s.keywords, ...s.secondaryKeywords],
-    alternates: { canonical: `/servicios/${s.slug}` },
-    openGraph: { type: "website", title: `${s.seoTitle} · ${site.name}`, description: s.metaDescription, url: `/servicios/${s.slug}`, images: [s.image] },
+    alternates: { canonical: localizedPath(l, path), languages: { es: path, ca: `/ca${path}`, "x-default": path } },
+    openGraph: { type: "website", title: `${s.seoTitle} · ${site.name}`, description: s.metaDescription, url: `${site.url}${localizedPath(l, path)}`, images: [s.image] },
   }
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params
-  const s = services.find((x) => x.slug === slug)
+export default async function ServicePage({ params }: { params: Promise<{ lang: string; slug: string }> }) {
+  const { lang, slug } = await params
+  const l: Locale = hasLocale(lang) ? lang : defaultLocale
+  const s = getService(l, slug)
   if (!s) notFound()
-  const faqs = FAQ_BY_SLUG[slug] ?? []
-  const sections = SECTIONS_BY_SLUG[slug] ?? []
+  const dict = await getDictionary(l)
+  const siteL = getSite(l)
+  const faqs = getServiceFaqs(l, slug)
+  const sections = getServiceSections(l, slug)
+  const process = getProcess(l)
+  const lp = (p: string) => localizedPath(l, p)
   const SUBS = ["mantenimiento-preventivo", "mantenimiento-correctivo"]
-  const others = services.filter((x) => x.slug !== slug && !SUBS.includes(x.slug))
+  const others = getServices(l).filter((x) => x.slug !== slug && !SUBS.includes(x.slug))
   const TIPOS_LINKS = [
-    { label: "Muro cortina", href: "/fachadas/muro-cortina" },
-    { label: "Fachada acristalada", href: "/fachadas/fachada-acristalada" },
-    { label: "Fachada de aluminio", href: "/fachadas/fachada-aluminio" },
-    { label: "Rehabilitación de fachadas", href: "/fachadas/rehabilitacion" },
+    { label: dict.service.tipos.muroCortina, href: "/fachadas/muro-cortina" },
+    { label: dict.service.tipos.acristalada, href: "/fachadas/fachada-acristalada" },
+    { label: dict.service.tipos.aluminio, href: "/fachadas/fachada-aluminio" },
+    { label: dict.service.tipos.rehabilitacion, href: "/fachadas/rehabilitacion" },
   ]
-  const TERMS: Record<string, string> = {
-    "mantenimiento-fachadas": "el mantenimiento de fachadas",
-    "mantenimiento-preventivo": "el mantenimiento preventivo",
-    "mantenimiento-correctivo": "el mantenimiento correctivo",
-    reparacion: "la reparación de fachadas",
-    regeneracion: "la regeneración de fachadas",
-    "informes-tecnicos": "el informe técnico de fachada",
-    "pruebas-estanqueidad": "las pruebas de estanqueidad",
-    fotocatalisis: "la fotocatálisis",
-  }
-  const term = TERMS[slug] ?? "este servicio"
+  const term = (dict.terms as Record<string, string>)[slug] ?? ""
   const isSubMantenimiento = slug === "mantenimiento-preventivo" || slug === "mantenimiento-correctivo"
 
   const jsonLd = {
@@ -70,26 +67,26 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       {
         "@type": "WebPage",
         name: s.seoTitle,
-        url: `${site.url}/servicios/${s.slug}`,
+        url: `${site.url}${lp(`/servicios/${s.slug}`)}`,
         datePublished: site.lastUpdated,
         dateModified: site.lastUpdated,
-        inLanguage: "es-ES",
+        inLanguage: l === "ca" ? "ca-ES" : "es-ES",
       },
       {
         "@type": "Service",
         name: s.seoTitle,
         serviceType: s.title,
-        areaServed: site.area,
+        areaServed: siteL.area,
         provider: { "@id": `${site.url}/#org` },
         description: s.answer,
       },
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Inicio", item: site.url },
-          { "@type": "ListItem", position: 2, name: "Servicios", item: `${site.url}/#servicios` },
-          ...(isSubMantenimiento ? [{ "@type": "ListItem", position: 3, name: "Mantenimiento", item: `${site.url}/servicios/mantenimiento-fachadas` }] : []),
-          { "@type": "ListItem", position: isSubMantenimiento ? 4 : 3, name: s.title, item: `${site.url}/servicios/${s.slug}` },
+          { "@type": "ListItem", position: 1, name: dict.common.inicio, item: `${site.url}${lp("/")}` },
+          { "@type": "ListItem", position: 2, name: dict.nav.servicios, item: `${site.url}${lp("/#servicios")}` },
+          ...(isSubMantenimiento ? [{ "@type": "ListItem", position: 3, name: dict.service.mantenimiento, item: `${site.url}${lp("/servicios/mantenimiento-fachadas")}` }] : []),
+          { "@type": "ListItem", position: isSubMantenimiento ? 4 : 3, name: s.title, item: `${site.url}${lp(`/servicios/${s.slug}`)}` },
         ],
       },
       faqs.length
@@ -102,24 +99,23 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     <>
       <JsonLd data={jsonLd} />
 
-      {/* Cabecera */}
       <PageHero
+        lang={l}
         breadcrumb={[
-          { label: "Inicio", href: "/" },
-          { label: "Servicios", href: "/#servicios" },
-          ...(isSubMantenimiento ? [{ label: "Mantenimiento", href: "/servicios/mantenimiento-fachadas" }] : []),
+          { label: dict.common.inicio, href: lp("/") },
+          { label: dict.nav.servicios, href: lp("/#servicios") },
+          ...(isSubMantenimiento ? [{ label: dict.service.mantenimiento, href: lp("/servicios/mantenimiento-fachadas") }] : []),
           { label: s.title },
         ] as Crumb[]}
-        eyebrow="Servicio"
+        eyebrow={dict.service.eyebrow}
         title={s.seoTitle}
         subtitle={s.answer}
       />
 
-      {/* Banda de imagen (se ensancha al hacer scroll) */}
       <section className="bg-cream py-6 sm:py-8">
         <div className="container-x">
           <ExpandOnScroll className="bg-ink" minHeight={220} maxHeight={400}>
-            <Image src={s.image} alt={`${s.title} de fachadas de aluminio y cristal en ${site.city}`} fill priority className="object-cover" sizes="100vw" />
+            <Image src={s.image} alt={`${s.title} · ${site.city}`} fill priority className="object-cover" sizes="100vw" />
           </ExpandOnScroll>
         </div>
       </section>
@@ -128,24 +124,19 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         <div>
           <p className="text-lg leading-relaxed text-warm">{s.intro}</p>
 
-          {/* Secciones de profundidad (GEO: contenido citable) */}
           {sections.map((sec) => (
             <section key={sec.h}>
               <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{sec.h}</h2>
               <div className="mt-4 space-y-4 leading-relaxed text-warm">
-                {sec.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+                {sec.body.map((p) => (<p key={p}>{p}</p>))}
               </div>
             </section>
           ))}
 
-          {/* Qué incluye */}
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Qué incluye {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.queIncluye} {term}</h2>
           <CheckList items={s.bullets} className="mt-6" />
 
-          {/* Cuándo lo necesitas */}
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cuándo necesitas {term}</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.cuandoNecesitas} {term}</h2>
           <ul className="mt-5 space-y-3">
             {s.when.map((w) => (
               <li key={w} className="flex items-start gap-2.5 text-warm">
@@ -154,24 +145,20 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ))}
           </ul>
 
-          {/* Nota aclaratoria (normativa) */}
           {s.note ? (
             <div className="mt-12 rounded-2xl border border-l-4 border-l-burdeos bg-cream p-6">
               <h2 className="flex items-center gap-2 text-lg font-bold text-ink">
                 <FileText className="h-5 w-5 shrink-0 text-burdeos" /> {s.note.title}
               </h2>
               <div className="mt-3 space-y-3 text-sm leading-relaxed text-warm">
-                {s.note.body.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
+                {s.note.body.map((p) => (<p key={p}>{p}</p>))}
               </div>
             </div>
           ) : null}
 
-          {/* Cómo trabajamos */}
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Cómo trabajamos</h2>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.comoTrabajamos}</h2>
           <ol className="mt-5 grid gap-4 sm:grid-cols-2">
-            {PROCESS.map((p, i) => (
+            {process.map((p, i) => (
               <li key={p.t} className="rounded-2xl border bg-white p-5">
                 <span className="text-sm font-bold text-burdeos">0{i + 1}</span>
                 <h3 className="mt-1 font-semibold text-ink">{p.t}</h3>
@@ -180,16 +167,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ))}
           </ol>
 
-          {/* Por qué IMFALÚ */}
-          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Por qué elegir IMFALÚ para {term}</h2>
-          <p className="mt-4 text-warm">
-            No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de
-            aluminio y cristal, y es lo único que hacemos. Más de 30 años de experiencia, trabajo en
-            altura certificado y servicio de urgencias para administradores de fincas, property managers
-            y departamentos de mantenimiento en {site.area}.
-          </p>
+          <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.porQueElegir} {term}</h2>
+          <p className="mt-4 text-warm">{dict.service.porQueTexto} {siteL.area}.</p>
           <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-[1fr_1.45fr_0.85fr_0.85fr]">
-            {site.stats.map((st) => (
+            {siteL.stats.map((st) => (
               <div key={st.label} className="rounded-2xl border bg-cream px-5 py-4">
                 <div className="whitespace-nowrap text-xl font-bold text-burdeos sm:text-2xl">{st.value}<span className="text-warm">{st.suffix}</span></div>
                 <div className="mt-1 text-xs text-warm">{st.label}</div>
@@ -197,20 +178,16 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             ))}
           </div>
 
-          {/* Galería de trabajos */}
           {s.gallery?.length ? (
             <>
-              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Algunos de nuestros trabajos</h2>
-              <div className="mt-5">
-                <ExpandingGallery items={s.gallery} />
-              </div>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.algunosTrabajos}</h2>
+              <div className="mt-5"><ExpandingGallery items={s.gallery} /></div>
             </>
           ) : null}
 
-          {/* FAQ */}
           {faqs.length ? (
             <>
-              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">Preguntas frecuentes sobre {term}</h2>
+              <h2 className="mt-12 text-2xl md:text-3xl font-bold text-ink">{dict.service.preguntasSobre} {term}</h2>
               <div className="mt-5 divide-y rounded-2xl border bg-white">
                 {faqs.map((f) => (
                   <details key={f.q} className="group p-5">
@@ -225,43 +202,42 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             </>
           ) : null}
 
-          <p className="mt-10 text-xs text-warm">Última actualización: {site.lastUpdatedLabel}</p>
+          <p className="mt-10 text-xs text-warm">{dict.common.actualizado}: {site.lastUpdatedLabel}</p>
         </div>
 
-        {/* Aside */}
         <aside className="lg:sticky lg:top-24 lg:self-start">
           <div className="rounded-2xl border bg-cream p-6">
-            <h3 className="font-semibold text-ink">¿Hablamos de tu fachada?</h3>
-            <p className="mt-2 text-sm text-warm">Te damos presupuesto sin compromiso. Más de 30 años en {site.city}.</p>
-            <Link href="/contacto" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-burdeos px-5 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
-              Pedir presupuesto <ArrowRight className="h-4 w-4" />
+            <h3 className="font-semibold text-ink">{dict.service.hablamos}</h3>
+            <p className="mt-2 text-sm text-warm">{dict.service.hablamosTexto} {site.city}.</p>
+            <Link href={lp("/contacto")} className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-burdeos px-5 py-3 text-sm font-semibold text-white hover:bg-burdeos-dark">
+              {dict.cta.pedirPresupuesto} <ArrowRight className="h-4 w-4" />
             </Link>
             <a href={`tel:+34${site.phone}`} className="mt-2 block text-center text-sm font-semibold text-ink hover:text-burdeos">
-              o llámanos: {site.phoneDisplay}
+              {dict.service.oLlamanos} {site.phoneDisplay}
             </a>
           </div>
 
           <div className="mt-5 rounded-2xl border p-6">
-            <h3 className="flex items-center gap-2 text-sm font-semibold text-ink"><Award className="h-4 w-4 text-burdeos" /> Especialistas en fachadas</h3>
-            <p className="mt-2 text-sm text-warm">Aluminio y cristal, muro cortina y fachada acristalada. +150 edificios en Barcelona y área metropolitana.</p>
+            <h3 className="flex items-center gap-2 text-sm font-semibold text-ink"><Award className="h-4 w-4 text-burdeos" /> {dict.service.especialistas}</h3>
+            <p className="mt-2 text-sm text-warm">{dict.service.especialistasTexto}</p>
           </div>
 
           {slug === "mantenimiento-fachadas" ? (
             <div className="mt-5 rounded-2xl border p-6">
-              <h3 className="text-sm font-semibold text-ink">Tipo de mantenimiento</h3>
+              <h3 className="text-sm font-semibold text-ink">{dict.service.tipoMantenimiento}</h3>
               <ul className="mt-3 space-y-2 text-sm">
-                <li><Link href="/servicios/mantenimiento-preventivo" className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> Mantenimiento preventivo</Link></li>
-                <li><Link href="/servicios/mantenimiento-correctivo" className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> Mantenimiento correctivo</Link></li>
+                <li><Link href={lp("/servicios/mantenimiento-preventivo")} className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> {dict.service.preventivo}</Link></li>
+                <li><Link href={lp("/servicios/mantenimiento-correctivo")} className="flex items-center gap-1.5 text-warm hover:text-burdeos"><ChevronRight className="h-3.5 w-3.5" /> {dict.service.correctivo}</Link></li>
               </ul>
             </div>
           ) : null}
 
           <div className="mt-5 rounded-2xl border p-6">
-            <h3 className="text-sm font-semibold text-ink">Otros servicios</h3>
+            <h3 className="text-sm font-semibold text-ink">{dict.service.otrosServicios}</h3>
             <ul className="mt-3 space-y-2 text-sm">
               {others.map((o) => (
                 <li key={o.slug}>
-                  <Link href={`/servicios/${o.slug}`} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
+                  <Link href={lp(`/servicios/${o.slug}`)} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
                     <Building2 className="h-3.5 w-3.5" /> {o.title}
                   </Link>
                 </li>
@@ -270,11 +246,11 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
 
           <div className="mt-5 rounded-2xl border p-6">
-            <h3 className="text-sm font-semibold text-ink">Tipos de fachada</h3>
+            <h3 className="text-sm font-semibold text-ink">{dict.service.tiposFachada}</h3>
             <ul className="mt-3 space-y-2 text-sm">
               {TIPOS_LINKS.map((t) => (
                 <li key={t.href}>
-                  <Link href={t.href} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
+                  <Link href={lp(t.href)} className="flex items-center gap-1.5 text-warm hover:text-burdeos">
                     <ChevronRight className="h-3.5 w-3.5" /> {t.label}
                   </Link>
                 </li>
@@ -284,7 +260,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
         </aside>
       </div>
 
-      <CtaBand />
+      <CtaBand lang={l} />
     </>
   )
 }

@@ -2,16 +2,21 @@ import Link from "next/link"
 import type { ReactNode } from "react"
 import { ChevronRight, ArrowRight } from "lucide-react"
 import { waLink } from "@/lib/site"
+import { localizedPath, type Locale } from "@/lib/paths"
 
 export interface Crumb {
   label: string
   href?: string
 }
 
+const T = {
+  es: { cta: "Pide presupuesto", wa: "Escríbenos por WhatsApp", waMsg: "Hola, quiero información sobre una fachada." },
+  ca: { cta: "Demana pressupost", wa: "Escriu-nos per WhatsApp", waMsg: "Hola, vull informació sobre una façana." },
+}
+
 /**
- * Cabecera de página centrada y cuidada: breadcrumb, "pill" de sección, H1
- * grande, subtítulo y CTAs. Tono claro (marca). Reutilizada en servicios,
- * fachadas, proyectos y empresa.
+ * Cabecera de página centrada: breadcrumb, "pill" de sección, H1, subtítulo y CTAs.
+ * Reutilizada en servicios, fachadas, proyectos y empresa.
  */
 export function PageHero({
   breadcrumb,
@@ -19,13 +24,16 @@ export function PageHero({
   title,
   subtitle,
   cta = true,
+  lang = "es",
 }: {
   breadcrumb?: Crumb[]
   eyebrow?: string
   title: string
   subtitle?: ReactNode
   cta?: boolean
+  lang?: Locale
 }) {
+  const t = T[lang]
   return (
     <section className="relative isolate overflow-hidden bg-cream">
       <div
@@ -66,18 +74,18 @@ export function PageHero({
         {cta ? (
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/contacto"
+              href={localizedPath(lang, "/contacto")}
               className="inline-flex items-center gap-2 rounded-full bg-burdeos px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-burdeos-dark"
             >
-              Pide presupuesto <ArrowRight className="h-4 w-4" />
+              {t.cta} <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href={waLink("Hola, quiero información sobre una fachada.")}
+              href={waLink(t.waMsg)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-ink/15 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-ink/5"
             >
-              Escríbenos por WhatsApp
+              {t.wa}
             </a>
           </div>
         ) : null}

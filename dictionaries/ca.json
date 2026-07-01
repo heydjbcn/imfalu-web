@@ -56,5 +56,37 @@
     "text": "La pàgina que busques no existeix o s'ha mogut. Potser l'enllaç està mal escrit. Et deixem per on seguir.",
     "servicios": "Els nostres serveis",
     "ayuda": "Necessites ajuda amb una façana? Truca'ns al"
+  },
+  "service": {
+    "eyebrow": "Servei",
+    "mantenimiento": "Manteniment",
+    "queIncluye": "Què inclou",
+    "cuandoNecesitas": "Quan necessites",
+    "comoTrabajamos": "Com treballem",
+    "porQueElegir": "Per què triar IMFALÚ per a",
+    "porQueTexto": "No som una empresa d'obra ni un multiservei: som especialistes en façanes d'alumini i vidre, i és l'únic que fem. Més de 30 anys d'experiència, treball en alçada certificat i servei d'urgències per a administradors de finques, property managers i departaments de manteniment a",
+    "algunosTrabajos": "Alguns dels nostres treballs",
+    "preguntasSobre": "Preguntes freqüents sobre",
+    "hablamos": "Parlem de la teva façana?",
+    "hablamosTexto": "Et donem pressupost sense compromís. Més de 30 anys a",
+    "oLlamanos": "o truca'ns:",
+    "especialistas": "Especialistes en façanes",
+    "especialistasTexto": "Alumini i vidre, mur cortina i façana acristallada. +150 edificis a Barcelona i àrea metropolitana.",
+    "tipoMantenimiento": "Tipus de manteniment",
+    "preventivo": "Manteniment preventiu",
+    "correctivo": "Manteniment correctiu",
+    "otrosServicios": "Altres serveis",
+    "tiposFachada": "Tipus de façana",
+    "tipos": { "muroCortina": "Mur cortina", "acristalada": "Façana de vidre", "aluminio": "Façana d'alumini", "rehabilitacion": "Rehabilitació de façanes" }
+  },
+  "terms": {
+    "mantenimiento-fachadas": "el manteniment de façanes",
+    "mantenimiento-preventivo": "el manteniment preventiu",
+    "mantenimiento-correctivo": "el manteniment correctiu",
+    "reparacion": "la reparació de façanes",
+    "regeneracion": "la regeneració de façanes",
+    "informes-tecnicos": "l'informe tècnic de façana",
+    "pruebas-estanqueidad": "les proves d'estanqueïtat",
+    "fotocatalisis": "la fotocatàlisi"
   }
 }

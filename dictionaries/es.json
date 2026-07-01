@@ -56,5 +56,37 @@
     "text": "La página que buscas no existe o se ha movido. Puede que el enlace esté mal escrito. Te dejamos por dónde seguir.",
     "servicios": "Nuestros servicios",
     "ayuda": "¿Necesitas ayuda con una fachada? Llámanos al"
+  },
+  "service": {
+    "eyebrow": "Servicio",
+    "mantenimiento": "Mantenimiento",
+    "queIncluye": "Qué incluye",
+    "cuandoNecesitas": "Cuándo necesitas",
+    "comoTrabajamos": "Cómo trabajamos",
+    "porQueElegir": "Por qué elegir IMFALÚ para",
+    "porQueTexto": "No somos una empresa de obra ni un multiservicio: somos especialistas en fachadas de aluminio y cristal, y es lo único que hacemos. Más de 30 años de experiencia, trabajo en altura certificado y servicio de urgencias para administradores de fincas, property managers y departamentos de mantenimiento en",
+    "algunosTrabajos": "Algunos de nuestros trabajos",
+    "preguntasSobre": "Preguntas frecuentes sobre",
+    "hablamos": "¿Hablamos de tu fachada?",
+    "hablamosTexto": "Te damos presupuesto sin compromiso. Más de 30 años en",
+    "oLlamanos": "o llámanos:",
+    "especialistas": "Especialistas en fachadas",
+    "especialistasTexto": "Aluminio y cristal, muro cortina y fachada acristalada. +150 edificios en Barcelona y área metropolitana.",
+    "tipoMantenimiento": "Tipo de mantenimiento",
+    "preventivo": "Mantenimiento preventivo",
+    "correctivo": "Mantenimiento correctivo",
+    "otrosServicios": "Otros servicios",
+    "tiposFachada": "Tipos de fachada",
+    "tipos": { "muroCortina": "Muro cortina", "acristalada": "Fachada acristalada", "aluminio": "Fachada de aluminio", "rehabilitacion": "Rehabilitación de fachadas" }
+  },
+  "terms": {
+    "mantenimiento-fachadas": "el mantenimiento de fachadas",
+    "mantenimiento-preventivo": "el mantenimiento preventivo",
+    "mantenimiento-correctivo": "el mantenimiento correctivo",
+    "reparacion": "la reparación de fachadas",
+    "regeneracion": "la regeneración de fachadas",
+    "informes-tecnicos": "el informe técnico de fachada",
+    "pruebas-estanqueidad": "las pruebas de estanqueidad",
+    "fotocatalisis": "la fotocatálisis"
   }
 }
