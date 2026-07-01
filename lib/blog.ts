@@ -2,7 +2,9 @@ import fs from "node:fs"
 import path from "node:path"
 import matter from "gray-matter"
 
+type Lang = "es" | "ca"
 const DIR = path.join(process.cwd(), "content/blog")
+const dirFor = (lang: Lang) => (lang === "ca" ? path.join(DIR, "ca") : DIR)
 
 export interface Post {
   slug: string
@@ -19,9 +21,9 @@ export interface Post {
   body: string
 }
 
-function read(slug: string): Post | null {
+function readFrom(dir: string, slug: string): Post | null {
   try {
-    const raw = fs.readFileSync(path.join(DIR, `${slug}.md`), "utf8")
+    const raw = fs.readFileSync(path.join(dir, `${slug}.md`), "utf8")
     const { data, content } = matter(raw)
     const words = content.split(/\s+/).filter(Boolean).length
     return {
@@ -43,6 +45,21 @@ function read(slug: string): Post | null {
   }
 }
 
+// Lee en el idioma pedido; si no existe la traducción CA, cae a ES (misma fecha/slug).
+function read(slug: string, lang: Lang = "es"): Post | null {
+  if (lang === "ca") {
+    const ca = readFrom(dirFor("ca"), slug)
+    if (ca) {
+      if (!ca.date) {
+        const es = readFrom(DIR, slug)
+        if (es) ca.date = es.date
+      }
+      return ca
+    }
+  }
+  return readFrom(DIR, slug)
+}
+
 export function getAllSlugs(): string[] {
   try {
     return fs
@@ -54,25 +71,23 @@ export function getAllSlugs(): string[] {
   }
 }
 
-// Un artículo está publicado cuando su fecha/hora ya ha llegado (programación por fecha).
 export function isPublished(date: string): boolean {
   return new Date(date).getTime() <= Date.now()
 }
 
-// Solo los publicados (oculta los programados a futuro). Ordenados por fecha desc.
-export function getAllPosts(): Post[] {
+export function getAllPosts(lang: Lang = "es"): Post[] {
   return getAllSlugs()
-    .map(read)
+    .map((s) => read(s, lang))
     .filter((p): p is Post => p !== null && isPublished(p.date))
     .sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-export function getPost(slug: string): Post | null {
-  return read(slug)
+export function getPost(slug: string, lang: Lang = "es"): Post | null {
+  return read(slug, lang)
 }
 
-export function getClusters(): string[] {
-  return [...new Set(getAllPosts().map((p) => p.cluster))]
+export function getClusters(lang: Lang = "es"): string[] {
+  return [...new Set(getAllPosts(lang).map((p) => p.cluster))]
 }
 
 export function slugifyHeading(s: string): string {
@@ -84,7 +99,6 @@ export function slugifyHeading(s: string): string {
     .replace(/(^-|-$)/g, "")
 }
 
-// Índice de contenidos a partir de los H2 (## ) del markdown.
 export function tableOfContents(body: string): { id: string; text: string }[] {
   return body
     .split("\n")

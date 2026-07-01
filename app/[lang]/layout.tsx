@@ -60,7 +60,7 @@ export default async function RootLayout({
   const { lang } = await params
   const l: Locale = hasLocale(lang) ? lang : defaultLocale
   const dict = await getDictionary(l)
-  const allPosts = getAllPosts()
+  const allPosts = getAllPosts(l)
   const blogPosts = allPosts.slice(0, 6).map((p) => ({ slug: p.slug, title: p.title, cover: p.cover, date: p.date, cluster: p.cluster }))
   const blogClusters = Array.from(new Set(allPosts.map((p) => p.cluster)))
   return (
