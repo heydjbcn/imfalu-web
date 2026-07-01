@@ -10,7 +10,7 @@ Estado: [x] publicado · [ ] pendiente. Slug = nombre del .md.
 - [x] fachada-ligera-vs-pesada
 - [x] muro-cortina-de-aluminio
 - [x] vidrio-en-el-muro-cortina
-- [ ] problemas-muro-cortina
+- [x] problemas-muro-cortina
 - [ ] vida-util-muro-cortina
 - [ ] fachada-doble-piel
 - [ ] vidrio-abotonado-estructural
